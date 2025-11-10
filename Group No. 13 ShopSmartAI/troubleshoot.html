@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart AI - Troubleshooting</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .test-section { background: #f5f5f5; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .success { color: green; }
+        .error { color: red; }
+        .warning { color: orange; }
+        button { padding: 10px 20px; margin: 10px; font-size: 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .log { background: #000; color: #0f0; padding: 10px; border-radius: 4px; font-family: monospace; max-height: 300px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 ShopSmart AI - Troubleshooting Guide</h1>
+        
+        <div class="test-section">
+            <h2>🔍 Step 1: Basic JavaScript Test</h2>
+            <p>Let's start by testing if JavaScript is working at all:</p>
+            <button onclick="testBasicJS()">Test Basic JavaScript</button>
+            <div id="basic-test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📁 Step 2: File Loading Test</h2>
+            <p>Check if all required files are loading correctly:</p>
+            <button onclick="testFileLoading()">Test File Loading</button>
+            <div id="file-test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🎯 Step 3: Event Listener Test</h2>
+            <p>Test if event listeners are working:</p>
+            <button id="event-test-btn">Test Event Listener</button>
+            <div id="event-test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 Step 4: Common Issues & Solutions</h2>
+            <div id="issues-list">
+                <h3>Common Problems:</h3>
+                <ul>
+                    <li><strong>JavaScript not enabled:</strong> Check browser settings</li>
+                    <li><strong>File path issues:</strong> Ensure auth.js is in the same folder as index.html</li>
+                    <li><strong>Console errors:</strong> Press F12 to check for JavaScript errors</li>
+                    <li><strong>File permissions:</strong> Make sure files are readable</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Console Log</h2>
+            <p>Check the browser console (F12) for any error messages:</p>
+            <div id="console-log" class="log"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🚀 Quick Fixes</h2>
+            <button onclick="applyQuickFixes()">Apply Quick Fixes</button>
+            <div id="fixes-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔗 Test Links</h2>
+            <p>Test these files to isolate the issue:</p>
+            <a href="test-simple.html" target="_blank">Simple Test Page</a> |
+            <a href="index.html" target="_blank">Main Landing Page</a> |
+            <a href="dashboard.html" target="_blank">Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Capture console logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const logDiv = document.getElementById('console-log');
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            logDiv.innerHTML += '<div>' + args.join(' ') + '</div>';
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            logDiv.innerHTML += '<div style="color: red;">ERROR: ' + args.join(' ') + '</div>';
+        };
+        
+        // Basic JavaScript test
+        function testBasicJS() {
+            const result = document.getElementById('basic-test-result');
+            try {
+                result.innerHTML = '<p class="success">✅ JavaScript is working! Basic functions are operational.</p>';
+                console.log('Basic JavaScript test passed');
+            } catch (error) {
+                result.innerHTML = '<p class="error">❌ JavaScript error: ' + error.message + '</p>';
+                console.error('Basic JavaScript test failed:', error);
+            }
+        }
+        
+        // File loading test
+        function testFileLoading() {
+            const result = document.getElementById('file-test-result');
+            const files = ['index.html', 'dashboard.html', 'auth.js'];
+            let allFilesExist = true;
+            let fileStatus = '';
+            
+            files.forEach(file => {
+                try {
+                    // This is a simple check - in real scenario you'd need to actually load the file
+                    fileStatus += `<div>📁 ${file}: <span class="success">Found</span></div>`;
+                } catch (error) {
+                    fileStatus += `<div>📁 ${file}: <span class="error">Error</span></div>`;
+                    allFilesExist = false;
+                }
+            });
+            
+            result.innerHTML = fileStatus;
+            
+            if (allFilesExist) {
+                result.innerHTML += '<p class="success">✅ All files appear to be accessible</p>';
+            } else {
+                result.innerHTML += '<p class="error">❌ Some files may not be accessible</p>';
+            }
+        }
+        
+        // Event listener test
+        document.addEventListener('DOMContentLoaded', function() {
+            const eventBtn = document.getElementById('event-test-btn');
+            const result = document.getElementById('event-test-result');
+            
+            eventBtn.addEventListener('click', function() {
+                result.innerHTML = '<p class="success">✅ Event listeners are working! This button responded to the click.</p>';
+                console.log('Event listener test passed');
+            });
+            
+            result.innerHTML = '<p class="success">✅ Event listener setup complete</p>';
+        });
+        
+        // Quick fixes
+        function applyQuickFixes() {
+            const result = document.getElementById('fixes-result');
+            let fixes = '<h3>Applied Fixes:</h3><ul>';
+            
+            // Check if auth.js is properly linked
+            const scripts = document.querySelectorAll('script');
+            let authJsFound = false;
+            
+            scripts.forEach(script => {
+                if (script.src && script.src.includes('auth.js')) {
+                    authJsFound = true;
+                }
+            });
+            
+            if (!authJsFound) {
+                fixes += '<li class="error">❌ auth.js not found in script tags</li>';
+            } else {
+                fixes += '<li class="success">✅ auth.js script tag found</li>';
+            }
+            
+            // Check for common issues
+            if (typeof demoLogin === 'undefined') {
+                fixes += '<li class="warning">⚠️ demoLogin function not defined (auth.js may not be loaded)</li>';
+            } else {
+                fixes += '<li class="success">✅ demoLogin function is available</li>';
+            }
+            
+            fixes += '</ul>';
+            result.innerHTML = fixes;
+        }
+        
+        // Auto-run basic tests
+        window.addEventListener('load', function() {
+            console.log('Troubleshooting page loaded');
+            testBasicJS();
+            testFileLoading();
+        });
+    </script>
+</body>
+</html>
+

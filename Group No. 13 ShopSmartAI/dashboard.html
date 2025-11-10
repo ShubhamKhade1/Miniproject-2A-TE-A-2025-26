@@ -1,0 +1,2642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ShopSmart AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #10b981);
+        }
+        .gradient-bg:hover {
+            background: linear-gradient(to right, #047857, #059669);
+        }
+        .tab-active {
+            background: linear-gradient(to right, #059669, #10b981);
+            color: white;
+        }
+        .tab-inactive {
+            color: #6b7280;
+        }
+        .tab-inactive:hover {
+            background-color: #f3f4f6;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="text-2xl">🧠</span>
+                    <span class="text-xl font-bold gradient-text">ShopSmart AI</span>
+                </a>
+                <div class="flex items-center gap-4">
+                    <span id="welcome-user" class="text-green-600 font-medium">Welcome, User</span>
+                    <button id="logout-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+            <!-- Dashboard Content -->
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <!-- Welcome Message -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-8">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-3xl">🎉</span>
+                    <h1 class="text-2xl font-bold text-green-800">Welcome to ShopSmart AI!</h1>
+                </div>
+                <p class="text-green-700 mb-4">Your AI-powered nutrition and budget optimization companion. Start by exploring the different tabs below or use the quick access buttons in the Overview tab.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">💰 Budget Optimization</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">🥗 Nutrition Filtering</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">🔄 Healthier Swaps</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">🛒 Smart Cart</span>
+                </div>
+            </div>
+            
+            <!-- Tab Navigation -->
+        <div class="space-y-2 mb-8 bg-white p-3 rounded-lg border shadow-sm">
+            <!-- First Row: Core Features -->
+            <div class="flex gap-2 flex-wrap justify-center">
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-active" data-tab="overview">
+                    <span>📊</span>
+                    <span class="hidden sm:inline">Overview</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="budget">
+                    <span>💰</span>
+                    <span class="hidden sm:inline">Budget Optimizer</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="items">
+                    <span>📝</span>
+                    <span class="hidden sm:inline">List of Items</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="nutrition">
+                    <span>🥗</span>
+                    <span class="hidden sm:inline">Nutrition Filter</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="swaps">
+                    <span>🔄</span>
+                    <span class="hidden sm:inline">Healthier Swaps</span>
+                </button>
+            </div>
+            
+            <!-- Second Row: Advanced Features & Actions -->
+            <div class="flex gap-2 flex-wrap justify-center">
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="greener">
+                    <span>🌱</span>
+                    <span class="hidden sm:inline">Greener Alternatives</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="apriori">
+                    <span>📊</span>
+                    <span class="hidden sm:inline">Apriori Analysis</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="cart">
+                    <span>🛒</span>
+                    <span class="hidden sm:inline">Cart</span>
+                    <span class="ml-2 text-sm text-gray-600" id="cart-item-count">(0)</span>
+                </button>
+                <button class="tab-btn flex items-center gap-2 px-4 py-2 rounded-md transition-colors tab-inactive" data-tab="saved-baskets">
+                    <span>💾</span>
+                    <span class="hidden sm:inline">Saved Baskets</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tab-content">
+            <!-- Overview Tab -->
+            <div id="overview-tab" class="tab-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">💰</span>
+                            <h3 class="text-xl font-semibold">Budget Optimizer</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Maximize nutrition while staying within budget</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('budget')">Start Optimizing</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">📝</span>
+                            <h3 class="text-xl font-semibold">Browse Items</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Explore our nutrition database</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('items')">View Items</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">🥗</span>
+                            <h3 class="text-xl font-semibold">Nutrition Filter</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Filter by nutritional requirements</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('nutrition')">Apply Filters</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">🔄</span>
+                            <h3 class="text-xl font-semibold">Healthier Swaps</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Find healthier alternatives using AI</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('swaps')">Find Swaps</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">🌱</span>
+                            <h3 class="text-xl font-semibold">Greener Alternatives</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Find environmentally friendly alternatives</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('greener')">Find Greener Options</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">📊</span>
+                            <h3 class="text-xl font-semibold">Apriori Analysis</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Discover shopping patterns and associations</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('apriori')">Run Analysis</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">🛒</span>
+                            <h3 class="text-xl font-semibold flex items-center gap-2">
+                                Shopping Cart
+                                <span id="overview-co2-badge" class="hidden px-2 py-0.5 text-xs rounded-full text-white font-medium" style="background-color:#10b981;">🌍 Low CO₂</span>
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Manage your selected items</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('cart')">View Cart</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">🌍</span>
+                            <h3 class="text-xl font-semibold">CO₂ Emissions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Filter by environmental impact</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchToCo2Filter()">Filter by CO₂</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">💾</span>
+                            <h3 class="text-xl font-semibold">Saved Baskets</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">View your saved shopping baskets</p>
+                        <button class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all" onclick="switchTab('saved-baskets')">View Saved Baskets</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-2xl">📊</span>
+                            <h3 class="text-xl font-semibold">Your Stats</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Track your nutrition journey</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Items Saved:</span>
+                                <span class="font-medium" id="items-count">0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Budget Used:</span>
+                                <span class="font-medium" id="budget-used">₹0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">CO2 Emissions:</span>
+                                <span class="font-medium"><span id="co2-emissions">0.0 kg</span> <span class="text-xs text-gray-500" id="co2-level">(Low)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Optimizer Tab -->
+            <div id="budget-tab" class="tab-content hidden">
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Budget Optimizer</h2>
+                        <p class="text-gray-600 mb-6">Enter your budget and preferences to get optimized recommendations</p>
+                        
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Monthly Budget (₹)</label>
+                                    <input type="number" id="budget-input" placeholder="Enter your budget" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Family Size</label>
+                                    <select id="family-size" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                        <option value="1">1 person</option>
+                                        <option value="2">2 people</option>
+                                        <option value="3">3 people</option>
+                                        <option value="4">4 people</option>
+                                        <option value="5">5+ people</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="optimize-btn" class="w-full gradient-bg text-white py-3 rounded-lg hover:shadow-lg transition-all">Optimize My Budget</button>
+                            <div id="budget-results" class="hidden mt-6 space-y-4">
+                                <h3 class="text-lg font-semibold">Optimized Recommendations</h3>
+                                <div id="budget-items" class="space-y-3"></div>
+                                <div id="budget-summary" class="p-3 bg-green-50 rounded border border-green-200"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Items List Tab -->
+            <div id="items-tab" class="tab-content hidden">
+                <div class="bg-white p-6 rounded-xl shadow-sm border">
+                    <h2 class="text-2xl font-bold mb-2">Food Items Database</h2>
+                    <p class="text-gray-600 mb-6">Browse through our comprehensive nutrition database</p>
+                    
+                    <div class="space-y-4">
+                        <input type="text" id="search-items" placeholder="Search food items..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <div id="items-list" class="space-y-3 max-h-96 overflow-y-auto">
+                            <div class="text-center py-8 text-gray-500">Loading items...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nutrition Filter Tab -->
+            <div id="nutrition-tab" class="tab-content hidden">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Nutritional Filtering</h2>
+                        <p class="text-gray-600 mb-6">Filter items based on your nutritional requirements using simple Low, Medium, High categories</p>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-blue-600">ℹ️</span>
+                                    <h3 class="font-semibold text-blue-800">How to Use Nutrition Filters</h3>
+                                </div>
+                                <p class="text-blue-700 text-sm">Select your preferred ranges for each nutrient. Leave as "Any" if you don't want to filter that nutrient. The system will find foods that match all your selected criteria.</p>
+                            </div>
+
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-green-600">🌍</span>
+                                    <h3 class="font-semibold text-green-800">Understanding CO₂ Emissions</h3>
+                                </div>
+                                <div class="text-green-700 text-sm space-y-2">
+                                    <p><strong>Low CO₂ (<2kg CO₂/kg):</strong> Climate-friendly choices like fruits, vegetables, grains, and legumes.</p>
+                                    <p><strong>Medium CO₂ (2-10kg CO₂/kg):</strong> Moderate impact foods like poultry, fish, dairy, and processed foods.</p>
+                                    <p><strong>High CO₂ (>10kg CO₂/kg):</strong> High-impact foods like beef, lamb, and cheese that significantly contribute to greenhouse gas emissions.</p>
+                                    <p class="text-xs text-green-600 mt-2">💡 <strong>Tip:</strong> Choosing lower CO₂ foods helps reduce your carbon footprint and supports sustainable agriculture!</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                                        <span class="text-orange-500">🔥</span>
+                                        Calories per 100g
+                                    </label>
+                                    <select id="calories-filter" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all">
+                                        <option value="">Any Amount</option>
+                                        <option value="low">Low (0-50 calories) - Very light foods</option>
+                                        <option value="medium">Medium (50-150 calories) - Moderate energy</option>
+                                        <option value="high">High (150+ calories) - Energy dense</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                                        <span class="text-red-500">💪</span>
+                                        Protein per 100g
+                                    </label>
+                                    <select id="protein-filter" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all">
+                                        <option value="">Any Amount</option>
+                                        <option value="low">Low (0-5g) - Minimal protein</option>
+                                        <option value="medium">Medium (5-15g) - Good protein source</option>
+                                        <option value="high">High (15g+) - Excellent protein source</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                                        <span class="text-yellow-500">🧈</span>
+                                        Fat per 100g
+                                    </label>
+                                    <select id="fat-filter" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all">
+                                        <option value="">Any Amount</option>
+                                        <option value="low">Low (0-5g) - Low fat content</option>
+                                        <option value="medium">Medium (5-15g) - Moderate fat</option>
+                                        <option value="high">High (15g+) - High fat content</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                                        <span class="text-pink-500">🍯</span>
+                                        Sugars per 100g
+                                    </label>
+                                    <select id="sugars-filter" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all">
+                                        <option value="">Any Amount</option>
+                                        <option value="low">Low (0-5g) - Very low sugar</option>
+                                        <option value="medium">Medium (5-15g) - Moderate sugar</option>
+                                        <option value="high">High (15g+) - High sugar content</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                                        <span class="text-green-600">🌍</span>
+                                        CO₂ Emissions
+                                    </label>
+                                    <select id="co2-filter" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all">
+                                        <option value="">Any Level</option>
+                                        <option value="low">Low (<2kg CO₂/kg) - Climate friendly</option>
+                                        <option value="medium">Medium (2-10kg CO₂/kg) - Moderate impact</option>
+                                        <option value="high">High (>10kg CO₂/kg) - High impact</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="border-t pt-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                                    <span class="text-green-600">⚡</span>
+                                    Quick Filter Presets
+                                </h3>
+                                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                                    <button onclick="applyPreset('low-calorie')" class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm">
+                                        <div class="font-medium">Low Calorie</div>
+                                        <div class="text-xs text-gray-600">Weight management</div>
+                                    </button>
+                                    <button onclick="applyPreset('high-protein')" class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm">
+                                        <div class="font-medium">High Protein</div>
+                                        <div class="text-xs text-gray-600">Muscle building</div>
+                                    </button>
+                                    <button onclick="applyPreset('low-sugar')" class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm">
+                                        <div class="font-medium">Low Sugar</div>
+                                        <div class="text-xs text-gray-600">Diabetic friendly</div>
+                                    </button>
+                                    <button onclick="applyPreset('low-fat')" class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm">
+                                        <div class="font-medium">Low Fat</div>
+                                        <div class="text-xs text-gray-600">Heart healthy</div>
+                                    </button>
+                                    <button onclick="applyPreset('low-co2')" class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm">
+                                        <div class="font-medium">Low CO₂</div>
+                                        <div class="text-xs text-gray-600">Climate friendly</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button id="filter-btn" class="flex-1 gradient-bg text-white py-3 rounded-lg hover:shadow-lg transition-all font-medium">Apply Nutrition Filters</button>
+                                <button onclick="clearFilters()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all">Clear All</button>
+                            </div>
+
+                            <div id="filter-results" class="hidden space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold">Filtered Results</h3>
+                                    <div class="text-sm text-gray-600" id="filter-count">0 items found</div>
+                                </div>
+                                <div id="filtered-items" class="space-y-3 max-h-96 overflow-y-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthier Swaps Tab -->
+            <div id="swaps-tab" class="tab-content hidden">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Healthier Swaps</h2>
+                        <p class="text-gray-600 mb-6">Find healthier alternatives using our AI-powered KNN algorithm</p>
+                        
+                        <div class="space-y-6">
+                            <!-- AI Algorithm Info Box -->
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-blue-600">🤖</span>
+                                    <h3 class="font-semibold text-blue-800">How Our AI Works</h3>
+                                </div>
+                                <p class="text-blue-700 text-sm">Our KNN (K-Nearest Neighbors) algorithm analyzes nutritional similarity between foods and recommends alternatives with better nutrition density scores. It considers calories, protein, fat, carbs, fiber, and other nutrients to find the healthiest similar options.</p>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <input type="text" id="swap-food" placeholder="e.g., white rice, potato chips, margarine" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <button id="find-swaps-btn" class="px-6 py-2 gradient-bg text-white rounded-lg hover:shadow-lg transition-all">Find Healthier Alternatives</button>
+                            </div>
+                            
+                            <div id="swaps-results" class="hidden space-y-4">
+                                <h3 class="text-lg font-semibold">Healthier Alternatives</h3>
+                                <div id="swaps-list" class="space-y-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Greener Alternatives Tab -->
+            <div id="greener-tab" class="tab-content hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Greener Alternatives</h2>
+                        <p class="text-gray-600 mb-6">Browse environmentally friendly alternatives by category to reduce your carbon footprint</p>
+                        
+                        <div class="space-y-6">
+                            <!-- Category Tabs -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="oils-fats">
+                                    🫒 Oils & Fats
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="dairy">
+                                    🥛 Dairy Products
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="seafood">
+                                    🐟 Seafood
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="vegetables">
+                                    🥬 Vegetables
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="processed">
+                                    🥫 Processed Foods
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="nuts-seeds">
+                                    🥜 Nuts & Seeds
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="meat-poultry">
+                                    🥩 Meat & Poultry
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="fruits">
+                                    🍎 Fruits
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="plant-proteins">
+                                    🌱 Plant-Based Proteins
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="grains">
+                                    🌾 Grains & Cereals
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="eggs">
+                                    🥚 Eggs
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="herbs-spices">
+                                    🌿 Herbs & Spices
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="snacks">
+                                    🍿 Snacks & Processed Foods
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="beverages">
+                                    🥤 Beverages
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="sugars">
+                                    🍯 Sugars & Sweeteners
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="condiments">
+                                    🧂 Condiments & Sauces
+                                </button>
+                                <button class="greener-category-btn px-4 py-2 rounded-lg border border-gray-300 hover:bg-green-50 hover:border-green-300 transition-all text-sm font-medium" data-category="legumes">
+                                    🫘 Legumes & Pulses
+                                </button>
+                            </div>
+                            
+                            <div id="greener-results" class="hidden space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold" id="greener-category-title">Greener Alternatives</h3>
+                                        <p class="text-xs text-green-600 mt-1">🌱 Sorted by CO₂ emissions (lowest to highest)</p>
+                                    </div>
+                                    <div class="text-sm text-gray-600" id="greener-count">0 items found</div>
+                                </div>
+                                <div id="greener-list" class="space-y-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apriori Analysis Tab -->
+            <div id="apriori-tab" class="tab-content hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Apriori Analysis</h2>
+                        <p class="text-gray-600 mb-6">Discover shopping patterns and item associations using market basket analysis</p>
+                        
+                        <div class="space-y-6">
+                            <!-- Analysis Controls -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold mb-4">Analysis Parameters</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Minimum Support (%)</label>
+                                        <input type="number" id="min-support" value="5" min="1" max="100" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Minimum Confidence (%)</label>
+                                        <input type="number" id="min-confidence" value="30" min="1" max="100" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Minimum Lift</label>
+                                        <input type="number" id="min-lift" value="0.5" min="0.1" max="10" step="0.1" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <button id="run-apriori-analysis" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium">
+                                        🔍 Run Analysis
+                                    </button>
+                                    <button id="get-recommendations" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all font-medium ml-3">
+                                        🎯 Get Recommendations
+                                    </button>
+                                    <button id="debug-transactions" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-medium ml-3">
+                                        🔍 Debug Data
+                                    </button>
+                                    <button id="clear-apriori-results" class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all font-medium ml-3">
+                                        🗑️ Clear Results
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Analysis Results -->
+                            <div id="apriori-results" class="hidden space-y-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold">Association Rules</h3>
+                                    <div class="text-sm text-gray-600" id="apriori-count">0 rules found</div>
+                                </div>
+                                
+                                <!-- Rules Display -->
+                                <div id="apriori-rules" class="space-y-3"></div>
+                                
+                                <!-- Statistics -->
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-blue-800 mb-2">Analysis Statistics</h4>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                                        <div>
+                                            <span class="text-blue-600 font-medium">Total Transactions:</span>
+                                            <span id="total-transactions" class="ml-2">0</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-blue-600 font-medium">Unique Items:</span>
+                                            <span id="unique-items" class="ml-2">0</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-blue-600 font-medium">Frequent Itemsets:</span>
+                                            <span id="frequent-itemsets" class="ml-2">0</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-blue-600 font-medium">Strong Rules:</span>
+                                            <span id="strong-rules" class="ml-2">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sample Data Info -->
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-800 mb-2">📊 About Apriori Analysis</h4>
+                                <p class="text-sm text-yellow-700">
+                                    This analysis uses your saved shopping baskets to discover which items are frequently bought together. 
+                                    It helps identify shopping patterns and suggests complementary items for better meal planning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Tab -->
+            <div id="cart-tab" class="tab-content hidden">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Shopping Cart</h2>
+                        <p class="text-gray-600 mb-6">Review and manage your selected items</p>
+                        
+                        <!-- Recommendations Section -->
+                        <div id="cart-recommendations" class="hidden mb-6">
+                            <div class="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="text-2xl">🎯</span>
+                                    <h3 class="text-lg font-semibold text-green-800">Recommended for You</h3>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-3">Based on your shopping patterns, you might also like:</p>
+                                <div id="recommendation-items" class="space-y-2"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="cart-content">
+                            <div id="empty-cart" class="text-center py-8">
+                                <div class="text-4xl mb-4">🛒</div>
+                                <h3 class="text-lg font-semibold mb-2">Your cart is empty</h3>
+                                <p class="text-gray-600">Add some items to get started!</p>
+                            </div>
+                            <div id="cart-items" class="hidden space-y-4"></div>
+                            <div id="cart-summary" class="hidden border-t pt-4 mt-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-lg font-semibold">Total: ₹<span id="cart-total">0.00</span></span>
+                                    <div class="flex gap-2">
+                                        <button id="save-basket-btn" class="px-4 py-2 gradient-bg text-white rounded-lg hover:shadow-lg transition-all">Save Basket</button>
+                                        <button id="clear-cart-btn" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all">Clear Cart</button>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <div>Total Items: <span id="total-items">0</span></div>
+                                    <div>Average Price per Item: ₹<span id="avg-price">0.00</span></div>
+                                    <div class="flex items-center gap-2">Total CO₂ Emissions: <span id="cart-total-co2">0.00 kg</span> <span id="cart-co2-level" class="text-xs px-2 py-0.5 rounded-full hidden"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Baskets Tab -->
+            <div id="saved-baskets-tab" class="tab-content hidden">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h2 class="text-2xl font-bold mb-2">Saved Baskets</h2>
+                        <p class="text-gray-600 mb-6">View and manage your previously saved shopping baskets</p>
+                        
+                        <div id="saved-baskets-content">
+                            <div id="no-saved-baskets" class="text-center py-8">
+                                <div class="text-4xl mb-4">💾</div>
+                                <h3 class="text-lg font-semibold mb-2">No saved baskets yet</h3>
+                                <p class="text-gray-600">Save your first basket from the Cart tab to get started!</p>
+                            </div>
+                            <div id="saved-baskets-list" class="hidden space-y-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basket Naming Modal -->
+    <div id="basket-name-modal" class="modal">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-6 border-b">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🛒</span>
+                    <span class="text-xl font-bold gradient-text">Save Basket</span>
+                </div>
+                <button id="close-basket-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2 text-center">Name Your Basket</h2>
+                <p class="text-gray-600 text-center mb-6">Give your basket a memorable name</p>
+                <form id="basket-name-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Basket Name</label>
+                        <input type="text" id="basket-name-input" placeholder="e.g., Weekly Groceries, Healthy Meals" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                        <div class="flex justify-between">
+                            <span>Items:</span>
+                            <span id="modal-item-count">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Total:</span>
+                            <span>₹<span id="modal-total-amount">0.00</span></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all">Save Basket</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CO₂ Emission Warning Modal -->
+    <div id="co2-warning-modal" class="modal">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-6 border-b">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🌍</span>
+                    <span class="text-xl font-bold text-red-600">High CO₂ Emissions</span>
+                </div>
+                <button id="close-co2-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚠️</div>
+                    <h2 class="text-2xl font-bold mb-2 text-red-600">Your cart's CO₂ emission score is high</h2>
+                    <p class="text-gray-600">Consider choosing more environmentally friendly alternatives to reduce your carbon footprint before saving this basket.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button id="edit-cart-btn" class="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium">
+                        Edit
+                    </button>
+                    <button id="continue-cart-btn" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all font-medium">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard functionality
+        let currentTab = "overview"
+        let cart = []
+
+        document.addEventListener("DOMContentLoaded", () => {
+            checkAuth()
+            setupEventListeners()
+            loadCart()
+            updateCartDisplay()
+        })
+
+        function checkAuth() {
+            const user = localStorage.getItem("user")
+            if (!user) {
+                window.location.href = "index.html"
+                return
+            }
+
+            const userData = JSON.parse(user)
+            document.getElementById("welcome-user").textContent = `Welcome, ${userData.name}`
+        }
+
+        function setupEventListeners() {
+            // Tab navigation
+            document.querySelectorAll(".tab-btn").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const tab = btn.getAttribute("data-tab")
+                    switchTab(tab)
+                })
+            })
+
+            // Logout
+            document.getElementById("logout-btn").addEventListener("click", () => {
+                localStorage.removeItem("user")
+                localStorage.removeItem("cart")
+                window.location.href = "index.html"
+            })
+
+            // Budget optimizer
+            document.getElementById("optimize-btn")?.addEventListener("click", optimizeBudget)
+
+            // Items search
+            document.getElementById("search-items")?.addEventListener("input", searchItems)
+
+            // Nutrition filter
+            document.getElementById("filter-btn")?.addEventListener("click", filterNutrition)
+
+            // Healthier swaps
+            document.getElementById("find-swaps-btn")?.addEventListener("click", findSwaps)
+
+            // Greener alternatives - category buttons
+            document.querySelectorAll(".greener-category-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const category = btn.getAttribute("data-category")
+                    findGreenerAlternativesByCategory(category)
+                })
+            })
+
+            // Apriori Analysis
+            document.getElementById("run-apriori-analysis")?.addEventListener("click", runAprioriAnalysis)
+            document.getElementById("get-recommendations")?.addEventListener("click", getPersonalizedRecommendations)
+            document.getElementById("debug-transactions")?.addEventListener("click", debugUserTransactions)
+            document.getElementById("clear-apriori-results")?.addEventListener("click", clearAprioriResults)
+
+            // Cart actions
+            document.getElementById("save-basket-btn")?.addEventListener("click", saveBasket)
+            document.getElementById("clear-cart-btn")?.addEventListener("click", clearCart)
+
+            // Basket naming modal
+            document.getElementById("close-basket-modal")?.addEventListener("click", hideBasketNameModal)
+            document.getElementById("basket-name-form")?.addEventListener("submit", (e) => {
+                e.preventDefault()
+                handleBasketSave()
+            })
+
+            // CO₂ warning modal
+            document.getElementById("close-co2-modal")?.addEventListener("click", hideCo2WarningModal)
+            document.getElementById("edit-cart-btn")?.addEventListener("click", handleEditCart)
+            document.getElementById("continue-cart-btn")?.addEventListener("click", handleContinueCart)
+
+            // Close modal when clicking outside
+            window.addEventListener("click", (event) => {
+                if (event.target.classList.contains("modal")) {
+                    event.target.classList.remove("show")
+                }
+            })
+
+            // Load initial data
+            loadItems()
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll(".tab-btn").forEach((btn) => {
+                btn.classList.remove("tab-active")
+                btn.classList.add("tab-inactive")
+            })
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add("tab-active")
+            document.querySelector(`[data-tab="${tabName}"]`).classList.remove("tab-inactive")
+
+            // Show/hide tab content
+            document.querySelectorAll(".tab-content").forEach((content) => {
+                content.classList.add("hidden")
+            })
+            document.getElementById(`${tabName}-tab`).classList.remove("hidden")
+
+            currentTab = tabName
+
+            if (tabName === "cart") {
+                updateCartDisplay()
+            } else if (tabName === "greener") {
+                // Auto-load first category when opening greener alternatives tab
+                if (!csvData) {
+                    loadCSVData().then(() => {
+                        // Load first category after CSV is loaded
+                        findGreenerAlternativesByCategory('oils-fats')
+                    })
+                } else {
+                    // Load first category if CSV is already loaded
+                    findGreenerAlternativesByCategory('oils-fats')
+                }
+            } else if (tabName === "saved-baskets") {
+                loadSavedBaskets()
+            }
+        }
+
+        function switchToCo2Filter() {
+            // Switch to nutrition tab and set CO₂ filter to low
+            switchTab('nutrition')
+            
+            // Set the CO₂ filter to low emissions
+            setTimeout(() => {
+                const co2Filter = document.getElementById("co2-filter")
+                if (co2Filter) {
+                    co2Filter.value = "low"
+                    // Auto-apply the filter
+                    filterNutrition()
+                }
+            }, 100)
+        }
+
+        // Budget Optimizer Functions
+        async function optimizeBudget() {
+            const budget = document.getElementById("budget-input").value
+            const familySize = document.getElementById("family-size").value
+
+            if (!budget) {
+                showCartNotification("Please enter a budget", "error")
+                return
+            }
+
+            if (budget <= 0) {
+                showCartNotification("Budget must be greater than 0", "error")
+                return
+            }
+
+            // Check if user is logged in
+            const currentUser = JSON.parse(localStorage.getItem("user"))
+            if (!currentUser || !currentUser.id) {
+                showCartNotification("Please login to use budget optimization", "error")
+                return
+            }
+
+            const btn = document.getElementById("optimize-btn")
+            btn.textContent = "Optimizing..."
+            btn.disabled = true
+
+            try {
+                const response = await fetch("http://localhost:5000/api/budget/optimize", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        budget: parseFloat(budget),
+                        family_size: parseInt(familySize) || 1
+                    })
+                })
+
+                const result = await response.json()
+                
+                if (result.success) {
+                    const formattedResult = {
+                        items: result.recommendations,
+                        summary: {
+                            budget: parseFloat(budget),
+                            totalCost: result.total_cost,
+                            savings: result.saved_amount
+                        }
+                    }
+                    displayBudgetResults(formattedResult)
+                    showCartNotification("Budget optimization completed!", "success")
+                } else {
+                    showCartNotification(result.message || "Optimization failed", "error")
+                }
+            } catch (error) {
+                console.error("Budget optimization error:", error)
+                showCartNotification("Optimization failed. Please check your connection and try again.", "error")
+            } finally {
+                btn.textContent = "Optimize My Budget"
+                btn.disabled = false
+            }
+        }
+
+        function displayBudgetResults(result) {
+            const resultsDiv = document.getElementById("budget-results")
+            const itemsDiv = document.getElementById("budget-items")
+            const summaryDiv = document.getElementById("budget-summary")
+
+            if (result.items && result.items.length > 0) {
+                itemsDiv.innerHTML = result.items
+                    .map(
+                        (item) => `
+                            <div class="bg-white rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <h3 class="font-semibold text-lg text-gray-800">${item.food}</h3>
+                                            ${item.co2_emissions ? `
+                                                <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${item.co2_emissions.color}">
+                                                    🌍 ${item.co2_emissions.emission_value}kg CO₂
+                                                </span>
+                                            ` : ''}
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                                            <div>Calories: ${item.caloric_value || 0}</div>
+                                            <div>Protein: ${item.protein?.toFixed(1) || 0}g</div>
+                                            <div>Fat: ${item.fat?.toFixed(1) || 0}g</div>
+                                            <div>Carbs: ${item.carbohydrates?.toFixed(1) || 0}g</div>
+                                            <div>Fiber: ${item.dietary_fiber?.toFixed(1) || 0}g</div>
+                                            <div>Nutrition Score: ${item.nutrition_density?.toFixed(2) || 0}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right ml-4">
+                                        <div class="text-2xl font-bold text-green-600 mb-2">₹${item.price?.toFixed(2) || 0}</div>
+                                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium" onclick="addToCart(${JSON.stringify(item).replace(/"/g, "&quot;")})">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `,
+                    )
+                    .join("")
+
+                if (result.summary) {
+                    summaryDiv.innerHTML = `
+                        <div class="text-sm space-y-1">
+                            <div>Total Budget: ₹${result.summary.budget}</div>
+                            <div>Total Cost: ₹${result.summary.totalCost}</div>
+                            <div>Savings: ₹${result.summary.savings}</div>
+                        </div>
+                    `
+                }
+
+                resultsDiv.classList.remove("hidden")
+            }
+        }
+
+        // Items List Functions
+        async function loadItems() {
+            try {
+                const response = await fetch("http://localhost:5000/api/items?limit=50")
+                const data = await response.json()
+                displayItems(data.items || [])
+            } catch (error) {
+                console.error("Failed to load items:", error)
+                document.getElementById("items-list").innerHTML =
+                    '<div class="text-center py-8 text-red-500">Failed to load items</div>'
+            }
+        }
+
+        function displayItems(items) {
+            const itemsList = document.getElementById("items-list")
+            if (items.length === 0) {
+                itemsList.innerHTML = '<div class="text-center py-8 text-gray-500">No items found</div>'
+                return
+            }
+
+            itemsList.innerHTML = items
+                .slice(0, 50)
+                .map(
+                    (item) => `
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded border">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <div class="font-medium">${item.food}</div>
+                                    ${item.co2_emissions ? `
+                                        <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${item.co2_emissions.color}">
+                                            🌍 ${item.co2_emissions.emission_value}kg CO₂
+                                        </span>
+                                    ` : ''}
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    Calories: ${item.caloric_value} | Protein: ${item.protein}g | Price: ₹${item.price}
+                                </div>
+                            </div>
+                            <button class="px-3 py-1 gradient-bg text-white text-sm rounded hover:shadow-lg transition-all" onclick="addToCart(${JSON.stringify(item).replace(/"/g, "&quot;")})">Add to Cart</button>
+                        </div>
+                    `,
+                )
+                .join("")
+        }
+
+        async function searchItems() {
+            const searchTerm = document.getElementById("search-items").value.trim().toLowerCase()
+            const itemsList = document.getElementById("items-list")
+            itemsList.innerHTML = '<div class="text-center py-8 text-gray-500">Searching...</div>'
+            try {
+                const url = searchTerm ? `http://localhost:5000/api/items?q=${encodeURIComponent(searchTerm)}&limit=50` : `http://localhost:5000/api/items?limit=50`
+                const response = await fetch(url)
+                const data = await response.json()
+                if (!data.items || data.items.length === 0) {
+                    itemsList.innerHTML = `
+                        <div class="text-center py-8 text-gray-500">
+                            <div class="text-4xl mb-4">🔍</div>
+                            <h3 class="text-lg font-semibold mb-2">No items found</h3>
+                            <p class="text-gray-600">Try a different search term</p>
+                        </div>
+                    `
+                } else {
+                    displayItems(data.items)
+                }
+            } catch (error) {
+                console.error("Search error:", error)
+                itemsList.innerHTML = '<div class="text-center py-8 text-red-500">Failed to search items</div>'
+            }
+        }
+
+        // Nutrition Filter Functions
+        async function filterNutrition() {
+            const filters = {
+                calories: document.getElementById("calories-filter").value,
+                protein: document.getElementById("protein-filter").value,
+                fat: document.getElementById("fat-filter").value,
+                sugars: document.getElementById("sugars-filter").value,
+                co2_emissions: document.getElementById("co2-filter").value,
+            }
+
+            const btn = document.getElementById("filter-btn")
+            btn.textContent = "Filtering..."
+            btn.disabled = true
+
+            try {
+                const response = await fetch("http://localhost:5000/api/nutrition/filter", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ filters })
+                })
+
+                const result = await response.json()
+                
+                if (result.success) {
+                    displayFilterResults(result.items)
+                    showCartNotification(`Found ${result.total_count} items matching your filters!`, "success")
+                } else {
+                    showCartNotification(result.message || "Filtering failed", "error")
+                }
+            } catch (error) {
+                console.error("Filtering error:", error)
+                showCartNotification("Filtering failed. Please check your connection and try again.", "error")
+            } finally {
+                btn.textContent = "Apply Nutrition Filters"
+                btn.disabled = false
+            }
+        }
+
+        function displayFilterResults(items) {
+            const resultsDiv = document.getElementById("filter-results")
+            const itemsDiv = document.getElementById("filtered-items")
+            const countDiv = document.getElementById("filter-count")
+
+            if (items.length > 0) {
+                itemsDiv.innerHTML = items
+                    .map(
+                        (item) => `
+                            <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border hover:shadow-md transition-shadow">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="font-medium text-gray-900">${item.food}</div>
+                                        ${item.co2_emissions ? `
+                                            <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${item.co2_emissions.color}">
+                                                🌍 ${item.co2_emissions.emission_value}kg CO₂
+                                            </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="text-sm text-gray-600 mt-1">
+                                        <span class="inline-flex items-center gap-1">
+                                            <span class="text-orange-500">🔥</span> ${item.caloric_value || 0} cal
+                                        </span>
+                                        <span class="inline-flex items-center gap-1 ml-3">
+                                            <span class="text-red-500">💪</span> ${(item.protein || 0).toFixed(1)}g protein
+                                        </span>
+                                        <span class="inline-flex items-center gap-1 ml-3">
+                                            <span class="text-yellow-500">🧈</span> ${(item.fat || 0).toFixed(1)}g fat
+                                        </span>
+                                        <span class="inline-flex items-center gap-1 ml-3">
+                                            <span class="text-pink-500">🍯</span> ${(item.sugars || 0).toFixed(1)}g sugar
+                                        </span>
+                                    </div>
+                                    <div class="text-xs text-green-600 mt-1">Nutrition Score: ${(item.nutrition_density || 0).toFixed(2)}</div>
+                                </div>
+                                <div class="text-right ml-4">
+                                    <div class="font-semibold text-lg text-gray-900">₹${(item.price || 0).toFixed(2)}</div>
+                                    <button class="mt-2 px-4 py-2 gradient-bg text-white text-sm rounded-lg hover:shadow-lg transition-all" onclick="addToCart(${JSON.stringify(item).replace(/"/g, "&quot;")})">Add to Cart</button>
+                                </div>
+                            </div>
+                        `,
+                    )
+                    .join("")
+
+                resultsDiv.classList.remove("hidden")
+                countDiv.textContent = `${items.length} items found`
+            } else {
+                itemsDiv.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="text-4xl mb-4">🔍</div>
+                        <h3 class="text-lg font-semibold mb-2">No items match your filters</h3>
+                        <p class="text-gray-600 mb-4">Try adjusting your filter criteria or use our quick presets</p>
+                        <button onclick="clearFilters()" class="px-4 py-2 gradient-bg text-white rounded-lg hover:shadow-lg transition-all">Clear Filters</button>
+                    </div>
+                `
+                resultsDiv.classList.remove("hidden")
+                countDiv.textContent = "0 items found"
+            }
+        }
+
+        function applyPreset(presetType) {
+            const caloriesFilter = document.getElementById("calories-filter")
+            const proteinFilter = document.getElementById("protein-filter")
+            const fatFilter = document.getElementById("fat-filter")
+            const sugarsFilter = document.getElementById("sugars-filter")
+            const co2Filter = document.getElementById("co2-filter")
+
+            // Clear all filters first
+            caloriesFilter.value = ""
+            proteinFilter.value = ""
+            fatFilter.value = ""
+            sugarsFilter.value = ""
+            co2Filter.value = ""
+
+            switch (presetType) {
+                case "low-calorie":
+                    caloriesFilter.value = "low"
+                    fatFilter.value = "low"
+                    break
+                case "high-protein":
+                    proteinFilter.value = "high"
+                    break
+                case "low-sugar":
+                    sugarsFilter.value = "low"
+                    break
+                case "low-fat":
+                    fatFilter.value = "low"
+                    break
+                case "low-co2":
+                    co2Filter.value = "low"
+                    break
+            }
+
+            // Show visual feedback
+            showCartNotification(`Applied ${presetType.replace("-", " ")} preset`)
+
+            // Auto-apply the filter
+            setTimeout(() => {
+                filterNutrition()
+            }, 500)
+        }
+
+        function clearFilters() {
+            document.getElementById("calories-filter").value = ""
+            document.getElementById("protein-filter").value = ""
+            document.getElementById("fat-filter").value = ""
+            document.getElementById("sugars-filter").value = ""
+            document.getElementById("co2-filter").value = ""
+
+            // Hide results
+            document.getElementById("filter-results").classList.add("hidden")
+
+            showCartNotification("Filters cleared")
+        }
+
+        // Healthier Swaps Functions
+        async function findSwaps() {
+            const food = document.getElementById("swap-food").value
+            if (!food) {
+                showCartNotification("Please enter a food item", "error")
+                return
+            }
+
+            const btn = document.getElementById("find-swaps-btn")
+            btn.textContent = "Finding..."
+            btn.disabled = true
+
+            try {
+                // Call the real KNN API endpoint
+                const response = await fetch("http://localhost:5000/api/healthier-swaps", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ food_name: food })
+                })
+
+                const result = await response.json()
+                
+                if (result.success) {
+                    // Transform API response to match display format
+                    const alternatives = result.alternatives.map(alt => ({
+                        food: alt.food,
+                        similarity: alt.similarity_score,
+                        nutrition_density: alt.nutrition_density,
+                        caloric_value: alt.caloric_value,
+                        protein: alt.protein,
+                        fat: alt.fat,
+                        price: alt.price,
+                        health_improvement: alt.health_improvement,
+                        carbohydrates: alt.carbohydrates,
+                        dietary_fiber: alt.dietary_fiber,
+                        sugars: alt.sugars,
+                        food_id: alt.food_id,
+                        co2_emissions: alt.co2_emissions
+                    }))
+                    
+                    displaySwaps(alternatives)
+                    showCartNotification(`Found ${result.total_alternatives} healthier alternatives for ${food}!`, "success")
+                } else {
+                    showCartNotification(result.message || "Failed to find alternatives", "error")
+                }
+            } catch (error) {
+                console.error("Swaps error:", error)
+                showCartNotification("Failed to find swaps. Please check your connection and try again.", "error")
+            } finally {
+                btn.textContent = "Find Swaps"
+                btn.disabled = false
+            }
+        }
+
+        function displaySwaps(swaps) {
+            const resultsDiv = document.getElementById("swaps-results")
+            const swapsDiv = document.getElementById("swaps-list")
+
+            if (swaps.length > 0) {
+                swapsDiv.innerHTML = swaps
+                    .map(
+                        (swap) => `
+                            <div class="flex justify-between items-center p-4 bg-green-50 rounded border border-green-200 hover:shadow-md transition-shadow">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="font-medium text-green-800 text-lg">${swap.food}</div>
+                                        ${swap.co2_emissions ? `
+                                            <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${swap.co2_emissions.color}">
+                                                🌍 ${swap.co2_emissions.emission_value}kg CO₂ (${swap.co2_emissions.emission_level})
+                                            </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="text-sm text-green-600 mt-1">
+                                        <span class="inline-flex items-center gap-1">
+                                            <span class="text-blue-500">🔍</span> Similarity: ${swap.similarity?.toFixed(3) || "N/A"}
+                                        </span>
+                                        <span class="inline-flex items-center gap-1 ml-3">
+                                            <span class="text-green-500">⚡</span> Nutrition Score: ${swap.nutrition_density?.toFixed(2) || "N/A"}
+                                        </span>
+                                        ${swap.health_improvement ? `
+                                        <span class="inline-flex items-center gap-1 ml-3 ${swap.health_improvement > 0 ? 'text-green-600' : 'text-red-600'}">
+                                            <span>📈</span> Health: ${swap.health_improvement > 0 ? '+' : ''}${swap.health_improvement}
+                                        </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="text-xs text-gray-600 mt-2 grid grid-cols-2 gap-2">
+                                        <span>🔥 Cal: ${swap.caloric_value || 0}</span>
+                                        <span>💪 Protein: ${swap.protein || 0}g</span>
+                                        <span>🧈 Fat: ${swap.fat || 0}g</span>
+                                        <span>🌾 Carbs: ${swap.carbohydrates || 0}g</span>
+                                        <span>🌿 Fiber: ${swap.dietary_fiber || 0}g</span>
+                                        <span>🍯 Sugar: ${swap.sugars || 0}g</span>
+                                    </div>
+                                </div>
+                                <div class="text-right ml-4">
+                                    <div class="font-semibold text-lg text-gray-900 mb-2">₹${swap.price?.toFixed(2) || 0}</div>
+                                    <button class="px-4 py-2 gradient-bg text-white text-sm rounded-lg hover:shadow-lg transition-all font-medium" onclick="addToCart(${JSON.stringify(swap).replace(/"/g, "&quot;")})">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        `,
+                    )
+                    .join("")
+
+                resultsDiv.classList.remove("hidden")
+            } else {
+                swapsDiv.innerHTML = '<div class="text-center py-8 text-gray-500">No healthier alternatives found</div>'
+                resultsDiv.classList.remove("hidden")
+            }
+        }
+
+        // Greener Alternatives Functions
+        let csvData = null
+
+        async function findGreenerAlternativesByCategory(category) {
+            // Update active button styling
+            document.querySelectorAll(".greener-category-btn").forEach(btn => {
+                btn.classList.remove("bg-green-600", "text-white", "border-green-600")
+                btn.classList.add("border-gray-300")
+            })
+            
+            const activeBtn = document.querySelector(`[data-category="${category}"]`)
+            activeBtn.classList.add("bg-green-600", "text-white", "border-green-600")
+            activeBtn.classList.remove("border-gray-300")
+
+            try {
+                // Load CSV data if not already loaded
+                if (!csvData) {
+                    await loadCSVData()
+                }
+
+                // Filter items by category
+                const categoryDisplayName = getCategoryDisplayName(category)
+                console.log('Looking for category:', categoryDisplayName)
+                console.log('Total items in CSV:', csvData.length)
+                
+                const filteredItems = csvData.filter(item => item.refined_category === categoryDisplayName)
+                console.log('Filtered items found:', filteredItems.length)
+                
+                // Transform CSV data to match display format
+                const alternatives = filteredItems.map(item => ({
+                    food: item.food,
+                    food_id: item.food_id,
+                    caloric_value: parseFloat(item.caloric_value) || 0,
+                    protein: parseFloat(item.protein) || 0,
+                    fat: parseFloat(item.fat) || 0,
+                    carbohydrates: parseFloat(item.carbohydrates) || 0,
+                    dietary_fiber: parseFloat(item.dietary_fiber) || 0,
+                    sugars: parseFloat(item.sugars) || 0,
+                    nutrition_density: parseFloat(item.nutrition_density) || 0,
+                    price: parseFloat(item.price) || 0,
+                    co2_emissions: {
+                        emission_value: parseFloat(item.CO2_emissions_kg_per_kg) || 0,
+                        emission_level: getCO2Level(parseFloat(item.CO2_emissions_kg_per_kg) || 0),
+                        color: getCO2Color(parseFloat(item.CO2_emissions_kg_per_kg) || 0)
+                    },
+                    co2_reduction: calculateCO2Reduction(parseFloat(item.CO2_emissions_kg_per_kg) || 0),
+                    environmental_impact: getEnvironmentalImpact(parseFloat(item.CO2_emissions_kg_per_kg) || 0)
+                }))
+                
+                // Sort alternatives by CO₂ emissions (lowest to highest)
+                alternatives.sort((a, b) => a.co2_emissions.emission_value - b.co2_emissions.emission_value)
+                
+                displayGreenerAlternatives(alternatives, category)
+                showCartNotification(`Found ${alternatives.length} items in ${categoryDisplayName}!`, "success")
+            } catch (error) {
+                console.error("Greener alternatives error:", error)
+                showCartNotification("Failed to load greener alternatives. Please try again.", "error")
+            }
+        }
+
+        async function loadCSVData() {
+            try {
+                // Use the backend API to load CSV data
+                const response = await fetch('http://localhost:5000/api/items/csv-data')
+                const result = await response.json()
+                
+                if (result.success) {
+                    csvData = result.items
+                    console.log('CSV data loaded successfully:', csvData.length, 'items')
+                    return csvData
+                } else {
+                    throw new Error(result.message || "Failed to load CSV data")
+                }
+            } catch (error) {
+                console.error("Error loading CSV:", error)
+                throw error
+            }
+        }
+
+        function getCO2Level(emissions) {
+            if (emissions < 2) return "Low"
+            if (emissions <= 10) return "Medium"
+            return "High"
+        }
+
+        function getCO2Color(emissions) {
+            if (emissions < 2) return "#10b981" // green
+            if (emissions <= 10) return "#f59e0b" // amber
+            return "#dc2626" // red
+        }
+
+        function calculateCO2Reduction(emissions) {
+            // Calculate percentage reduction compared to high-emission foods (20+ kg CO2)
+            const highEmission = 20
+            if (emissions >= highEmission) return 0
+            return Math.round(((highEmission - emissions) / highEmission) * 100)
+        }
+
+        function getEnvironmentalImpact(emissions) {
+            if (emissions < 2) return "Very Low"
+            if (emissions < 5) return "Low"
+            if (emissions < 10) return "Medium"
+            if (emissions < 15) return "High"
+            return "Very High"
+        }
+
+        function getCategoryDisplayName(category) {
+            const categoryNames = {
+                'oils-fats': 'Oils & Fats',
+                'dairy': 'Dairy Products',
+                'seafood': 'Seafood',
+                'vegetables': 'Vegetables',
+                'processed': 'Processed Foods',
+                'nuts-seeds': 'Nuts & Seeds',
+                'meat-poultry': 'Meat & Poultry',
+                'fruits': 'Fruits',
+                'plant-proteins': 'Plant-Based Proteins',
+                'grains': 'Grains & Cereals',
+                'eggs': 'Eggs',
+                'herbs-spices': 'Herbs & Spices',
+                'snacks': 'Snacks & Processed Foods',
+                'beverages': 'Beverages',
+                'sugars': 'Sugars & Sweeteners',
+                'condiments': 'Condiments & Sauces',
+                'legumes': 'Legumes & Pulses'
+            }
+            return categoryNames[category] || category
+        }
+
+        // Debug function to check available categories in CSV
+        async function debugCategories() {
+            try {
+                if (!csvData) {
+                    await loadCSVData()
+                }
+                
+                const categories = [...new Set(csvData.map(item => item.refined_category))]
+                console.log('Available categories in CSV:', categories)
+                return categories
+            } catch (error) {
+                console.error('Error getting categories:', error)
+                return []
+            }
+        }
+
+        function displayGreenerAlternatives(alternatives, category) {
+            const resultsDiv = document.getElementById("greener-results")
+            const alternativesDiv = document.getElementById("greener-list")
+            const categoryTitle = document.getElementById("greener-category-title")
+            const countDiv = document.getElementById("greener-count")
+
+            // Update title and count
+            if (categoryTitle) {
+                categoryTitle.textContent = `Greener Alternatives - ${getCategoryDisplayName(category)}`
+            }
+            if (countDiv) {
+                countDiv.textContent = `${alternatives.length} items found`
+            }
+
+            if (alternatives.length > 0) {
+                alternativesDiv.innerHTML = alternatives
+                    .map(
+                        (alt) => `
+                            <div class="flex justify-between items-center p-4 bg-green-50 rounded border border-green-200 hover:shadow-md transition-shadow">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="font-medium text-green-800 text-lg">${alt.food}</div>
+                                        ${alt.co2_emissions ? `
+                                            <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${alt.co2_emissions.color}">
+                                                🌍 ${alt.co2_emissions.emission_value}kg CO₂ (${alt.co2_emissions.emission_level})
+                                            </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="text-sm text-green-600 mt-1">
+                                        <span class="inline-flex items-center gap-1">
+                                            <span class="text-green-500">🌱</span> CO₂: ${alt.co2_emissions.emission_value.toFixed(2)}kg (${alt.co2_emissions.emission_level})
+                                        </span>
+                                        <span class="inline-flex items-center gap-1 ml-3">
+                                            <span class="text-blue-500">⚡</span> Nutrition Score: ${alt.nutrition_density?.toFixed(2) || "N/A"}
+                                        </span>
+                                        ${alt.co2_reduction > 0 ? `
+                                        <span class="inline-flex items-center gap-1 ml-3 text-green-600">
+                                            <span>📉</span> Reduction: ${alt.co2_reduction}%
+                                        </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="text-xs text-gray-600 mt-2 grid grid-cols-2 gap-2">
+                                        <span>🔥 Cal: ${alt.caloric_value || 0}</span>
+                                        <span>💪 Protein: ${alt.protein || 0}g</span>
+                                        <span>🧈 Fat: ${alt.fat || 0}g</span>
+                                        <span>🌾 Carbs: ${alt.carbohydrates || 0}g</span>
+                                        <span>🌿 Fiber: ${alt.dietary_fiber || 0}g</span>
+                                        <span>🍯 Sugar: ${alt.sugars || 0}g</span>
+                                    </div>
+                                </div>
+                                <div class="text-right ml-4">
+                                    <div class="font-semibold text-lg text-gray-900 mb-2">₹${alt.price?.toFixed(2) || 0}</div>
+                                    <button class="px-4 py-2 gradient-bg text-white text-sm rounded-lg hover:shadow-lg transition-all font-medium" onclick="addToCart(${JSON.stringify(alt).replace(/"/g, "&quot;")})">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        `,
+                    )
+                    .join("")
+
+                resultsDiv.classList.remove("hidden")
+            } else {
+                alternativesDiv.innerHTML = `<div class="text-center py-8 text-gray-500">No greener alternatives found in ${getCategoryDisplayName(category)}</div>`
+                resultsDiv.classList.remove("hidden")
+            }
+        }
+
+        // Apriori Analysis Functions
+        async function runAprioriAnalysis() {
+            try {
+                showCartNotification("Running Apriori analysis...", "info")
+                
+                // Get current user ID from localStorage
+                const userData = JSON.parse(localStorage.getItem('user') || '{}')
+                const userId = userData.id
+                
+                if (!userId) {
+                    showCartNotification("Please login to run Apriori analysis.", "error")
+                    return
+                }
+
+                // Get analysis parameters
+                const minSupport = parseInt(document.getElementById('min-support').value) / 100
+                const minConfidence = parseInt(document.getElementById('min-confidence').value) / 100
+                const minLift = parseFloat(document.getElementById('min-lift').value)
+
+                // Call backend API for Apriori analysis
+                const response = await fetch(`http://localhost:5000/api/apriori/analyze/${userId}?min_support=${minSupport}&min_confidence=${minConfidence}&limit=50`)
+                const result = await response.json()
+                
+                if (result.success) {
+                    // Display results
+                    displayAprioriResults(result.analysis_results, result.parameters)
+                    showCartNotification(`Analysis complete! Found ${result.analysis_results.association_rules.length} association rules.`, "success")
+                } else {
+                    showCartNotification(result.message || "Analysis failed", "error")
+                }
+                
+            } catch (error) {
+                console.error("Apriori analysis error:", error)
+                showCartNotification("Failed to run analysis. Please try again.", "error")
+            }
+        }
+
+        async function performAprioriAnalysis(transactions, minSupport, minConfidence, minLift) {
+            // Simple Apriori implementation
+            const itemCounts = {}
+            const totalTransactions = transactions.length
+            
+            // Count item frequencies
+            transactions.forEach(transaction => {
+                transaction.forEach(item => {
+                    itemCounts[item] = (itemCounts[item] || 0) + 1
+                })
+            })
+            
+            // Find frequent itemsets
+            const frequentItems = Object.keys(itemCounts).filter(item => 
+                itemCounts[item] / totalTransactions >= minSupport
+            )
+            
+            // Generate association rules
+            const rules = []
+            
+            // Generate rules for pairs of items
+            for (let i = 0; i < frequentItems.length; i++) {
+                for (let j = i + 1; j < frequentItems.length; j++) {
+                    const item1 = frequentItems[i]
+                    const item2 = frequentItems[j]
+                    
+                    // Count co-occurrences
+                    let bothCount = 0
+                    let item1Count = 0
+                    let item2Count = 0
+                    
+                    transactions.forEach(transaction => {
+                        const hasItem1 = transaction.includes(item1)
+                        const hasItem2 = transaction.includes(item2)
+                        
+                        if (hasItem1) item1Count++
+                        if (hasItem2) item2Count++
+                        if (hasItem1 && hasItem2) bothCount++
+                    })
+                    
+                    // Calculate metrics
+                    const support = bothCount / totalTransactions
+                    const confidence1to2 = bothCount / item1Count
+                    const confidence2to1 = bothCount / item2Count
+                    const lift1to2 = confidence1to2 / (item2Count / totalTransactions)
+                    const lift2to1 = confidence2to1 / (item1Count / totalTransactions)
+                    
+                    // Add rules if they meet criteria
+                    if (support >= minSupport && confidence1to2 >= minConfidence && lift1to2 >= minLift) {
+                        rules.push({
+                            antecedent: [item1],
+                            consequent: [item2],
+                            support: support,
+                            confidence: confidence1to2,
+                            lift: lift1to2
+                        })
+                    }
+                    
+                    if (support >= minSupport && confidence2to1 >= minConfidence && lift2to1 >= minLift) {
+                        rules.push({
+                            antecedent: [item2],
+                            consequent: [item1],
+                            support: support,
+                            confidence: confidence2to1,
+                            lift: lift2to1
+                        })
+                    }
+                }
+            }
+            
+            return {
+                rules: rules.sort((a, b) => b.lift - a.lift), // Sort by lift descending
+                frequentItems: frequentItems,
+                totalTransactions: totalTransactions,
+                uniqueItems: Object.keys(itemCounts).length
+            }
+        }
+
+        function displayAprioriResults(analysisResults, parameters) {
+            const resultsDiv = document.getElementById("apriori-results")
+            const rulesDiv = document.getElementById("apriori-rules")
+            const countDiv = document.getElementById("apriori-count")
+            
+            // Update statistics
+            document.getElementById("total-transactions").textContent = analysisResults.total_transactions
+            document.getElementById("unique-items").textContent = analysisResults.unique_items
+            document.getElementById("frequent-itemsets").textContent = analysisResults.frequent_items.length
+            document.getElementById("strong-rules").textContent = analysisResults.association_rules.length
+            
+            if (countDiv) {
+                countDiv.textContent = `${analysisResults.association_rules.length} rules found`
+            }
+            
+            if (analysisResults.association_rules.length > 0) {
+                // Display association rules
+                rulesDiv.innerHTML = analysisResults.association_rules
+                    .map(rule => `
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex-1">
+                                    <div class="text-sm text-gray-600 mb-1">
+                                        <span class="font-medium">${rule.antecedent.join(', ')}</span> 
+                                        <span class="mx-2">→</span>
+                                        <span class="font-medium text-blue-600">${rule.consequent.join(', ')}</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500">
+                                        Support: ${(rule.support * 100).toFixed(1)}% | 
+                                        Confidence: ${(rule.confidence * 100).toFixed(1)}% | 
+                                        Lift: ${rule.lift.toFixed(2)}
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <span class="px-2 py-1 text-xs rounded-full ${rule.lift > 2 ? 'bg-green-100 text-green-800' : rule.lift > 1.5 ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-800'}">
+                                        ${rule.lift > 2 ? 'Strong' : rule.lift > 1.5 ? 'Moderate' : 'Weak'}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                    .join("")
+                
+                // Add recommendations section if available
+                if (analysisResults.recommendations && analysisResults.recommendations.length > 0) {
+                    const recommendationsHtml = `
+                        <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-3">🎯 Personalized Recommendations</h4>
+                            <div class="space-y-2">
+                                ${analysisResults.recommendations.map(rec => `
+                                    <div class="flex justify-between items-center bg-white p-3 rounded border">
+                                        <div>
+                                            <span class="font-medium text-green-700">${rec.item}</span>
+                                            <span class="text-sm text-gray-600 ml-2">${rec.reason}</span>
+                                        </div>
+                                        <div class="text-xs text-gray-500">
+                                            Confidence: ${(rec.confidence * 100).toFixed(1)}%
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `
+                    rulesDiv.innerHTML += recommendationsHtml
+                }
+                
+                resultsDiv.classList.remove("hidden")
+            } else {
+                rulesDiv.innerHTML = '<div class="text-center py-8 text-gray-500">No association rules found with current parameters</div>'
+                resultsDiv.classList.remove("hidden")
+            }
+        }
+
+        async function getPersonalizedRecommendations() {
+            try {
+                showCartNotification("Getting personalized recommendations...", "info")
+                
+                // Get current user ID from localStorage
+                const userData = JSON.parse(localStorage.getItem('user') || '{}')
+                const userId = userData.id
+                
+                if (!userId) {
+                    showCartNotification("Please login to get recommendations.", "error")
+                    return
+                }
+
+                // Call backend API for recommendations
+                const response = await fetch(`http://localhost:5000/api/apriori/recommendations/${userId}`)
+                const result = await response.json()
+                
+                if (result.success) {
+                    // Display recommendations
+                    displayRecommendations(result.recommendations, result.frequent_items)
+                    showCartNotification(`Found ${result.recommendations.length} personalized recommendations!`, "success")
+                } else {
+                    showCartNotification(result.message || "Failed to get recommendations", "error")
+                }
+                
+            } catch (error) {
+                console.error("Recommendations error:", error)
+                showCartNotification("Failed to get recommendations. Please try again.", "error")
+            }
+        }
+
+        function displayRecommendations(recommendations, frequentItems) {
+            const resultsDiv = document.getElementById("apriori-results")
+            const rulesDiv = document.getElementById("apriori-rules")
+            const countDiv = document.getElementById("apriori-count")
+            
+            // Update statistics
+            document.getElementById("total-transactions").textContent = "Recent"
+            document.getElementById("unique-items").textContent = frequentItems.length
+            document.getElementById("frequent-itemsets").textContent = frequentItems.length
+            document.getElementById("strong-rules").textContent = recommendations.length
+            
+            if (countDiv) {
+                countDiv.textContent = `${recommendations.length} recommendations found`
+            }
+            
+            if (recommendations.length > 0) {
+                rulesDiv.innerHTML = `
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-3">🎯 Personalized Recommendations</h4>
+                        <div class="space-y-3">
+                            ${recommendations.map(rec => `
+                                <div class="bg-white p-4 rounded-lg border border-green-200 hover:shadow-md transition-shadow">
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="font-medium text-green-700 text-lg mb-1">${rec.item}</div>
+                                            <div class="text-sm text-gray-600 mb-2">${rec.reason}</div>
+                                            <div class="flex gap-4 text-xs text-gray-500">
+                                                <span>Confidence: ${(rec.confidence * 100).toFixed(1)}%</span>
+                                                <span>Lift: ${rec.lift.toFixed(2)}</span>
+                                                <span>Support: ${(rec.support * 100).toFixed(1)}%</span>
+                                            </div>
+                                        </div>
+                                        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all text-sm font-medium" onclick="addRecommendedItem('${rec.item}')">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `
+                
+                resultsDiv.classList.remove("hidden")
+            } else {
+                rulesDiv.innerHTML = '<div class="text-center py-8 text-gray-500">No recommendations available. Try running the analysis first.</div>'
+                resultsDiv.classList.remove("hidden")
+            }
+        }
+
+        function addRecommendedItem(itemName) {
+            // This function would add the recommended item to cart
+            // For now, just show a notification
+            showCartNotification(`Added ${itemName} to cart!`, "success")
+        }
+
+        async function debugUserTransactions() {
+            try {
+                showCartNotification("Loading transaction data...", "info")
+                
+                // Get current user ID from localStorage
+                const userData = JSON.parse(localStorage.getItem('user') || '{}')
+                const userId = userData.id
+                
+                if (!userId) {
+                    showCartNotification("Please login to debug transactions.", "error")
+                    return
+                }
+
+                // Call backend API for debug data
+                const response = await fetch(`http://localhost:5000/api/apriori/debug/${userId}`)
+                const result = await response.json()
+                
+                if (result.success) {
+                    // Display debug information
+                    displayDebugData(result)
+                    showCartNotification(`Debug data loaded for ${result.total_transactions} transactions!`, "success")
+                } else {
+                    showCartNotification(result.message || "Failed to load debug data", "error")
+                }
+                
+            } catch (error) {
+                console.error("Debug error:", error)
+                showCartNotification("Failed to load debug data. Please try again.", "error")
+            }
+        }
+
+        function displayDebugData(debugData) {
+            const resultsDiv = document.getElementById("apriori-results")
+            const rulesDiv = document.getElementById("apriori-rules")
+            const countDiv = document.getElementById("apriori-count")
+            
+            // Update statistics
+            document.getElementById("total-transactions").textContent = debugData.total_transactions
+            document.getElementById("unique-items").textContent = debugData.unique_items
+            document.getElementById("frequent-itemsets").textContent = debugData.item_frequencies.length
+            document.getElementById("strong-rules").textContent = "Debug Mode"
+            
+            if (countDiv) {
+                countDiv.textContent = `${debugData.total_transactions} transactions analyzed`
+            }
+            
+            // Display debug information
+            rulesDiv.innerHTML = `
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-purple-800 mb-3">🔍 Debug Information</h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h5 class="font-medium text-purple-700 mb-2">Transaction Itemsets:</h5>
+                            <div class="bg-white p-3 rounded border max-h-40 overflow-y-auto">
+                                ${debugData.itemsets.map((transaction, index) => `
+                                    <div class="text-sm mb-1">
+                                        <span class="font-medium">Transaction ${index + 1}:</span> 
+                                        ${transaction.join(', ')}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium text-purple-700 mb-2">Item Frequencies:</h5>
+                            <div class="bg-white p-3 rounded border max-h-40 overflow-y-auto">
+                                ${debugData.item_frequencies.map(([item, count]) => `
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>${item}</span>
+                                        <span class="font-medium">${count} times</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="text-xs text-gray-600">
+                            <p><strong>Note:</strong> This shows the raw transaction data. Items that appear together frequently in the same transactions will generate association rules.</p>
+                        </div>
+                    </div>
+                </div>
+            `
+            
+            resultsDiv.classList.remove("hidden")
+        }
+
+        function clearAprioriResults() {
+            const resultsDiv = document.getElementById("apriori-results")
+            resultsDiv.classList.add("hidden")
+            showCartNotification("Results cleared", "info")
+        }
+
+        // Cart Recommendations Functions
+        async function getCartRecommendations() {
+            try {
+                // Get current user ID from localStorage
+                const userData = JSON.parse(localStorage.getItem('user') || '{}')
+                const userId = userData.id
+                
+                if (!userId || cart.length === 0) {
+                    document.getElementById("cart-recommendations").classList.add("hidden")
+                    return
+                }
+
+                // Call backend API for cart recommendations
+                const response = await fetch(`http://localhost:5000/api/apriori/cart-recommendations/${userId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        cart_items: cart
+                    })
+                })
+                
+                const result = await response.json()
+                
+                if (result.success && result.recommendations.length > 0) {
+                    displayCartRecommendations(result.recommendations)
+                } else {
+                    document.getElementById("cart-recommendations").classList.add("hidden")
+                }
+                
+            } catch (error) {
+                console.error("Cart recommendations error:", error)
+                document.getElementById("cart-recommendations").classList.add("hidden")
+            }
+        }
+
+        function displayCartRecommendations(recommendations) {
+            const recommendationsDiv = document.getElementById("cart-recommendations")
+            const itemsDiv = document.getElementById("recommendation-items")
+            
+            if (recommendations.length === 0) {
+                recommendationsDiv.classList.add("hidden")
+                return
+            }
+            
+            // Display recommendations
+            itemsDiv.innerHTML = recommendations.map(rec => `
+                <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-green-200 hover:shadow-md transition-shadow">
+                    <div class="flex-1">
+                        <div class="font-medium text-green-700">${rec.item}</div>
+                        <div class="text-sm text-gray-600">${rec.reason}</div>
+                        <div class="text-xs text-gray-500 mt-1">
+                            Confidence: ${(rec.confidence * 100).toFixed(1)}% | 
+                            Lift: ${rec.lift.toFixed(2)}
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="addRecommendedItem('${rec.item}')" class="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition-all text-sm font-medium">
+                            Add to Cart
+                        </button>
+                        <button onclick="dismissRecommendation('${rec.item}')" class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 transition-all text-sm">
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+            `).join('')
+            
+            recommendationsDiv.classList.remove("hidden")
+        }
+
+        async function addRecommendedItem(itemName) {
+            try {
+                // Find the item in the nutrition dataset
+                const response = await fetch('http://localhost:5000/api/items/csv-data')
+                const result = await response.json()
+                
+                if (result.success) {
+                    const item = result.items.find(i => i.food === itemName)
+                    if (item) {
+                        // Transform the item to match cart format
+                        const cartItem = {
+                            food: item.food,
+                            food_id: item.food_id,
+                            price: parseFloat(item.price) || 0,
+                            quantity: 1,
+                            caloric_value: parseFloat(item.caloric_value) || 0,
+                            protein: parseFloat(item.protein) || 0,
+                            fat: parseFloat(item.fat) || 0,
+                            carbohydrates: parseFloat(item.carbohydrates) || 0,
+                            dietary_fiber: parseFloat(item.dietary_fiber) || 0,
+                            sugars: parseFloat(item.sugars) || 0,
+                            nutrition_density: parseFloat(item.nutrition_density) || 0,
+                            co2_emissions: {
+                                emission_value: parseFloat(item.CO2_emissions_kg_per_kg) || 0,
+                                emission_level: getCO2Level(parseFloat(item.CO2_emissions_kg_per_kg) || 0),
+                                color: getCO2Color(parseFloat(item.CO2_emissions_kg_per_kg) || 0)
+                            }
+                        }
+                        
+                        addToCart(cartItem)
+                        showCartNotification(`Added ${itemName} to cart!`, "success")
+                        
+                        // Refresh recommendations after adding item
+                        setTimeout(() => getCartRecommendations(), 1000)
+                    } else {
+                        showCartNotification(`Item ${itemName} not found in database`, "error")
+                    }
+                } else {
+                    showCartNotification("Failed to load item data", "error")
+                }
+            } catch (error) {
+                console.error("Error adding recommended item:", error)
+                showCartNotification("Failed to add recommended item", "error")
+            }
+        }
+
+        function dismissRecommendation(itemName) {
+            // Hide the specific recommendation
+            const recommendations = document.querySelectorAll('#recommendation-items > div')
+            recommendations.forEach(rec => {
+                if (rec.textContent.includes(itemName)) {
+                    rec.style.display = 'none'
+                }
+            })
+            
+            // Hide the entire recommendations section if no recommendations are visible
+            const visibleRecommendations = document.querySelectorAll('#recommendation-items > div:not([style*="display: none"])')
+            if (visibleRecommendations.length === 0) {
+                document.getElementById("cart-recommendations").classList.add("hidden")
+            }
+        }
+
+        // Cart Functions
+        function loadCart() {
+            const cartData = localStorage.getItem("cart")
+            cart = cartData ? JSON.parse(cartData) : []
+            updateCartDisplay()
+        }
+
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart))
+            updateCartDisplay()
+            updateCartBadge()
+        }
+
+        function addToCart(item) {
+            if (!item.food_id && item.food) {
+                item.food_id = item.food.toLowerCase().replace(/\s+/g, "_") + "_" + Date.now()
+            }
+
+            const existingItem = cart.find(ci => ci.food_id === item.food_id || ci.food === item.food)
+            if (existingItem) {
+                existingItem.quantity += 1
+            } else {
+                cart.push({ ...item, quantity: 1 })
+            }
+
+            saveCart()
+            showCartNotification(`${item.food} added to cart!`, "success")
+        }
+
+        function showCartNotification(message, type = "info") {
+            // Create notification element
+            const notification = document.createElement("div")
+            const bgColor = type === "success" ? "bg-green-600" : type === "error" ? "bg-red-600" : "bg-blue-600"
+            notification.className =
+                `fixed top-20 right-4 ${bgColor} text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300`
+            notification.textContent = message
+
+            document.body.appendChild(notification)
+
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = "0"
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification)
+                    }
+                }, 300)
+            }, 3000)
+        }
+
+        function updateCartBadge() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+            // Prefer updating the explicit badge element if present
+            const badge = document.getElementById("cart-item-count")
+            if (badge) {
+                badge.textContent = `(${totalItems})`
+                return
+            }
+            // Fallback to previous behavior if structure differs
+            const cartTab = document.querySelector('[data-tab="cart"]')
+            if (cartTab) {
+                const cartText = cartTab.querySelector("span:last-child")
+                if (cartText) {
+                    cartText.textContent = totalItems > 0 ? `Cart (${totalItems})` : "Cart"
+                }
+            }
+        }
+
+        function updateCartDisplay() {
+            const emptyCart = document.getElementById("empty-cart")
+            const cartItems = document.getElementById("cart-items")
+            const cartSummary = document.getElementById("cart-summary")
+
+            if (cart.length === 0) {
+                emptyCart?.classList.remove("hidden")
+                cartItems?.classList.add("hidden")
+                cartSummary?.classList.add("hidden")
+                updateCartBadge()
+                return
+            }
+
+            emptyCart?.classList.add("hidden")
+            cartItems?.classList.remove("hidden")
+            cartSummary?.classList.remove("hidden")
+
+            // Display cart items
+            if (cartItems) {
+                cartItems.innerHTML = cart
+                    .map(
+                        (item, index) => `
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded border">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <div class="font-medium">${item.food}</div>
+                                    ${item.co2_emissions ? `
+                                        <span class="px-2 py-1 text-xs rounded-full text-white font-medium" style="background-color: ${item.co2_emissions.color}">
+                                            🌍 ${item.co2_emissions.emission_value}kg CO₂
+                                        </span>
+                                    ` : ''}
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    ₹${item.price} each | Cal: ${item.caloric_value} | Protein: ${item.protein}g
+                                    ${item.co2_emissions && item.co2_emissions.emission_value ? `
+                                        <span class="ml-2">| CO₂ this qty: ${(item.co2_emissions.emission_value * 0.1 * item.quantity).toFixed(2)} kg</span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-2">
+                                    <button onclick="updateQuantity(${index}, ${item.quantity - 1})" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300">-</button>
+                                    <span class="w-8 text-center">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, ${item.quantity + 1})" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300">+</button>
+                                </div>
+                                <div class="text-right min-w-16">
+                                    <div class="font-semibold">₹${(Number.parseFloat(item.price) * item.quantity).toFixed(2)}</div>
+                                </div>
+                                <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 ml-2">&times;</button>
+                            </div>
+                        </div>
+                    `,
+                    )
+                    .join("")
+            }
+
+            // Update summary
+            const total = cart.reduce((sum, item) => sum + Number.parseFloat(item.price) * item.quantity, 0)
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+            const avgPrice = totalItems > 0 ? total / totalItems : 0
+
+            const cartTotalEl = document.getElementById("cart-total")
+            const totalItemsEl = document.getElementById("total-items")
+            const avgPriceEl = document.getElementById("avg-price")
+
+            if (cartTotalEl) cartTotalEl.textContent = total.toFixed(2)
+            if (totalItemsEl) totalItemsEl.textContent = totalItems
+            if (avgPriceEl) avgPriceEl.textContent = avgPrice.toFixed(2)
+
+            // Update stats in overview
+            const itemsCountEl = document.getElementById("items-count")
+            const budgetUsedEl = document.getElementById("budget-used")
+            const co2EmissionsEl = document.getElementById("co2-emissions")
+            const co2LevelEl = document.getElementById("co2-level")
+
+            if (itemsCountEl) itemsCountEl.textContent = totalItems
+            if (budgetUsedEl) budgetUsedEl.textContent = `₹${total.toFixed(2)}`
+            
+            // Calculate actual CO₂ emissions from cart items
+            let totalEmissions = 0
+            cart.forEach(item => {
+                if (item.co2_emissions && item.co2_emissions.emission_value) {
+                    // Estimate 100g per item for CO₂ calculation
+                    const itemWeight = 0.1 // 100g in kg
+                    totalEmissions += item.co2_emissions.emission_value * itemWeight * item.quantity
+                }
+            })
+            
+            if (co2EmissionsEl) co2EmissionsEl.textContent = `${totalEmissions.toFixed(2)} kg`
+            if (co2LevelEl) {
+                let level = "Low"
+                if (totalEmissions > 10) level = "High"
+                else if (totalEmissions >= 2) level = "Medium"
+                co2LevelEl.textContent = `(${level})`
+            }
+
+            // Update cart summary CO₂ total and badge
+            const cartTotalCo2El = document.getElementById("cart-total-co2")
+            const cartCo2LevelEl = document.getElementById("cart-co2-level")
+            if (cartTotalCo2El) {
+                cartTotalCo2El.textContent = `${totalEmissions.toFixed(2)} kg`
+            }
+            if (cartCo2LevelEl) {
+                let levelText = "Low"
+                let color = "#10b981"
+                if (totalEmissions > 10) { levelText = "High"; color = "#dc2626" }
+                else if (totalEmissions >= 2) { levelText = "Medium"; color = "#f59e0b" }
+                cartCo2LevelEl.textContent = levelText
+                cartCo2LevelEl.style.backgroundColor = color
+                cartCo2LevelEl.style.color = "#ffffff"
+                cartCo2LevelEl.classList.remove("hidden")
+            }
+
+            // Update overview Shopping Cart CO₂ badge
+            const overviewBadge = document.getElementById("overview-co2-badge")
+            if (overviewBadge) {
+                let levelText = "Low CO₂"
+                let color = "#10b981" // green
+                if (totalEmissions > 10) {
+                    levelText = "High CO₂"
+                    color = "#dc2626" // red
+                } else if (totalEmissions >= 2) {
+                    levelText = "Medium CO₂"
+                    color = "#f59e0b" // amber
+                }
+                overviewBadge.textContent = `🌍 ${levelText}`
+                overviewBadge.style.backgroundColor = color
+                overviewBadge.classList.remove("hidden")
+            }
+
+            updateCartBadge()
+            
+            // Get cart recommendations if user is logged in
+            getCartRecommendations()
+        }
+
+        function updateQuantity(index, newQuantity) {
+            if (newQuantity <= 0) {
+                removeItem(index)
+                return
+            }
+
+            cart[index].quantity = newQuantity
+            saveCart()
+        }
+
+        function removeItem(index) {
+            const removedItem = cart[index]
+            showCartNotification(`${removedItem.food} removed from cart`)
+
+            cart.splice(index, 1)
+            saveCart()
+        }
+
+        function saveBasket() {
+            if (cart.length === 0) {
+                showCartNotification("Cannot save empty cart", "error")
+                return
+            }
+
+            // Check for high CO₂ emissions before saving
+            let totalEmissions = 0
+            cart.forEach(item => {
+                if (item.co2_emissions && item.co2_emissions.emission_value) {
+                    // Estimate 100g per item for CO₂ calculation
+                    const itemWeight = 0.1 // 100g in kg
+                    totalEmissions += item.co2_emissions.emission_value * itemWeight * item.quantity
+                }
+            })
+            
+            // Show CO₂ warning if emissions are high
+            if (totalEmissions > 10) {
+                showCo2WarningModal()
+                return
+            }
+
+            // Show basket naming modal if emissions are acceptable
+            showBasketNameModal()
+        }
+
+        function showBasketNameModal() {
+            const modal = document.getElementById("basket-name-modal")
+            const total = cart.reduce((sum, item) => sum + Number.parseFloat(item.price) * item.quantity, 0)
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+
+            // Update modal with current cart info
+            document.getElementById("modal-item-count").textContent = totalItems
+            document.getElementById("modal-total-amount").textContent = total.toFixed(2)
+
+            // Clear previous input
+            document.getElementById("basket-name-input").value = ""
+
+            modal.classList.add("show")
+        }
+
+        function hideBasketNameModal() {
+            const modal = document.getElementById("basket-name-modal")
+            modal.classList.remove("show")
+        }
+
+        function showCo2WarningModal() {
+            const modal = document.getElementById("co2-warning-modal")
+            modal.classList.add("show")
+        }
+
+        function hideCo2WarningModal() {
+            const modal = document.getElementById("co2-warning-modal")
+            modal.classList.remove("show")
+        }
+
+        function handleEditCart() {
+            hideCo2WarningModal()
+            // Switch to greener alternatives tab to find eco-friendly options
+            switchTab('greener')
+            showCartNotification("Find greener alternatives to reduce your CO₂ emissions", "info")
+        }
+
+        function handleContinueCart() {
+            hideCo2WarningModal()
+            // Proceed with saving the basket despite high emissions
+            showBasketNameModal()
+            showCartNotification("Proceeding to save basket with current items", "info")
+        }
+
+        function checkAndShowCo2Warning() {
+            // Calculate total CO₂ emissions from cart items
+            let totalEmissions = 0
+            cart.forEach(item => {
+                if (item.co2_emissions && item.co2_emissions.emission_value) {
+                    // Estimate 100g per item for CO₂ calculation
+                    const itemWeight = 0.1 // 100g in kg
+                    totalEmissions += item.co2_emissions.emission_value * itemWeight * item.quantity
+                }
+            })
+            
+            // Show popup only if emissions are high (>10kg)
+            if (totalEmissions > 10) {
+                showCo2WarningModal()
+            }
+        }
+
+        async function handleBasketSave() {
+            try {
+                const user = JSON.parse(localStorage.getItem("user"))
+                if (!user || !user.id) {
+                    showCartNotification("Please login to save your cart", "error")
+                    return
+                }
+
+                const basketName = document.getElementById("basket-name-input").value.trim()
+                if (!basketName) {
+                    showCartNotification("Please enter a basket name", "error")
+                    return
+                }
+
+                const response = await fetch("http://localhost:5000/api/cart/save", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        user_id: user.id,
+                        items: cart,
+                        cart_name: basketName,
+                    }),
+                })
+
+                const result = await response.json()
+                if (response.ok && result.success) {
+                    showCartNotification(`Basket "${basketName}" saved successfully!`, "success")
+                    hideBasketNameModal()
+                    setTimeout(() => {
+                        if (confirm("Would you like to clear your local cart after saving?")) {
+                            clearCart()
+                        }
+                    }, 1200)
+                } else {
+                    showCartNotification(result.message || "Failed to save basket", "error")
+                }
+            } catch (error) {
+                console.error("Save basket error:", error)
+                showCartNotification("Failed to save basket", "error")
+            }
+        }
+
+        async function clearCart() {
+            if (cart.length > 0 && !confirm("Are you sure you want to clear your cart?")) {
+                return
+            }
+
+            const currentUser = JSON.parse(localStorage.getItem("user"))
+            if (!currentUser || !currentUser.id) {
+                showCartNotification("Please login to manage cart", "error")
+                return
+            }
+            
+            // For now, just clear the local cart
+            // In a real app, you'd call the backend to clear the database
+            cart = []
+            updateCartDisplay()
+            showCartNotification("Cart cleared successfully", "success")
+        }
+
+        // Saved Baskets Functions
+        async function loadSavedBaskets() {
+            try {
+                const user = JSON.parse(localStorage.getItem("user"))
+                if (!user || !user.id) {
+                    return
+                }
+
+                const response = await fetch(`http://localhost:5000/api/cart/saved-baskets?user_id=${user.id}`)
+                const result = await response.json()
+                
+                if (result.success) {
+                    displaySavedBaskets(result.baskets)
+                } else {
+                    console.error("Failed to load saved baskets:", result.message)
+                }
+            } catch (error) {
+                console.error("Error loading saved baskets:", error)
+            }
+        }
+
+        function displaySavedBaskets(baskets) {
+            const noBasketsDiv = document.getElementById("no-saved-baskets")
+            const basketsListDiv = document.getElementById("saved-baskets-list")
+
+            if (baskets.length === 0) {
+                noBasketsDiv.classList.remove("hidden")
+                basketsListDiv.classList.add("hidden")
+                return
+            }
+
+            noBasketsDiv.classList.add("hidden")
+            basketsListDiv.classList.remove("hidden")
+
+            basketsListDiv.innerHTML = baskets.map(basket => `
+                <div class="bg-gray-50 rounded-lg border p-4 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg text-gray-800">${basket.cart_name}</h3>
+                            <div class="text-sm text-gray-600 mt-1">
+                                <span>Saved on: ${new Date(basket.created_at).toLocaleDateString()}</span>
+                                <span class="ml-4">Items: ${basket.item_count}</span>
+                                <span class="ml-4">Total: ₹${basket.total_amount}</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="loadBasketToCart(${basket.id})" class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors">
+                                Load to Cart
+                            </button>
+                            <button onclick="deleteBasket(${basket.id})" class="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <div class="font-medium mb-2">Items in this basket:</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            ${basket.items.map(item => `
+                                <div class="flex justify-between">
+                                    <span>${item.food_name}</span>
+                                    <span>Qty: ${item.quantity}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('')
+        }
+
+        async function loadBasketToCart(basketId) {
+            try {
+                const user = JSON.parse(localStorage.getItem("user"))
+                if (!user || !user.id) {
+                    showCartNotification("Please login to load basket", "error")
+                    return
+                }
+
+                // Get basket details
+                const response = await fetch(`http://localhost:5000/api/cart/saved-baskets?user_id=${user.id}`)
+                const result = await response.json()
+                
+                if (result.success) {
+                    const basket = result.baskets.find(b => b.id === basketId)
+                    if (basket) {
+                        // Convert basket items to cart format
+                        const cartItems = basket.items.map(item => ({
+                            food: item.food_name,
+                            food_id: item.food_id,
+                            price: parseFloat(item.price),
+                            quantity: parseInt(item.quantity),
+                            caloric_value: item.caloric_value,
+                            protein: item.protein,
+                            fat: item.fat,
+                            nutrition_density: item.nutrition_density,
+                            co2_emissions: item.co2_emissions || null
+                        }))
+
+                        // Clear current cart and load basket
+                        cart = cartItems
+                        saveCart()
+                        updateCartDisplay()
+                        switchTab('cart')
+                        showCartNotification(`Basket "${basket.cart_name}" loaded to cart!`, "success")
+                    }
+                }
+            } catch (error) {
+                console.error("Error loading basket:", error)
+                showCartNotification("Failed to load basket", "error")
+            }
+        }
+
+        async function deleteBasket(basketId) {
+            if (!confirm("Are you sure you want to delete this basket?")) {
+                return
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/cart/saved-baskets/${basketId}`, {
+                    method: "DELETE",
+                })
+                const result = await response.json()
+                if (result.success) {
+                    showCartNotification("Saved basket deleted", "success")
+                    loadSavedBaskets()
+                } else {
+                    showCartNotification(result.message || "Failed to delete basket", "error")
+                }
+            } catch (error) {
+                console.error("Error deleting basket:", error)
+                showCartNotification("Failed to delete basket", "error")
+            }
+        }
+
+        // Make functions globally available
+        window.switchTab = switchTab
+        window.switchToCo2Filter = switchToCo2Filter
+        window.addToCart = addToCart
+        window.updateQuantity = updateQuantity
+        window.removeItem = removeItem
+        window.applyPreset = applyPreset
+        window.clearFilters = clearFilters
+        window.loadBasketToCart = loadBasketToCart
+        window.deleteBasket = deleteBasket
+        
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + number keys for quick tab switching
+            if ((e.ctrlKey || e.metaKey) && e.key >= '1' && e.key <= '9') {
+                e.preventDefault();
+                const tabIndex = parseInt(e.key) - 1;
+                const tabs = ['overview', 'budget', 'items', 'nutrition', 'swaps', 'greener', 'apriori', 'cart', 'saved-baskets'];
+                if (tabs[tabIndex]) {
+                    switchTab(tabs[tabIndex]);
+                }
+            }
+            
+            // Escape key to return to overview
+            if (e.key === 'Escape') {
+                switchTab('overview');
+            }
+        });
+        
+        // Add helpful tooltips after DOM is loaded
+        setTimeout(() => {
+            addTooltips();
+        }, 100);
+        
+        function addTooltips() {
+            // Add tooltips to overview buttons
+            const overviewButtons = document.querySelectorAll('#overview-tab button');
+            const tooltips = [
+                'Switch to Budget Optimizer tab (Ctrl+2)',
+                'Switch to Items List tab (Ctrl+3)',
+                'Switch to Nutrition Filter tab (Ctrl+4)',
+                'Switch to Healthier Swaps tab (Ctrl+5)',
+                'Switch to Greener Alternatives tab (Ctrl+6)',
+                'Switch to Apriori Analysis tab (Ctrl+7)',
+                'Switch to Cart tab (Ctrl+8)',
+                'Switch to Saved Baskets tab (Ctrl+9)'
+            ];
+            
+            overviewButtons.forEach((button, index) => {
+                if (tooltips[index]) {
+                    button.title = tooltips[index];
+                }
+            });
+            
+            // Add tooltips to tab buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                const tabName = button.getAttribute('data-tab');
+                const tooltips = {
+                    'overview': 'Overview dashboard (Ctrl+1)',
+                    'budget': 'Budget optimization (Ctrl+2)',
+                    'items': 'Browse food items (Ctrl+3)',
+                    'nutrition': 'Nutrition filtering (Ctrl+4)',
+                    'swaps': 'Healthier alternatives (Ctrl+5)',
+                    'greener': 'Greener alternatives (Ctrl+6)',
+                    'apriori': 'Apriori analysis (Ctrl+7)',
+                    'cart': 'Shopping cart (Ctrl+8)',
+                    'saved-baskets': 'Saved baskets (Ctrl+9)'
+                };
+                
+                if (tooltips[tabName]) {
+                    button.title = tooltips[tabName];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

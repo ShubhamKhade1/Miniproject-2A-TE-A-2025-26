@@ -1,0 +1,723 @@
+food_id,food,caloric_value,fat,saturated_fats,carbohydrates,sugars,protein,dietary_fiber,cholesterol,sodium,calcium,iron,nutrition_density,price,CO2_emissions_kg_per_kg,refined_category
+0,margarine with yoghurt,88,9.8,1.9,0.073,0,0.058,0,0,0.018,2.8,0.027,12.971,98,15.5,Oils & Fats
+1,sunflower seed butter,99,8.8,0.7,3.7,1.7,2.8,0.9,0,0.065,10.2,0.7,27.5,15,17.5,Dairy Products
+2,hazelnut oil,120,13.6,1,0,0,0,0,0,0,0,0,13.6,51,0.43,Oils & Fats
+3,menhaden fish oil,1966,218,66.3,0,0,0,0,1135.8,0,0,0,218,47,18,Seafood
+4,cod liver fish oil,123,13.6,3.1,0,0,0,0,77.5,0,0,0,17.7,7,9.9,Seafood
+5,sardine oil,123,13.6,4.1,0,0,0,0,96.6,0,0,0,13.6,14,16.6,Oils & Fats
+6,cupu assu oil,120,13.6,7.2,0,0,0,0,0,0,0,0,13.6,88,9,Oils & Fats
+7,lard,115,12.8,5,0,0,0,0,12.2,0,0,0,12.8,76,19.7,Oils & Fats
+8,sesame butter,94,8.1,1.1,3.8,0,2.9,0.9,0,0.031,153.6,3.1,172.4,8,9.2,Dairy Products
+9,margarine spread,59,6.7,1.2,0.1,0,0.082,0,0.1,0.019,0.6,0.078,7.547,16,18.8,Oils & Fats
+10,lard vegetable oil,115,12.8,5.2,0,0,0,0,7.2,0,0,0,12.8,5,0.53,Vegetables
+11,shortening,113,12.8,3.2,0,0,0,0,0,0,0,0,12.8,81,11,Processed Foods
+12,vegetable oil spread,75,8.4,1.7,0.1,0,0.007,0,0.1,0.081,2.9,0,11.613,58,0.53,Vegetables
+13,cottonseed oil,120,13.6,3.5,0,0,0,0,0,0,0,0,13.6,87,14.2,Nuts & Seeds
+14,vegetable oil spread fat free,6,0.5,0.015,0.4,0,0.2,0,0.2,0.1,5.7,0.041,7.001,78,0.53,Vegetables
+15,soy margarine,88,9.9,3.2,0,0,0,0,0,0.1,0,0,12.642,27,1.7,Oils & Fats
+16,margarine with salt,100,11.3,2.1,0.017,0,0.031,0,0,0.1,0.068,0,13.618,42,18.6,Oils & Fats
+17,margarine,102,11.5,2.2,0.018,0,0.037,0,0,0.091,0.059,0,13.719,94,11.8,Oils & Fats
+18,salmon fish oil,123,13.6,2.7,0,0,0,0,66,0,0,0,13.6,19,16.6,Seafood
+19,nutmeg butter oil,1927,218,196.2,0,0,0,0,0,0,0,0,218,80,0.43,Dairy Products
+20,almond butter,98,8.9,0.7,3,0.7,3.4,1.6,0,0.037,55.5,0.6,73,58,6.9,Dairy Products
+21,sour cream shoprite,60,5,3.5,1,0.014,0,0,0,0,0,0,6,76,13.8,Dairy Products
+22,ucuhuba butter oil,120,13.6,11.6,0,0,0,0,0,0,0,0,13.6,91,13.7,Dairy Products
+23,chicken fat,115,12.8,3.8,0,0,0,0,10.9,0,0,0,12.8,18,6,Meat & Poultry
+24,herring fish oil,123,13.6,2.9,0,0,0,0,104.2,0,0,0,13.6,7,11.8,Seafood
+25,bacon grease,39,4.3,1.7,0,0,0,0,4.1,0.009,0,0,4.3,57,9.6,Processed Foods
+26,turkey fat,45,5,1.5,0,0,0,0,5.1,0,0,0,5,63,17.7,Meat & Poultry
+27,beef tallow,115,12.8,6.4,0,0,0,0,14,0,0,0,12.8,77,60,Meat & Poultry
+28,goose fat,45,5,1.4,0,0,0,0,5,0,0,0,5,17,9.6,Oils & Fats
+29,duck fat,44,5,1.7,0,0,0,0,5,0,0,0,5,99,7.6,Oils & Fats
+30,mutton tallow,45,5,2.4,0,0,0,0,5.1,0,0,0,5,80,25,Meat & Poultry
+31,grapeseed oil,120,13.6,1.3,0,0,0,0,0,0,0,0,13.6,78,6.8,Fruits
+32,sheanut oil,1927,218,101.6,0,0,0,0,0,0,0,0,218,51,0.43,Oils & Fats
+33,almond oil,120,13.6,1.1,0,0,0,0,0,0,0,0,13.6,52,3.6,Nuts & Seeds
+34,sunflower oil,120,13.6,1.2,0,0,0,0,0,0,0.1,0,13.617,52,5.3,Nuts & Seeds
+35,cashew butter,94,7.9,1.6,4.4,0.8,2.8,0.3,0,0.071,6.9,0.8,23.1,80,5.1,Dairy Products
+36,canola oil,124,14,1,0,0,0,0,0,0,0.088,0,14.132,58,17,Oils & Fats
+37,babassu oil,1927,218,177,0,0,0,0,0,0,0,0,218,10,19,Oils & Fats
+38,teaseed oil,120,13.6,2.9,0,0,0,0,0,0,0,0,13.6,50,5.7,Nuts & Seeds
+39,avocado oil,124,14,1.6,0,0,0,0,0,0,0,0,14,74,10.1,Oils & Fats
+40,vegetable palm kernel oil,117,13.6,11.1,0,0,0,0,0,0,0,0,13.6,74,0.53,Vegetables
+41,coconut oil,117,13.6,11.2,0,0,0,0,0,0,0.029,0,13.661,28,0.43,Oils & Fats
+42,safflower oil,120,13.6,1,0,0,0,0,0,0,0,0,13.6,34,6,Oils & Fats
+43,vegetable oil,120,13.6,2.1,0,0,0,0,0,0,0.073,0,13.706,64,0.53,Vegetables
+44,apricot kernel oil,40,4.5,0.3,0,0,0,0,0,0,0,0,4.5,100,4.6,Oils & Fats
+45,peanut oil,119,13.5,2.3,0,0,0,0,0,0,0,0.004,13.575,55,1,Plant-Based Proteins
+46,poppyseed oil,120,13.6,1.8,0,0,0,0,0,0,0,0,13.6,64,16.8,Nuts & Seeds
+47,flaxseed oil,120,13.6,1.2,0,0,0.086,0,0,0,0.1,0,13.729,20,14.4,Nuts & Seeds
+48,tomatoseed oil,1927,218,42.9,0,0,0,0,0,0,0,0,218,93,18.9,Vegetables
+49,wheat germ oil,120,13.6,2.6,0,0,0,0,0,0,0,0,13.6,53,2.5,Grains & Cereals
+50,sesame oil,40,4.5,0.6,0,0,0,0,0,0,0,0,4.5,98,5,Oils & Fats
+51,corn granola oil,124,14,1.1,0,0,0,0,0,0,0,0,14,1,17,Oils & Fats
+52,cocoa butter oil,120,13.6,8.1,0,0,0,0,0,0,0,0,13.6,46,18.4,Dairy Products
+53,olive oil,119,13.5,1.9,0,0,0,0,0,0.004,0.1,0.092,13.618,85,16.6,Oils & Fats
+54,palm kernel oil,40,4.5,4,0,0,0,0,0,0.098,0.033,0,4.741,86,10.5,Oils & Fats
+55,mustard oil,124,14,1.6,0,0,0,0,0,0,0,0,14,61,3.3,Oils & Fats
+56,rice bran oil,120,13.6,2.7,0,0,0,0,0,0,0,0.001,13.689,85,2.5,Grains & Cereals
+57,vegetable macaroni dry,308,0.9,0.1,62.9,0,11,3.6,0,0.06,28.6,3.6,110.6,41,0.53,Vegetables
+58,chow mein noodles,257,9.9,1,37.5,0.5,5.9,1.5,0,0.5,11.2,2.6,68.6,15,19,Processed Foods
+59,chinese noodles,456,0.094,0.088,111.9,0,0.2,0.7,0,0.088,0,0.1,112.906,93,4.8,Processed Foods
+60,vegetable macaroni cooked,172,0.1,0.037,35.7,1.5,6.1,5.8,0,0.015,14.7,0.7,63.1,53,0.53,Vegetables
+61,corn pasta dry,375,2.2,0.3,83.2,0,7.8,11.6,0,0.027,4.2,1,110,81,4.9,Grains & Cereals
+62,egg noodles dry,146,1.7,0.4,27.1,0.7,5.4,1.3,31.9,0.095,13.3,0.7,49.598,40,3,Eggs
+63,whole wheat spaghetti dry,98,0.4,0.047,21.2,0,4.1,0,0,0.002,11.3,1,38,40,2.5,Grains & Cereals
+64,japanese soba noodles dry,95,0.2,0.084,21.1,0,4.1,0,0,0.2,9.9,0.8,36.1,19,3.8,Processed Foods
+65,rice noodles dry,103,0.2,0.053,23.6,0,1,0.5,0,0.006,5.1,0.2,30.6,76,2.5,Grains & Cereals
+66,spinach spaghetti dry,105,0.4,0.097,21.2,0.8,3.8,3,0,0.094,16.4,0.6,45.4,58,0.5,Vegetables
+67,egg noodles cooked,110,1.7,0.3,20.1,0.3,3.6,1,23.2,0.027,0,0.051,26.542,56,3,Eggs
+68,japanese somen noodles cooked,231,0.3,0.006,48.5,0,7,0,0,0.3,14.1,0.9,70.8,88,4.4,Processed Foods
+69,whole wheat macaroni dry,365,1.5,0.3,78.8,0,15.4,8.7,0,0.028,42,3.8,150.2,59,2.5,Grains & Cereals
+70,pasta marinara and ground beef sauce,41,1.6,0.5,4.1,1,2.5,0.5,0.2,0,0,0,8.7,91,60,Meat & Poultry
+71,macaroni raw,390,1.6,0.3,78.4,2.8,13.7,3.4,0,0.097,22.1,3.5,122.7,94,3.6,Processed Foods
+72,spaghetti dry,105,0.4,0.045,21.1,0.8,3.7,0.9,0,0.09,5.9,0.9,32.9,19,15.6,Processed Foods
+73,fusilli cucina,100,0.4,0.1,3.4,0.041,0,0,0,0,0,0,3.8,70,13.3,Processed Foods
+74,japanese somen noodles dry,101,0.2,0,21,0,3.2,1.2,0,0.5,6.5,0.4,32.5,4,1.7,Processed Foods
+75,pasta cooked,301,2.4,0.3,57.3,0,11.8,0,75.9,0.073,13.8,2.6,87.985,10,7,Grains & Cereals
+76,macaroni cooked,221,1.3,0.2,43.2,0.8,8.1,2.5,0,0.071,0,0.1,55.217,51,8,Processed Foods
+77,spinach egg noodles dry,145,1.7,0.4,26.7,0,5.6,2.6,36.1,0.096,21.3,1.6,59.5,63,3,Eggs
+78,japanese soba noodles cooked,113,0.1,0.026,24.4,0,5.8,0,0,0.1,4.6,0.5,35.4,29,8.4,Processed Foods
+79,rice noodles cooked,190,0.4,0.072,42.3,0.052,3.2,1.8,0,0.075,7,0.2,54.9,68,2.5,Grains & Cereals
+80,whole wheat macaroni cooked,174,0.8,0.1,37.2,1.1,7.5,3.9,0,0.057,21,1.5,71.9,5,2.5,Grains & Cereals
+81,spaghetti cooked,363,2.1,0.4,71,1.3,13.3,4.1,0,0.089,0,0.2,90.8,11,4,Processed Foods
+82,whole wheat spaghetti cooked,174,0.8,0.1,37.2,1.1,7.5,6.3,0,0.091,21,1.5,74.3,91,2.5,Grains & Cereals
+83,waffle,218,10.6,2.1,24.7,0,5.9,0,51.8,0.4,191.3,1.7,234.547,79,10.1,Processed Foods
+84,baked taco shell,61,2.7,0.8,8.3,0.2,0.8,0.9,0,0.004,12.5,0.2,25.4,23,13.6,Processed Foods
+85,puff pastry,1367,94.3,13.5,112,1.8,18.1,3.7,0,0.6,24.5,6.4,259,86,10.2,Processed Foods
+86,blueberry muffin,214,9.2,1.6,30.2,17.9,2.6,0.6,17.1,0.2,0.054,0.063,42.915,94,14.4,Fruits
+87,bread crumbs,427,5.7,1.3,77.7,6.7,14.4,4.9,0,0.8,197.6,5.2,305.5,76,3.8,Grains & Cereals
+88,warm cinnamon roll mcdonalds,113,5.1,1.3,15,7,2,0.5,16.4,0.1,16.1,0.5,39.264,80,6,Herbs & Spices
+89,corn muffin,201,5.5,0.9,33.7,11.7,3.9,2.2,17.2,0.3,48.8,1.9,96.069,15,19.1,Processed Foods
+90,tortilla,467,1.9,0.6,98.4,5.4,14.3,4.7,0,0.9,137.9,7.5,264.7,10,5.3,Processed Foods
+91,croutons seasoned,186,7.3,2.1,25.4,1.8,4.3,2,2.8,0.4,38.4,1.1,78.5,54,10.7,Processed Foods
+92,buttermilk waffle,102,3.1,0.8,16,1.5,2.4,0.9,4.3,0.2,98.7,2.2,123.4,19,9.8,Dairy Products
+93,flour tortilla,146,3.7,0.6,24.1,1.3,3.9,1.2,0,0.4,79.9,1.6,114.4,2,8,Processed Foods
+94,glazed donut,55,3,1.2,6.2,3,0.8,0.3,3.9,0.082,13.1,0.3,23.931,69,0.43,Processed Foods
+95,corn tortilla,52,0.7,0.1,10.7,0.2,1.4,1.5,0,0.075,19.4,0.3,34,8,10,Processed Foods
+96,muffin,169,6.5,1.2,23.6,0,3.9,1.5,22.2,0.3,114,1.4,151.166,93,11.3,Processed Foods
+97,croutons,33,0.5,0.1,5.9,0,1,0.4,0,0.035,6.1,0.3,14.2,24,14,Processed Foods
+98,donut with jelly filling,289,15.9,4.1,33.2,17.9,5,0.8,22.1,0.4,21.3,1.5,77.736,90,0.43,Processed Foods
+99,sweet cinnamon rolls,309,13.6,2.6,42.2,26.3,5.1,2,54.8,0.3,59.8,1.3,125.783,57,17.1,Herbs & Spices
+100,oat bran muffin,46,1.3,0.2,8.2,1.4,1.2,0.8,0,0.067,10.7,0.7,22.9,50,16,Grains & Cereals
+101,french cruller donut,169,7.5,1.9,24.4,14.4,1.3,0.5,4.5,0.1,10.7,1,45.42,58,0.43,Processed Foods
+102,pancakes,86,3.7,0.8,10.8,0,2.4,0,22.4,0.2,83.2,0.7,100.942,19,10.3,Snacks & Processed Foods
+103,chocolate donut,250,11.9,3.1,34.4,19.2,2.7,1.3,34.2,0.1,127.8,1.4,179.637,51,0.43,Beverages
+104,sweet cheese rolls,238,12.1,4,28.8,0,4.7,0.8,50.2,0.2,77.9,0.5,124.9,80,21,Dairy Products
+105,eclair,234,19.2,11.5,11.2,2,4.4,0.4,121.5,0.1,31.5,0.9,68,17,12,Processed Foods
+106,donut with cream filling,307,20.8,4.6,25.5,12.4,5.4,0.7,20.4,0.3,21.3,1.6,75.331,7,0.43,Dairy Products
+107,fruit toaster pastry,209,5.6,1.3,37.1,14.8,2.4,0.5,0,0.2,5.6,2,53.4,28,2.7,Fruits
+108,donut,192,10.3,2.7,22.9,0,2.3,0.7,14.4,0.2,27,0.5,63.823,15,0.43,Processed Foods
+109,pancakes whole wheat,92,2.9,0.8,12.9,0,3.7,1.2,26.8,0.3,110,1.4,132.377,39,2.5,Grains & Cereals
+110,keikitos,196,10.6,0,22.3,10.8,2.9,0.5,0,0.2,26.5,1.1,63.9,99,7.1,Processed Foods
+111,zwieback,30,0.7,0.2,5.2,0.9,0.7,0.2,0.6,0.05,0.041,0.083,7.083,71,10.5,Processed Foods
+112,chocolate coated donut,81,4.5,2.4,9.2,4.8,0.9,0.3,3.4,0.099,4.3,0.7,20.16,62,0.43,Grains & Cereals
+113,waffle toasted,103,3.2,0.5,16.3,1.7,2.4,0.8,5,0.2,101.3,2.3,126.4,96,18.3,Processed Foods
+114,cinnamon toaster pastry,206,7.1,1.8,34.1,0,2.6,0.5,0,0.2,17,2,63.489,7,14.2,Herbs & Spices
+115,wheat bran bread,89,1.2,0.3,17.2,3.5,3.2,1.4,0,0.2,26.6,1.1,50.7,72,2.5,Grains & Cereals
+116,white bread,77,1,0.2,14.3,1.6,2.6,0.8,0,0.1,0.081,0.04,18.931,82,6.5,Grains & Cereals
+117,oat bran bread,71,1.3,0.2,11.9,2.3,3.1,1.4,0,0.1,19.5,0.9,38.121,100,13.7,Grains & Cereals
+118,whole wheat bread natures own,50,1,11,0,0,0,0,0,0,0,0,1,33,2.5,Grains & Cereals
+119,high protein bread dr zaks,152,3,0.5,15.3,0.6,0,0,0,0,0,0,18.3,70,9.2,Grains & Cereals
+120,wheat bread,79,1.3,0.2,13.8,1.7,3.1,1.2,0,0.1,0.026,0.066,19.619,92,2.5,Grains & Cereals
+121,egg bread toasted,117,2.4,0.6,19.5,0.7,3.9,0.9,20.7,0.2,37.7,1.2,65.618,72,3,Eggs
+122,butter toastbrot ja,66,0.9,0.6,2,0.4,0,0,0,0,0,0,2.9,91,1.2,Dairy Products
+123,vienna bread toasted,93,0.6,0.1,18,1,3.8,0.9,0,0.2,13.6,1.1,38.073,58,17.1,Grains & Cereals
+124,vienna bread,92,0.6,0.2,18.1,0.8,3.8,0.8,0,0.2,14.1,1.2,38.633,12,11.4,Grains & Cereals
+125,protein bread,47,0.4,0.009,8.3,0.3,2.3,0.6,0,0.008,23.6,0.8,36,46,0.1,Grains & Cereals
+126,banana bread,186,6,1.3,31.1,0,2.5,0.6,24.5,0.2,12,0.8,54.061,5,0.86,Fruits
+127,rice bran bread,66,1.2,0.2,11.7,1.3,2.4,1.3,0,0.081,18.6,1,36.2,33,2.5,Grains & Cereals
+128,white fibre wonder bread,95,1,0.2,18,2,3.5,1.5,0.1,0,0,0,24,77,12.7,Grains & Cereals
+129,focaccia,142,4.5,0.5,20.4,1,5,1,0,0.3,20,1.8,52.7,77,10.3,Processed Foods
+130,oat bran bread toasted,70,1.3,0.2,11.8,2.3,3.1,1.3,0,0.1,19.2,0.9,37.631,21,11.5,Grains & Cereals
+131,rye bread,83,1.1,0.2,15.5,1.2,2.7,1.9,0,0.2,23.4,0.9,45.6,48,11.3,Grains & Cereals
+132,wheat germ bread,73,0.8,0.2,13.5,1,2.7,0.6,0,0.2,24.9,1,43.598,100,2.5,Grains & Cereals
+133,protein bread toasted,46,0.4,0.059,8.2,0.2,2.2,0.6,0,0.049,23.1,0.8,35.3,13,4.9,Grains & Cereals
+134,oatmeal bread,73,1.2,0.2,13.1,2.2,2.3,1.1,0,0.1,17.8,0.7,36.227,43,5.6,Grains & Cereals
+135,arepa,215,5.3,2.8,36.4,0.9,5.4,2.5,4.9,0.3,87.2,1,137.897,73,11.7,Processed Foods
+136,raisin bread toasted,86,1.4,0.3,16.5,1.8,2.5,1.4,0,0.1,20.9,0.9,43.7,13,12.8,Grains & Cereals
+137,cracked wheat bread,74,1.1,0.3,14,0,2.5,1.6,0,0.2,12.2,0.8,32.2,86,2.5,Grains & Cereals
+138,garlic bread,151,7.1,2.3,17.9,1.6,3.6,1.1,0,0.2,11.6,1.3,42.646,15,3.6,Grains & Cereals
+139,rye bread toasted,82,1,0.2,15.4,1.2,2.7,1.9,0,0.2,23.2,0.9,45.128,1,0,Grains & Cereals
+140,whole wheat bread,128,2.5,0.4,23.6,1.8,3.9,2.8,0,0.2,15.2,1.4,49.4,18,2.5,Grains & Cereals
+141,whole wheat bread toasted,128,2.5,0.4,23.7,1.8,3.9,2.8,0,0.2,15.1,1.4,49.4,51,2.5,Grains & Cereals
+142,pan dulce bread,231,7.3,1.4,35.5,7.9,5.9,1.4,18.9,0.1,54.2,1.8,106.92,38,5.2,Grains & Cereals
+143,rice bran bread toasted,66,1.3,0.2,11.8,1.3,2.4,1.3,0,0.026,18.8,1,36.6,50,2.5,Grains & Cereals
+144,pita bread whole wheat,74,0.7,0.1,15.4,0.2,2.7,2.1,0,0.1,4.2,0.9,26,16,2.5,Grains & Cereals
+145,wheat germ bread toasted,73,0.8,0.2,13.6,1,2.7,0.6,0.3,0.2,25,1,43.706,35,2.5,Grains & Cereals
+146,pumpernickel bread,65,0.8,0.1,12.4,0.1,2.3,1.7,0,0.2,17.7,0.7,35.6,32,12.4,Grains & Cereals
+147,frybread,502,18.6,7,73.4,3.1,10.2,0,10.6,0.5,86.6,6.1,194.9,16,15.4,Grains & Cereals
+148,white bread toasted,83,1.1,0.2,15.4,1.3,2.5,0.7,0.3,0.2,33.7,0.9,54.3,2,4.7,Grains & Cereals
+149,piki bread,109,2,0.2,20.2,0.4,2.5,2.6,0,0.028,51.5,1.7,80.5,44,2.1,Grains & Cereals
+150,wheat bread toasted,75,1,0.2,13.4,1.5,3.1,1.1,0,0.1,39.6,1,59.243,87,2.5,Grains & Cereals
+151,pita bread,165,0.7,0.091,33.4,0.8,5.5,1.3,0,0.3,51.6,1.6,94.1,86,17.6,Grains & Cereals
+152,potato bread,85,1,0,15.1,3,4,2,0,0.1,0.072,0.072,22.272,15,0.46,Vegetables
+153,egg bread,115,2.4,0.6,19.1,0.7,3.8,0.9,20.4,0.2,37.2,1.2,64.622,43,3,Eggs
+154,oatmeal bread toasted,73,1.2,0.2,13.2,2.2,2.3,1.1,0,0.1,18,0.7,36.622,43,18.5,Grains & Cereals
+155,cheese bread,196,10,3,21.5,1,5,1,4.8,0.4,43.2,1.2,81.937,33,21,Dairy Products
+156,pumpernickel bread toasted,80,1,0.1,15.1,0.2,2.8,2.1,0,0.2,21.5,0.9,43.4,8,18.9,Grains & Cereals
+157,raisin bread,88,1.4,0.3,16.7,1.8,2.5,1.4,0,0.1,21.1,0.9,44.09,99,2.9,Grains & Cereals
+158,pumpernickel roll,77,0.8,0.1,14.8,0.1,3,1.5,0,0.1,18.8,0.8,39.7,93,6.1,Processed Foods
+159,cinnamon raisin bagel,71,0.4,0.054,14.4,1.6,2.5,0.6,0,0.047,4.9,1,24.016,53,15.4,Herbs & Spices
+160,english muffin,127,1.1,0.2,25.5,0.9,5,2.6,0,0.2,101.5,1.6,137.3,2,8.3,Processed Foods
+161,rye dinner roll,123,1.5,0.3,22.8,0.5,4.4,2.1,0,0.3,12.9,1.2,44.9,55,4.8,Processed Foods
+162,english muffin whole wheat,134,1.4,0.2,26.7,5.3,5.8,4.4,0,0.2,174.9,1.6,214.8,58,2.5,Grains & Cereals
+163,dinner roll whole wheat,74,1.3,0.2,14.3,2.4,2.4,2.1,0,0.1,29.7,0.7,50.5,54,2.5,Grains & Cereals
+164,dinner roll,76,1.8,0.4,12.9,0.5,2.4,1.1,0,0.1,49.3,1,68.5,58,16.4,Processed Foods
+165,hotdog roll,117,1.6,0.4,21.1,3.1,4.1,0.8,0,0.2,0.008,0.095,27.796,23,5.2,Processed Foods
+166,bagel,245,1.5,0,47.9,6,10,4,0,0.4,0.019,0.2,63.783,52,0.6,Processed Foods
+167,oat bran bagel,176,0.8,0.1,36.8,1.1,7.4,2.5,0,0.4,8.3,2.1,58.051,76,17.8,Grains & Cereals
+168,pain au chocolat de la boulangerie,235,12,27.6,0,0,0,0,0,0,0,0,12,54,11.5,Beverages
+169,egg bagel,72,0.5,0.1,13.8,0,2.8,0.6,6.2,0.1,3.4,1,22.349,79,3,Eggs
+170,english muffin toasted,140,1.1,0.3,27.4,1.8,5.4,1.5,0,0.2,102.4,2.4,141.1,64,7.6,Processed Foods
+171,english muffin whole wheat toasted,135,1.4,0.2,26.9,5.4,5.9,4.5,0,0.2,175.7,1.6,216,73,2.5,Grains & Cereals
+172,biscuit,357,16.5,4.4,45,2.2,7.1,1.5,3,0.6,237.4,2.9,310.6,15,8.1,Snacks & Processed Foods
+173,french roll,105,1.6,0.4,19.1,0.1,3.3,1.2,0,0.2,34.6,1,60.8,4,11.1,Processed Foods
+174,oat bran dinner roll,78,1.5,0.2,13.3,2.2,3.1,1.4,0,0.1,28.1,1.4,48.8,74,0.5,Grains & Cereals
+175,pecan shortbread cookies,76,4.6,1.1,8.2,0,0.7,0.3,4.6,0.002,4.2,0.3,18.349,45,3.1,Grains & Cereals
+176,oatmeal cookies,113,4.5,1.1,17.2,6.2,1.6,0.7,0,0.1,9.3,0.6,34.069,57,9.6,Grains & Cereals
+177,chocolate wafers,485,15.9,4.7,81.1,33.2,7.4,3.8,2.2,0.8,34.7,4.5,147.442,67,13,Beverages
+178,vanilla wafers low fat,353,12.2,3.1,58.9,30,4,1.5,40.8,0.3,38.4,1.9,116.995,50,6.5,Oils & Fats
+179,chocolate chip cookies mcdonalds,136,6.4,3.2,18.7,9.6,1.6,0.6,18.4,0.058,9.6,1.1,38.09,44,7.3,Snacks & Processed Foods
+180,gingersnap cookies,29,0.7,0.2,5.4,1.4,0.4,0.2,0,0.012,5.4,0.4,12.5,84,19,Snacks & Processed Foods
+181,biscotti abbracci mulino bianco,54,2.6,1.6,0.8,0.051,0.4,0,0,0,0,0,3.8,10,18.9,Processed Foods
+182,chocolate chip cookie,63,2.8,1.4,9.3,5.3,0.5,0.3,0,0.047,0.036,0.049,13.122,9,1.6,Snacks & Processed Foods
+183,brownie,243,9.8,2.5,38.3,22,2.9,1.3,10.2,0.2,17.4,1.4,71.166,76,16.1,Processed Foods
+184,shortbread cookies,40,1.9,0.5,5.2,1.2,0.5,0.1,1.6,0.097,2.8,0.2,10.729,30,4.6,Grains & Cereals
+185,oatmeal cookies with raisins,65,2.4,0.5,10.3,0,1,0,5,0.022,15,0.4,29.198,74,9.4,Grains & Cereals
+186,peanut butter sandwich cookies,67,3,0.7,9.2,5,1.2,0.3,0,0.098,7.4,0.4,21.624,20,1,Dairy Products
+187,sugar cookies,72,3.2,0.8,10.2,5.7,0.8,0.1,7.7,0.007,3.2,0.3,17.981,3,12.1,Snacks & Processed Foods
+188,chocolate covered graham crackers,68,3.2,1.8,9.3,5.8,0.8,0.4,0,0.067,8.1,0.5,22.313,30,10.2,Beverages
+189,raisin cookies,60,2,0.5,10.2,7.1,0.6,0.2,0.3,0.077,6.9,0.3,20.215,57,16,Snacks & Processed Foods
+190,vanilla wafers,28,1.2,0.3,4.3,0,0.3,0.1,0,0.045,1.5,0.1,7.5,82,5.1,Processed Foods
+191,graham crackers,355,8.5,1.3,64.5,26.1,5.8,2.4,0,0.4,20.2,3.1,104.5,75,1.7,Processed Foods
+192,peanut butter cookies,95,4.8,0.9,11.8,0,1.8,0,6.2,0.1,7.8,0.4,26.738,2,1,Dairy Products
+193,vanilla sandwich cookie,72,3,0.4,10.8,5.9,0.7,0.2,0,0.044,4.1,0.3,19.1,40,12.7,Snacks & Processed Foods
+194,sugar wafers with creme filling,51,2.3,1.2,7.1,4.3,0.4,0.2,0,0.06,2.7,0.4,13.1,95,19.8,Sugars & Sweeteners
+195,cheese puffs,197,12.8,1.9,18.6,1.1,2.1,0.6,2.5,0.3,20,0.7,54.854,59,21,Dairy Products
+196,saltine crackers,13,0.3,0.097,2.2,0.063,0.3,0.022,0,0.067,0.059,0.025,3.081,4,15.5,Processed Foods
+197,trail mix,139,8.8,1.7,13.5,0,4.1,0,0,0.014,23.4,0.9,51.1,97,9.1,Processed Foods
+198,corn cones,144,7.6,6.4,17.8,0,1.6,0.3,0,0.3,0.8,0.7,28.8,7,4.6,Processed Foods
+199,chocolate pretzels,50,1.8,0.8,7.8,0,0.8,0,0,0.037,8.1,0.2,18.726,43,1,Beverages
+200,french toast sticks,73,3.8,0.9,8.9,2.1,1.3,0.3,0,0.001,11.4,0.4,26.1,82,17.1,Processed Foods
+201,crackers,82,4.2,0.9,9.8,1.3,1.1,0.4,0,0.1,0.036,0.011,15.764,22,17.2,Processed Foods
+202,sesame sticks,54,3.7,0.6,4.7,0.084,1.1,0.3,0,0.09,17,0.055,26.81,80,7.8,Nuts & Seeds
+203,cheese crackers,34,1.6,0.4,4.2,0.3,0.8,0.2,0.2,0.065,0.026,0.032,7.053,34,21,Dairy Products
+204,oriental rice cracker mix,143,7.2,1.1,14.6,0.8,4.9,3.7,0,0.1,15.3,0.7,46.416,10,2.5,Grains & Cereals
+205,breadsticks,103,2.4,0.4,17.1,0.3,3,0.8,0,0.2,5.5,1.1,29.9,34,14.4,Grains & Cereals
+206,milk crackers,50,1.7,0.3,7.7,1.8,0.8,0.2,1.2,0.095,18.9,0.4,29.845,91,4.2,Dairy Products
+207,matzo crackers whole wheat,98,0.4,0.005,22.1,0,3.7,3.3,0,0.002,6.4,1.3,37.2,16,2.5,Grains & Cereals
+208,matzo crackers with egg,109,0.6,0.2,22,0,3.4,0.8,23.2,0.057,11.2,0.8,38.972,17,3,Eggs
+209,granola bites,23,0.9,0.5,3.3,1.5,0.4,0.3,0,0.067,0.015,0.074,5.042,83,3.9,Processed Foods
+210,crackers whole wheat,120,4,0.6,19.5,0.3,3,2.9,0,0.2,10.1,0.9,40.4,54,2.5,Grains & Cereals
+211,tropical trail mix,619,23.9,11.9,91.8,0,8.8,0,0,0.1,79.8,3.7,218.6,57,0.5,Processed Foods
+212,soft pretzels,389,3.6,0.8,79.8,0.3,9.4,2,3.5,0.9,26.5,4.5,125.8,65,3.3,Processed Foods
+213,corn tostada shell,58,2.9,0.9,7.9,0,0.8,0.7,0,0.084,9.3,0.2,21.8,58,7.4,Processed Foods
+214,matzo crackers,111,0.4,0.03,23.4,0.098,2.8,0.8,0,0,3.6,0.9,31.9,8,19.1,Processed Foods
+215,sesame crunch,9,0.6,0.096,0.9,0.6,0.2,0.1,0,0.027,11.5,0.019,13.351,78,12.9,Nuts & Seeds
+216,trail mix with chocolate chips,707,46.6,8.9,65.6,0,20.7,0,5.8,0.2,159.1,4.9,298.8,74,17,Snacks & Processed Foods
+217,cracker meal,440,2,0.3,93,0.4,10.7,3,0,0.078,26.5,5.3,140.5,49,13.7,Processed Foods
+218,puffed rice,153,0.2,0.037,34.1,0,2.4,0.6,0,0.053,2.3,12,51.6,18,2.5,Grains & Cereals
+219,filinchen gutena,19,0.2,0.056,0.5,0.028,0.4,0,0,0,0,0,1.1,72,0.6,Processed Foods
+220,melba toast crackers,117,1,0.1,23,0.3,3.6,1.9,0,0.2,27.9,1.1,58.5,25,14.7,Processed Foods
+221,matzo crackers with egg onion,109,1.1,0.3,21.6,0,2.8,1.4,12.6,0.052,10.1,1.2,38.316,39,3,Eggs
+222,cornnuts,126,4.4,0.7,20.3,0.2,2.4,2,0,0.2,2.5,0.5,32.1,40,0.43,Processed Foods
+223,bagel chips,789,26.5,12,116.1,10.5,21.6,7.2,0,0.4,42,8.8,222.2,52,1.5,Snacks & Processed Foods
+224,pretzels,115,0.9,0.1,24.1,0.7,3,1,0,0.4,0.01,0.08,29.214,44,3.4,Processed Foods
+225,potato raw,164,0.2,0.028,37.2,1.7,4.3,4.7,0,0.072,25.6,1.7,115.7,94,0.46,Vegetables
+226,gatto di patate home made,202,9.4,4.6,4,3.6,0,0,0,0,0,0,13.4,94,7.9,Processed Foods
+227,baked potato,161,0.2,0.074,36.6,2,4.3,3.8,0,0.097,0.057,0.2,45.667,6,0.46,Vegetables
+228,potato sticks,188,12.4,3.2,19.2,0.006,2.4,1.2,0,0.2,6.5,0.8,59.5,49,0.46,Vegetables
+229,potato cooked,52,0.006,0.003,12.1,0.5,1.1,1.2,0,0.035,3,0.2,25.487,56,0.46,Vegetables
+230,vivaldi potatoes sainsburys,23,0.1,5,0,0,0,0,0,0,0,0,0.1,56,0.46,Vegetables
+231,potato ham chowder soup,192,12.5,3.9,13.4,0,6.5,1.4,21.6,0.9,0,1.7,35.5,76,0.46,Vegetables
+232,russet potato raw,292,0.3,0.06,66.7,2.3,7.9,4.8,0,0.068,48,3.2,151.9,40,0.46,Vegetables
+233,russet potato baked,290,0.4,0.1,64.1,3.2,7.9,6.9,0,0.084,53.8,3.2,161.1,21,0.46,Vegetables
+234,french fries,13,0.4,0.01,2.2,0.088,0.2,0.2,0,0.056,0.8,0.076,5.362,65,6.3,Processed Foods
+235,potato scalloped,216,9,5.5,26.4,0,7,4.7,29.4,0.8,139.7,1.4,214.2,95,0.46,Vegetables
+236,cottage fries,11,0.4,0.084,1.9,0.019,0.2,0.2,0,0.058,0.9,0.025,4.413,81,15.8,Processed Foods
+237,mashed potatoes,215,6.8,1.4,35.5,1.2,4,3.1,0,0.7,43.6,0.8,93.836,31,0.46,Vegetables
+238,mashed potato with milk and butter,237,8.9,5.5,35.3,3,3.9,3.2,23.1,0.7,50.4,0.5,114.854,59,0.46,Dairy Products
+239,red potato raw,149,0.3,0.074,33.9,2.7,4,3.6,0,0.02,21.3,1.6,83,77,0.46,Vegetables
+240,potato pancake,59,3.2,0.5,6.1,0.4,1.3,0.7,20.9,0.2,7,0.4,24.864,37,0.46,Vegetables
+241,potato puffs,243,11,2.3,35.5,0.3,2.6,3.2,0,0.6,17.9,0.8,79.1,96,0.46,Vegetables
+242,red potato baked,74,0.1,0.008,16.7,1.2,2,1.5,0,0.037,0.075,0.1,20.689,25,0.46,Vegetables
+243,potatoes canned,132,0.3,0.098,29.7,0,3.6,4.2,0,0.7,117,2.2,179.8,60,0.46,Vegetables
+244,potato skin raw,22,0.099,0.093,4.7,0,1,1,0,0.053,11.4,1.2,23.697,20,0.46,Vegetables
+245,shoestring french fries,4,0.1,0.059,0.7,0.062,0.099,0.099,0,0.055,0.3,0.052,1.604,9,1.7,Processed Foods
+246,hash brown potato,144,9,1.3,15.3,0.3,1.4,1.4,0,0.3,0.069,0.004,27.245,27,0.46,Vegetables
+247,baked chips lays,130,2,26,0,0,0,0,0,0,0,0,2,69,18.1,Snacks & Processed Foods
+248,corn chips,162,10,1.3,17.2,0.031,1.9,1.2,0,0.2,0.068,0.021,30.501,100,3.3,Snacks & Processed Foods
+249,nacho cheese tortilla chips low fat,90,1,0.3,18.5,0.8,2.4,1.8,0.6,0.2,36.2,1.4,62.9,74,21,Dairy Products
+250,corn chips barbecue,1036,64.7,8.8,111.3,0,13.9,10.3,0,1.5,259.4,3,466,10,19.2,Snacks & Processed Foods
+251,corn chips unsalted,490,29.4,3.8,50.5,1.2,5.8,3.9,0,0.024,109.1,1.5,202,53,14.6,Snacks & Processed Foods
+252,potato chips fat free,860,1.4,0.3,190.1,8.4,21.9,17,0,1.5,79.5,8.1,339.1,88,0.46,Vegetables
+253,sweet chilli kettle baked chips,99,2.2,0.3,2.1,0.4,2,0,0,0,0,0,6.3,35,7.8,Snacks & Processed Foods
+254,taro chips,11,0.6,0.1,1.6,0.04,0.049,0.2,0,0.022,1.4,0.008,4.042,51,9,Snacks & Processed Foods
+255,potato chips reduced fat,801,35.4,7.1,113.7,0.4,12.1,10,0,0.8,35.7,2.3,252.9,47,0.46,Vegetables
+256,onion snacks,150,6.8,1.3,19.5,1.4,2.3,1.2,0,0.3,8.7,1.1,40.199,59,0.5,Vegetables
+257,potato chips cheese,843,46.2,14.6,98.1,0,14.5,8.8,6.8,0.8,122.4,3.1,385.109,33,21,Dairy Products
+258,yuca cassava chips,9,0.4,0.1,1.2,0.006,0.054,0.002,0,0.041,0.9,0.099,2.621,52,18.7,Snacks & Processed Foods
+259,tortilla chips low fat,117,1.6,0.2,22.6,0.2,3.1,1.5,0,0.1,45,0.5,74.368,12,10.7,Oils & Fats
+260,ranch flavor tortilla chips,992,48.8,7,124.2,6,14.2,7.9,0,1,265.3,2.7,463.1,57,4.9,Snacks & Processed Foods
+261,potato chips,161,10.4,3.3,15.9,0.007,2.1,1.4,0,0.021,7.2,0.5,46.8,2,0.46,Vegetables
+262,tortilla chips,142,6.2,0.8,20.3,0.2,2.1,1.6,0,0.077,0.014,0.2,30.699,26,2.9,Snacks & Processed Foods
+263,sweet potato chips,149,9.1,0.8,15.9,2.5,0.8,2.5,0,0.05,16.5,0.6,45.4,98,0.46,Vegetables
+264,nacho cheese tortilla chips,156,8.2,1.2,18.2,0.8,2.2,1.5,0,0.2,0.002,0.071,30.369,25,21,Dairy Products
+265,vegetable chips,134,6.6,0.5,17.1,1.1,1.5,1.3,0,0.3,14.7,0.4,43,97,0.53,Vegetables
+266,taco flavor tortilla chips,1090,54.9,10.5,143.2,0,17.9,12,11.4,1.8,351.9,4.6,586.5,67,7.9,Snacks & Processed Foods
+267,potato chips barbecue,970,64.2,15.9,104.5,14,15.2,8.7,0,1.3,99,3.8,362.5,91,0.46,Vegetables
+268,pita chips,137,4.6,0.4,20.5,1.4,3.5,1.1,0,0.3,0.051,0.065,29.893,93,11.4,Snacks & Processed Foods
+269,potato chips sour cream and onion,1051,67.1,17.6,102,0,16,10.3,13.9,1.1,142.6,3.2,415.171,17,0.46,Dairy Products
+270,adobo fresco,780,60.2,8.4,53.6,5.8,5.8,3.7,0,49.4,354.2,9.2,503.4,59,12.9,Processed Foods
+271,chili pepper sauce red,3,0.089,0.073,0.6,0.4,0.1,0.1,0,0.003,1.4,0.051,6.755,37,1.7,Herbs & Spices
+272,creamy ranch sauce mcdonalds,132,14.7,2.2,1,1,0.3,0,5.9,0.2,8.2,0.039,24.274,4,10.7,Dairy Products
+273,catsup,19,0.066,0.026,4.5,3.7,0.2,0.053,0,0.2,2.7,0.073,8.299,30,0.2,Processed Foods
+274,chili pepper sauce green,3,0.032,0.048,0.8,0.4,0.1,0.3,0,0.03,0.8,0.023,12.206,55,3.3,Herbs & Spices
+275,red wine vinegar,3,0,0,0.011,0,0.055,0,0,0.092,0.9,0.049,1.221,32,13.6,Beverages
+276,fish sauce,6,0.013,0.08,0.7,0.7,0.9,0,0,1.4,7.7,0.1,9.498,69,18.8,Seafood
+277,coleslaw dressing reduced fat,56,3.4,0.5,6.8,6.6,0,0.045,4.3,0.3,6.1,0.08,16.403,37,12.7,Oils & Fats
+278,sour dressing,21,2,1.6,0.6,0.6,0.4,0,0.6,0.094,13.6,0.091,16.853,60,10.2,Condiments & Sauces
+279,guava sauce cooked,86,0.3,0.014,22.6,14,0.8,8.6,0,0.017,16.7,0.4,397.8,23,5.5,Condiments & Sauces
+280,pizza sauce,136,2.9,1.2,21.8,9.5,5.5,5,0,0.9,0,0.3,35.8,84,3.2,Condiments & Sauces
+281,sweetn sour sauce mcdonalds,48,0.3,0.075,11,10,0.2,0,0,0.2,1.7,0.2,13.7,32,7.8,Condiments & Sauces
+282,nance syrup,4,0.002,0,0.8,0.6,0.028,0.3,0,0.035,1.6,0.013,3.227,57,2.1,Sugars & Sweeteners
+283,french dressing reduced fat,37,2.2,0.2,4.7,4.6,0.072,0.2,0,0.072,1.8,0.1,9.052,23,6.5,Oils & Fats
+284,peppercorn dressing,76,8.2,1.4,0.5,0.3,0.2,0,6.6,0.1,2.9,0.055,11.946,62,19.5,Herbs & Spices
+285,sorghum syrup,61,0,0,15.7,15.7,0,0,0,0.096,31.5,0.8,48,50,17.6,Sugars & Sweeteners
+286,ranch dressing fat free,17,0.3,0.007,3.7,0.7,0.039,0.088,1,0.1,7,0.1,11.204,91,10.6,Oils & Fats
+287,caesar dressing low calorie,17,0.7,0.1,2.8,2.4,0.028,0.053,0.3,0.2,3.6,0.016,7.293,86,8.3,Condiments & Sauces
+288,sweet sour dressing,2,0,0,0.6,0.6,0.082,0,0,0.065,0.6,0.078,2.587,52,6.5,Condiments & Sauces
+289,mayonnaise imitation fat free,13,0.4,0.005,2.5,1.6,0.043,0.3,1.4,0.1,1,0.008,4.313,37,15.5,Oils & Fats
+290,sofrito,488,37.5,0,11.2,0,26.4,3.5,0,2.4,41.2,1.9,163.7,81,19.8,Processed Foods
+291,turkey gravy instant,27,1,0.3,3.9,0.5,0.8,0.3,1.6,0.3,7.7,0.6,14.333,25,17.7,Meat & Poultry
+292,teriyaki sauce,16,0.015,0,2.8,2.5,1.1,0.016,0,0.7,4.5,0.3,8.733,65,1.9,Condiments & Sauces
+293,tomato sauce,59,0.7,0.1,13,8.7,2.9,3.7,0,0.083,0.083,0.3,20.864,17,15.1,Vegetables
+294,barbecue sauce kraft,28,0.053,0.013,6.5,5.2,0.1,0.032,0,0.2,7.5,0.1,14.388,29,7.6,Condiments & Sauces
+295,cranberry sauce sweetened,418,0.4,0.056,107.8,105,0.6,2.8,0,0.076,11.1,0.6,128.8,60,3.4,Fruits
+296,coleslaw dressing,62,5.3,0.8,3.8,3.2,0.1,0.024,4.2,0.1,2.2,0.01,11.62,34,6.8,Condiments & Sauces
+297,onion gravy dry,77,0.7,0.4,16.2,0,2.2,1.4,0.5,1,67.2,0.2,89.6,36,0.5,Vegetables
+298,corn syrup light,62,0.09,0,16.9,16.9,0,0,0,0.065,2.9,0,19.806,34,19.5,Sugars & Sweeteners
+299,bacon tomato dressing,49,5.3,0.8,0.3,0.3,0.3,0.04,0.6,0.1,0.6,0.057,7.942,23,12.5,Vegetables
+300,pancake syrup,53,0.075,0.025,13.9,8.4,0,0,0,0.064,1,0.038,15.031,76,11.6,Snacks & Processed Foods
+301,balsamic vinegar,14,0,0,2.7,2.4,0.041,0,0,0.071,4.3,0.1,7.129,14,4.9,Processed Foods
+302,ranch dressing reduced fat,29,1.9,0.2,3.2,0.6,0.2,0.2,2.4,0.2,6,0.1,11.727,11,9.2,Oils & Fats
+303,barbecue sauce mcdonalds,46,0.3,0.09,10.3,9.6,0.4,0.4,0,0.3,3.1,0.1,14.6,49,10.6,Condiments & Sauces
+304,vinegar oil dressing,72,8,1.5,0.4,0.4,0,0,0,0.076,0,0,8.4,94,9.8,Oils & Fats
+305,poppyseed dressing,66,5.5,1,4,3.9,0.2,0.03,2.5,0.1,9.7,0.048,19.612,62,12,Nuts & Seeds
+306,honey mustard dressing,70,6.1,0.8,3.5,2.4,0.1,0.057,4.4,0.019,1.8,0.07,11.752,93,14.2,Sugars & Sweeteners
+307,french dressing fat free,21,0.024,0.067,5.1,2.6,0.01,0.4,0,0.1,0.8,0.081,6.399,64,7.1,Oils & Fats
+308,vinegar,3,0,0,0.089,0.063,0,0,0,0.024,0.9,0.002,1.02,36,18.1,Processed Foods
+309,spray dressing,13,0.9,0.1,1.3,1.1,0.07,0.075,0,0.012,0.5,0.096,2.931,74,17.7,Condiments & Sauces
+310,honey mustard dressing fat free,25,0.2,0.031,5.8,2.7,0.2,0.2,0.2,0.2,3.6,0.053,10.426,11,16.8,Oils & Fats
+311,mushroom gravy,119,6.4,1,13,0,3,1,0,1.4,16.7,1.6,41.7,26,18.9,Processed Foods
+312,white sauce,368,26.6,7.1,22.9,11,9.6,0.5,17.5,0.9,295,0.8,357.7,75,15.5,Condiments & Sauces
+313,marinara pasta sauce,129,3.9,0.4,19.9,14.5,3.7,4.8,5.3,1.1,71.3,2.1,111,12,16,Grains & Cereals
+314,tomato sauce with mushrooms,86,0.3,0.027,20.7,14.1,3.6,3.7,0,1.1,31.9,2.2,92.8,75,14.4,Vegetables
+315,pork gravy powder,25,0.6,0.3,4.3,1.7,0.6,0.2,0.7,0.4,9.3,0.3,15.363,54,7,Meat & Poultry
+316,beef gravy,123,5.5,2.7,11.2,0.5,8.7,0.9,7,1.5,14,1.6,41.982,44,60,Meat & Poultry
+317,green goddess dressing,64,6.5,0.9,1.1,1,0.3,0.094,6,0.1,5.1,0.067,13.2,57,11.4,Condiments & Sauces
+318,salsa con queso,358,23.8,6.2,27.9,4.9,7.9,1.8,22.5,2,245,0.4,307.813,21,15.6,Condiments & Sauces
+319,cocktail sauce,19,0.2,0,4.2,1.8,0.2,0.3,0,0.2,3.9,0.1,10.667,1,13.7,Condiments & Sauces
+320,worcestershire sauce,13,0,0,3.3,1.7,0,0,0,0.2,18.2,0.9,24.673,35,16.5,Condiments & Sauces
+321,barbecue sauce,29,0.1,0.009,6.9,5.7,0.1,0.2,0,0.2,5.6,0.1,13.1,49,6.6,Condiments & Sauces
+322,tomato sauce with onions,103,0.5,0.007,24.4,0,3.8,4.4,0,1.3,41.7,2.3,108.2,70,0.5,Vegetables
+323,brown gravy dry,22,0.6,0.2,3.6,0,0.6,0.1,0.2,0.3,7.9,0.1,13.021,23,5.1,Processed Foods
+324,blue cheese dressing light,14,0.4,0.1,2.1,0.6,0.3,0,1.6,0.2,10.9,0.042,13.835,86,21,Dairy Products
+325,spanish tomato sauce,81,0.7,0.007,17.7,0,3.5,3.4,0,1.2,41.5,8.5,96.3,34,10.8,Vegetables
+326,oyster sauce,9,0.066,0.016,2,0,0.2,0.024,0,0.5,5.8,0.069,8.095,33,3.4,Condiments & Sauces
+327,cheese sauce,30,2.2,1.2,0.8,0.033,1.5,0.071,5.7,0.002,46.7,0.047,51.263,17,21,Dairy Products
+328,hoisin sauce,35,0.5,0.036,7.1,4.4,0.5,0.4,0.5,0.3,5.1,0.2,13.882,95,14.8,Condiments & Sauces
+329,pickle relish,20,0.061,0.093,5.3,4.4,0.097,0.2,0,0.1,0.5,0.1,6.381,87,6.1,Condiments & Sauces
+330,tomato sauce with herbs cheese,144,4.7,1.5,25,0,5.2,5.4,7.3,1.3,90.3,2.1,157.1,84,21,Dairy Products
+331,french dressing,73,7.2,0.9,2.5,2.6,0.1,0,0,0.1,3.8,0.1,14.3,83,16.1,Condiments & Sauces
+332,mayonnaise hellmanns,15,1.7,0.9,0.087,0.2,0,0,0,0,0,0,1.737,17,12.3,Condiments & Sauces
+333,canadian maple syrup,76,0,0,19.1,17,0,0,0,0.086,30.8,0.088,49.95,96,16.4,Sugars & Sweeteners
+334,maple syrup,52,0.047,0.036,13.4,13.6,0.09,0,0,0.059,20.4,0.014,33.895,66,17.6,Sugars & Sweeteners
+335,barbecue sauce bulls eye,27,0.1,0.028,6.4,5.6,0.1,0.2,0,0.2,6.9,0.1,13.891,40,6.9,Condiments & Sauces
+336,ranch dressing,65,6.7,1,0.9,0.7,0.2,0,3.9,0.1,0.024,0.085,8.046,26,10.4,Condiments & Sauces
+337,tomato ketchup mp,15,0,4,0.2,0,0,0,0,0,0,0,0.2,87,13.1,Vegetables
+338,mayonnaise light,36,3.3,0.5,1.4,0.5,0.032,0,2.4,0.1,0.05,0.039,4.966,48,13,Condiments & Sauces
+339,mayonnaise dressing,103,11.7,1.6,0.066,0.093,0,0,0,0.081,1.1,0,12.917,66,16.1,Condiments & Sauces
+340,malt syrup,67,0,0,15,15,1.3,0,0,0.05,12.8,0.2,29.3,15,11.3,Sugars & Sweeteners
+341,gravy dry,86,2,0.7,14.5,0,3.3,0,1,1.4,37.5,0.3,59.4,69,16.4,Processed Foods
+342,cranberry orange relish,490,0.3,0.06,127.1,0,0.8,0,0,0.063,30.3,0.6,208.6,49,16.7,Fruits
+343,caesar dressing,80,8.5,1.3,0.5,0.4,0.3,0.036,5.7,0.2,7.1,0.2,16.717,74,9.5,Condiments & Sauces
+344,italian dressing,35,3.1,0.4,1.8,1.6,0.032,0,0,0.1,0.059,0.063,5.108,74,19,Condiments & Sauces
+345,brown gravy instant,25,0.8,0.4,4,0.6,0.6,0.2,0.8,0.3,7.8,0.5,14,98,16.8,Processed Foods
+346,roquefort cheese dressing,15,1.1,0.4,0.4,0.4,0.8,0,0.2,0.1,13.4,0.069,15.875,84,21,Dairy Products
+347,blue cheese dressing,71,7.7,1.2,0.7,0.5,0.2,0.045,4.7,0.2,5.6,0.058,14.429,88,21,Dairy Products
+348,duck sauce,80,0.063,0.033,19.7,9.9,0.1,0.2,0,0.1,3.6,0.1,24.017,41,17.9,Condiments & Sauces
+349,au jus,38,0.5,0.2,5.9,0,2.8,0,0,1.1,9.4,1.4,22.4,1,5.4,Processed Foods
+350,corn syrup dark,57,0,0,15.5,15.5,0,0,0,0.047,3.6,0.044,19.122,58,18.1,Sugars & Sweeteners
+351,buttermilk dressing light,30,1.9,0.2,3.2,0.6,0.2,0.2,2.4,0.2,6,0.1,11.699,82,15.1,Dairy Products
+352,cider vinegar,3,0,0,0.1,0.018,0,0,0,0.011,1,0.052,1.117,53,17.8,Processed Foods
+353,tartar sauce,32,2.5,0.5,2,0.6,0.2,0.078,1.1,0.1,3.9,0.047,9.096,40,15.3,Condiments & Sauces
+354,pepper hot sauce,1,0.018,0.057,0.031,0.065,0.024,0.071,0,0.1,0.4,0.035,4.171,44,4.4,Herbs & Spices
+355,tomato chili sauce,6,0.095,0.076,1.2,0.6,0.2,0.4,0,0.083,1.2,0.087,4.085,15,5.5,Vegetables
+356,turkey gravy dry,26,0.5,0.1,4.6,0,0.7,0,1,0.3,10.2,0.2,16.335,19,13.4,Meat & Poultry
+357,salsa sauce,5,0.039,0.07,1.2,0.7,0.3,0.3,0,0.1,5.4,0.007,7.524,30,12.2,Condiments & Sauces
+358,steak sauce,16,0.004,0,3.7,1.7,0.2,0.3,0,0.3,3.2,0.2,8.815,9,13.2,Beverages
+359,molasses,58,0.068,0.052,14.9,14.9,0,0,0,0.007,41,0.9,56.848,93,10.8,Processed Foods
+360,italian dressing fat free,7,0.1,0.099,1.2,1.2,0.1,0.077,0.3,0.2,4.2,0.036,5.71,23,8,Oils & Fats
+361,plum sauce,35,0.2,0.094,8.1,0,0.2,0.1,0,0.1,2.3,0.3,11.246,79,2.2,Condiments & Sauces
+362,chow mein stir fry master foods,26,0.2,5.5,0,0,0,0,0,0,0,0,0.2,18,8.6,Processed Foods
+363,beef gravy instant,25,0.6,0.3,4.1,1.6,0.7,0.3,0.7,0.3,9.4,0.4,15.598,66,60,Meat & Poultry
+364,horseradish,2,0.085,0.007,0.6,0.4,0.003,0.2,0,0.039,0.027,0.052,1.133,100,13,Processed Foods
+365,grenadine,54,0,0,13.4,9.3,0,0,0,0.038,1.2,0.011,14.63,44,13.5,Processed Foods
+366,tabasco sauce,1,0.002,0.051,0.006,0.067,0.045,0.013,0,0.075,0.6,0.019,1.054,86,7.9,Condiments & Sauces
+367,sweet sour sauce,26,0.084,0,6.7,3.3,0.02,0.065,0,0.024,1.8,0.021,10.183,99,9.4,Condiments & Sauces
+368,salsa verde,6,0.1,0,1,0.5,0.2,0.3,0,0.034,1.4,0.079,4.826,78,19.6,Condiments & Sauces
+369,miso,40,1.2,0.2,5.1,1.2,2.6,1.1,0,0.7,0.094,0.046,10.193,91,6.1,Processed Foods
+370,sprouted soybean cooked,76,4.2,0.6,6.1,0.4,8,0.8,0,0.2,55.5,1.2,83.6,57,1,Plant-Based Proteins
+371,soy flour roasted,375,18.6,2.7,28.6,6.5,29.6,8.2,0,0.083,159.8,4.9,249.7,80,12.4,Legumes & Pulses
+372,soy flour low fat,330,7.8,1.1,30.7,9.3,40,14.1,0,0.085,250.8,7.2,350.6,38,9.4,Oils & Fats
+373,green soybean cooked,127,5.8,0.7,9.9,0,11.1,3.8,0,0.2,0,0.1,30.78,82,1,Plant-Based Proteins
+374,azumaya tofu vitasoy,316,16.6,2,9.1,1.6,32.8,2.4,0,0.03,711,5.1,777,16,13.8,Plant-Based Proteins
+375,soy proteins isolate,96,1,0.1,2.1,0,22.8,1.6,0,0.3,50.4,4.1,82,53,13.8,Legumes & Pulses
+376,tofu yogurt,246,4.7,0.7,41.8,3.2,9.2,0.5,0,0.03,0.013,0.2,56.57,67,11.1,Dairy Products
+377,bacon meatless,446,42.5,6.7,9.1,0,15.4,3.7,0,2.1,33.1,3.5,107.3,52,12.5,Processed Foods
+378,meatless chicken fried,304,16.6,1.5,11.1,0,27.7,5.6,0,0.5,54.6,5,120.6,85,6,Meat & Poultry
+379,soymilk,109,4.8,0.5,8.4,6.1,7.1,1,0,0.1,0,0.3,22.2,58,3.8,Dairy Products
+380,soy vermicelli,463,0.1,0.092,115.2,24.4,0.1,5.5,0,0.032,77,2.5,200.4,84,5.7,Legumes & Pulses
+381,tofu fried,35,2.6,0.4,1.2,0.4,2.4,0.5,0,0.021,0.099,0.051,6.832,12,10.4,Plant-Based Proteins
+382,tempeh,320,17.9,3.7,15.6,0,30.8,0,0,0.068,184.3,4.5,253.1,22,11,Plant-Based Proteins
+383,koyadofu,81,5.2,0.7,1.7,0,8.9,1.2,0,0.081,0,0.2,17.237,2,15.5,Processed Foods
+384,meatless meatloaf,110,5,0.8,4.5,0.7,11.8,2.6,0,0.3,16.2,1.2,41.3,86,11.1,Processed Foods
+385,soya vanille joghurt alpro,21,0.6,0.1,1,0.09,0.3,0,0,0,0,0,1.9,75,5.7,Legumes & Pulses
+386,soybean curd cheese,340,18.2,2.6,15.5,3.6,28.1,0,0,0.094,423,12.6,497.4,79,21,Dairy Products
+387,soy sauce,8,0.054,0.025,0.8,0.097,1.3,0.1,0,0.9,0,0.031,2.293,52,13.3,Legumes & Pulses
+388,soybean dry roasted,419,20.1,2.9,30.4,0,36.8,7.5,0,0.077,130.2,3.7,233,73,1,Plant-Based Proteins
+389,soybean oil,120,13.6,2.1,0,0,0,0,0,0,0,0.048,13.67,32,1,Plant-Based Proteins
+390,meatless chicken,376,21.4,3.1,6.1,0,39.7,6,0,1.2,58.8,5.5,137.5,8,6,Meat & Poultry
+391,soybean cooked,296,15.4,2.2,17.1,5.2,28.6,10.3,0,0.075,0.099,0.7,72.517,57,1,Plant-Based Proteins
+392,soymilk nonfat,68,0.046,0,10.1,8.9,6,0.5,0,0.1,281.9,0.9,299.508,18,3.9,Dairy Products
+393,soy flour,23,1.1,0.2,1.8,0.4,1.8,0.5,0,0.023,0.061,0.2,5.488,43,0.2,Legumes & Pulses
+394,soybean lecithin oil,104,13.6,2,0,0,0,0,0,0,0,0,13.6,73,1,Plant-Based Proteins
+395,tofu raw,188,11.9,1.7,4.7,0,20,0.7,0,0.06,868,13.3,918.8,31,18,Plant-Based Proteins
+396,soy chips,109,2.1,0.3,15,0.5,7.5,1,0,0.2,48.4,1.5,75.5,43,1.8,Snacks & Processed Foods
+397,green soybean raw,376,17.4,2,28.3,0,33.2,10.8,0,0.017,504.3,9.1,677.3,38,1,Plant-Based Proteins
+398,soy proteins concentrate,93,0.1,0.04,7.2,0,18,1.6,0,0.3,102.7,3.1,132.7,67,10.1,Legumes & Pulses
+399,soybean margarine,34,3.8,0.8,0.043,0,0.052,0,0,0.005,1.4,0,5.309,85,1,Plant-Based Proteins
+400,chocolate soymilk nonfat,107,0.046,0,20.7,8.9,6,0.5,0,0.1,281.9,0.9,310.107,53,3.4,Dairy Products
+401,okara,93,2.1,0.2,15.3,0,3.9,0,0,0.07,0,0.2,21.6,45,5.1,Processed Foods
+402,meatless meatballs,284,13,2.1,11.5,1.8,30.2,6.6,0,0.8,36,3.1,100.4,59,14.5,Processed Foods
+403,vanilla soymilk,131,4.3,0.5,15.3,9.7,7.9,1.5,0,0.1,60.8,1.6,91.4,75,3.3,Dairy Products
+404,soy meal raw,414,2.9,0.3,49,0,54.8,0,0,0.017,297.7,16.7,421.1,22,0.5,Legumes & Pulses
+405,soymilk low fat,104,1.5,0,17.5,8.5,4,1.9,0,0.04,199.3,1.1,225.3,67,17.5,Dairy Products
+406,sprouted soybean raw,85,4.7,0.7,6.7,0,9.2,0.8,0,0.005,0,0.3,21.8,1,1,Plant-Based Proteins
+407,soybean raw,830,37.1,5.4,56.1,13.6,67.9,17.3,0,0.023,515.2,29.2,734,27,1,Plant-Based Proteins
+408,tempeh cooked,55,3.2,1,2.6,0,5.1,0,0,0.084,27.2,0.6,38.7,91,5.2,Plant-Based Proteins
+409,vanilla soymilk light,83,2.1,0.2,9.4,1,6.4,1.5,0,0.2,298.9,1.1,319.4,9,2,Dairy Products
+410,chocolate soymilk,153,3.7,0.6,24.2,19.1,5.5,1,0,0.1,0.074,0.5,35.156,7,5.9,Dairy Products
+411,soy oil,120,13.6,3.4,0,0,0,0,0,0,0,0,13.6,62,15.4,Oils & Fats
+412,natto,169,8.8,1.3,11.5,3.9,14.2,4.3,0,0.026,0.085,0.5,39.429,1,9.7,Processed Foods
+413,chrysanthemum raw,12,0.3,0,1.5,0,1.7,1.5,0,0.012,0.2,0.044,5.285,69,7,Processed Foods
+414,gourd cooked,100,0.6,0.035,25.5,9.2,1.2,5.2,0,0.065,0.03,0.2,32.903,96,14.1,Processed Foods
+415,cauliflower raw,3,0.081,0.094,0.6,0.2,0.2,0.3,0,0.042,0.033,0.01,1.337,24,5.5,Processed Foods
+416,red cabbage raw,53,0.3,0.002,12.5,6.5,2.4,3.6,0,0.079,76.5,1.4,193.6,52,0.51,Processed Foods
+417,broccoli raab raw,9,0.2,0.047,1.1,0.2,1.3,1.1,0,0.04,0.074,0.022,3.861,21,0.51,Vegetables
+418,napa cabbage cooked,13,0.2,0,2.4,0,1.2,0,0,0.012,31.6,0.8,39.7,30,0.51,Processed Foods
+419,kelp,2,0.067,0.037,0.5,0.069,0.07,0.018,0,0.019,8.4,0.1,9.303,4,17,Processed Foods
+420,shallots raw,18,0.061,0.041,4.2,2,0.6,0.8,0,0.044,0.007,0.004,5.833,96,16,Processed Foods
+421,bamboo shoots raw,49,0.5,0.1,9.4,5.4,4.7,4,0,0.067,0,0.3,19.3,85,2.5,Processed Foods
+422,jute cooked,32,0.2,0.004,6.3,0.9,3.2,1.7,0,0.043,183.6,2.7,226.4,12,12.1,Processed Foods
+423,red lettuce,4,0.08,0.036,0.6,0.1,0.4,0.3,0,0.057,0.021,0.093,1.595,70,0.5,Processed Foods
+424,broccoli cooked,98,1.1,0.2,20.1,3.9,6.7,9.2,0,0.1,0.4,0.2,38.3,63,0.51,Vegetables
+425,romanesco raw,20,0.2,0.038,3.9,1.9,1.9,2,0,0.025,21.1,0.5,86,88,13.8,Processed Foods
+426,eggplant raw,115,0.8,0.2,26.9,16.2,4.5,13.7,0,0.028,41.2,1.1,98.3,65,3,Eggs
+427,leeks raw,54,0.3,0.049,12.6,3.5,1.3,1.6,0,0.003,0.011,0.1,16.132,2,0.5,Processed Foods
+428,lemongrass citronella,5,0.076,0.067,1.2,0,0.038,0,0,0.024,3.1,0.4,4.937,49,17.9,Processed Foods
+429,pumpkin cooked,49,0.2,0.019,12,5.1,1.8,2.7,0,0.006,0.098,0.2,17.005,5,2.1,Processed Foods
+430,celery cooked,7,0.098,0.064,1.5,0.9,0.3,0.6,0,0.093,15.8,0.2,20.767,20,19.7,Processed Foods
+431,serrano pepper,2,0.075,0.072,0.4,0.2,0.1,0.2,0,0.067,0.021,0.063,0.902,76,16.4,Herbs & Spices
+432,nopales raw,14,0.063,0.018,2.9,1,1.1,1.9,0,0.076,141,0.5,155.484,46,6,Processed Foods
+433,sweet potato leaves cooked,22,0.2,0.099,4.7,3.5,1.4,1.2,0,0.2,21.1,0.4,30,30,0.46,Vegetables
+434,eggplant cooked,33,0.2,0.049,8.1,3.2,0.8,2.5,0,0.2,5.9,0.2,19,56,3,Eggs
+435,asparagus cooked,3,0.074,0.004,0.6,0.2,0.4,0.3,0,0,0.099,0.031,1.458,81,8.7,Processed Foods
+436,rutabaga cooked,72,0.4,0.007,16.4,9.5,2.2,4.3,0,0.049,43.2,0.4,112,77,2.4,Processed Foods
+437,parsnips raw,128,0.5,0.1,30.6,8.2,2,8.3,0,0.068,0.055,0.2,41.83,93,6.4,Processed Foods
+438,sour pickles,17,0.3,0.079,3.5,1.6,0.5,1.9,0,1.9,0,0.6,8.4,10,11.8,Processed Foods
+439,turnip greens cooked,29,0.3,0.091,6.3,0.8,1.6,5,0,0.4,197.3,1.2,251.2,51,0.2,Processed Foods
+440,jerusalem artichokes,110,0.047,0,26.2,14.4,3,2.4,0,0.011,21,5.1,63.742,56,13.3,Processed Foods
+441,collard raw,12,0.2,0.026,2,0.2,1.1,1.4,0,0.014,0.2,0.004,5.001,6,18.3,Oils & Fats
+442,chrysanthemum cooked,20,0.036,0,4.3,2,1.6,2.3,0,0.042,0.1,0.1,8.597,75,6.2,Processed Foods
+443,oriental radish dried,314,0.8,0.3,73.5,43.3,9.2,27.7,0,0.3,729.6,7.8,848.6,22,3.1,Processed Foods
+444,tomatillos,42,1.3,0.2,7.7,5.2,1.3,2.5,0,0.019,9.2,0.8,38.2,99,13.7,Processed Foods
+445,taro shoots raw,9,0.069,0.016,2,0,0.8,0,0,0.056,10.3,0.5,31.723,4,12.4,Processed Foods
+446,acorn squash raw,172,0.4,0.091,44.9,0,3.4,6.5,0,0.017,142.2,3,247.8,28,8.5,Processed Foods
+447,leeks dried,10,0.026,0.08,2.4,0,0.5,0.3,0,0.077,11.5,0.2,18.709,72,0.5,Processed Foods
+448,cabbage raw,70,0.3,0.054,16.2,9,3.6,7,0,0.006,0.2,0.083,27.635,78,0.51,Processed Foods
+449,sweet red peppers cooked,19,0.1,0.012,4.5,3.2,0.7,0.9,0,0.2,6.6,0.3,137.9,64,13.2,Herbs & Spices
+450,sweet red peppers raw,46,0.4,0.088,9,6.3,1.5,3.1,0,0.092,10.4,0.6,215.3,14,6.6,Herbs & Spices
+451,cucumber peeled,16,0.2,0.1,2.9,1.8,0.8,0.9,0,0.098,0.052,0.018,4.903,18,4.3,Processed Foods
+452,purslane raw,9,0.2,0,1.5,0,0.9,0,0,0.066,28,0.9,40.5,72,13.8,Processed Foods
+453,peas onions cooked,81,0.4,0.055,15.5,6.8,4.6,4,0,0.5,25.2,1.7,63.8,72,1,Plant-Based Proteins
+454,tomato cooked,22,0.1,0.086,4.9,3.1,1.2,0.9,0,0.029,0.054,0.052,7.36,43,6.4,Vegetables
+455,taro shoots cooked,20,0.1,0.068,4.5,0,1,0,0,0.3,19.6,0.6,52.3,37,7.4,Processed Foods
+456,scots kale raw,28,0.4,0.072,5.6,0,1.9,1.1,0,0.059,137.4,2,235.5,82,19.4,Vegetables
+457,artichoke raw,60,0.2,0.056,13.5,1.3,4.2,6.9,0,0.1,0.045,0.3,25.274,70,11.5,Processed Foods
+458,navy bean sprouts raw,70,0.7,0.05,13.6,0,6.4,0,0,0.063,15.6,2,57.9,85,1,Plant-Based Proteins
+459,sweet pickles,146,0.7,0.1,33.8,29.2,0.9,1.6,0,0.7,97.6,0.4,136.1,1,17,Processed Foods
+460,oriental radish cooked,25,0.4,0.1,5,2.7,1,2.4,0,0.4,25,0.2,56.2,85,11.1,Processed Foods
+461,sweet potato leaves raw,15,0.2,0.088,3.1,0,0.9,1.9,0,0.073,27.3,0.3,37.6,100,0.46,Vegetables
+462,irishmoss,2,0.049,0.06,0.6,0.098,0.037,0.082,0,0.084,3.6,0.4,4.975,54,2.4,Processed Foods
+463,drumstick leaves cooked,25,0.4,0,4.7,0.4,2.2,0.8,0,0.1,63.4,1,85.5,8,8.2,Processed Foods
+464,winter squash raw,39,0.2,0.019,10,2.6,1.1,1.7,0,0.027,32.5,0.7,60.5,66,16.1,Processed Foods
+465,pumpkin raw,30,0.1,0.065,7.5,3.2,1.2,0.6,0,0.062,24.4,0.9,45.1,2,1.7,Processed Foods
+466,chicory greens,7,0.096,0.078,1.4,0.2,0.5,1.2,0,0.017,0.079,0.081,3.279,46,11.1,Processed Foods
+467,spinach cooked,41,0.5,0.042,6.8,0.8,5.3,4.3,0,0.1,0.9,0.3,18.5,100,0.5,Vegetables
+468,radish pickled,42,0.5,0.1,7.8,3,1.7,3.3,0,1.2,42,0.3,55.6,28,19.1,Processed Foods
+469,sweet onion,106,0.3,0,25,16.6,2.6,3,0,0.063,0.033,0.2,31.6,81,0.5,Vegetables
+470,salsify cooked,92,0.2,0,20.7,3.9,3.7,4.2,0,0.028,63.5,0.7,99.2,63,2.7,Processed Foods
+471,radish seeds sprouted,16,1,0.3,1.4,0,1.4,0,0,0.067,19.4,0.3,34.5,47,16.3,Nuts & Seeds
+472,turnips raw,51,0.2,0.074,11.8,7,1.6,3.3,0,0.1,0.057,0.2,17.384,6,9.8,Processed Foods
+473,burdock root raw,85,0.2,0.069,20.5,3.4,1.8,3.9,0,0.008,48.4,0.9,79.2,100,18,Processed Foods
+474,red cabbage cooked,49,0.2,0.058,11.8,5.6,2.6,4.4,0,0.047,0.049,0.032,19.534,9,0.51,Processed Foods
+475,jute raw,10,0.046,0,1.6,0,1.3,0,0,0.042,0,0.049,3.197,89,17.3,Processed Foods
+476,hot chile pepper dried,2,0.054,0.001,0.3,0.2,0.054,0.1,0,0.041,0.2,0.062,1.07,72,16.6,Herbs & Spices
+477,salsify raw,109,0.3,0,24.7,0,4.4,4.4,0,0.093,0,0.1,34.3,27,10.3,Processed Foods
+478,crookneck squash raw,24,0.3,0.1,4.9,4.5,1.3,1.3,0,0.047,26.7,0.6,59.6,45,8.5,Processed Foods
+479,indian squash cooked,38,0.4,0,7.6,4.7,0.7,3.5,0,0,0,0,12.2,35,12.7,Processed Foods
+480,poi,269,0.3,0.063,65.4,0.9,0.9,1,0,0.091,0.022,0.4,68.761,31,3.5,Processed Foods
+481,sesbania flower cooked,22,0.007,0,5.3,0,1.2,0,0,0.3,22.9,0.6,68.544,2,1.1,Processed Foods
+482,acorn squash cooked,115,0.3,0.023,29.9,0,2.3,9,0,0.5,90.2,1.9,155.7,80,11.2,Processed Foods
+483,cauliflower cooked,29,0.6,0.055,5.1,2.6,2.3,2.9,0,0.094,0.068,0.041,11.26,97,1.4,Processed Foods
+484,crookneck squash cooked,34,0.7,0.1,6.8,4.5,1.9,2,0,0.4,39.6,0.7,72.6,27,13.1,Processed Foods
+485,laver seaweed,1,0.012,0.066,0.1,0.071,0.2,0.09,0,0.075,1.8,0.087,3.176,50,1.1,Processed Foods
+486,mountain yam cooked,119,0.1,0.014,29,0,2.5,0,0,0.4,11.6,0.6,43.8,61,0.7,Processed Foods
+487,pumpkin flowers raw,5,0.084,0.049,1.1,0,0.3,0,0,0.066,12.9,0.2,23.71,4,19.5,Processed Foods
+488,mustard greens raw,15,0.2,0.072,2.6,0.7,1.6,1.8,0,0.004,64.4,0.9,110.7,96,7,Condiments & Sauces
+489,arrowhead,12,0.084,0,2.4,0,0.6,0,0,0.082,1.2,0.3,4.68,63,1,Processed Foods
+490,japanese cabbage,45,0.2,0.092,8.5,2,2.4,4.7,0,0.4,72,0.7,89.6,58,0.51,Processed Foods
+491,mung bean sprouts cooked,24,0.1,0.05,4.5,3.5,2.5,1,0,0.3,14.9,0.8,37.9,90,1,Plant-Based Proteins
+492,scallop squash cooked,29,0.3,0.034,5.9,2.7,1.9,3.4,0,0.4,27,0.6,58.5,74,12,Processed Foods
+493,pumpkin leaves cooked,15,0.2,0.092,2.4,0.5,1.9,1.9,0,0.2,30.5,2.3,39.9,87,17.6,Processed Foods
+494,hungarian pepper,8,0.1,0.082,1.8,1,0.2,0.3,0,0.028,3.2,0.1,30.8,80,12.7,Herbs & Spices
+495,sweet potato baked,103,0.2,0.013,23.6,7.4,2.3,3.8,0,0.07,43.3,0.8,96.3,25,0.46,Vegetables
+496,chinese cabbage pe tsai raw,12,0.2,0.033,2.5,1.1,0.9,0.9,0,0.049,58.5,0.2,83.7,80,0.51,Processed Foods
+497,taro raw,116,0.2,0.099,27.5,0.4,1.6,4.3,0,0.054,44.7,0.6,83.6,64,14.1,Processed Foods
+498,yam bean jicama,49,0.1,0.061,11.5,2.3,0.9,6.4,0,0.047,15.6,0.8,61.6,53,1,Plant-Based Proteins
+499,olives,10,0.9,0.2,0.5,0,0.09,0.1,0,0.001,7.4,0.5,9.479,14,19,Processed Foods
+500,mustard greens cooked,36,0.7,0.053,6.3,2,3.6,2.8,0,0.4,165.2,1.2,215.2,9,4.2,Condiments & Sauces
+501,pumpkin flowers cooked,20,0.1,0.057,4.4,3.2,1.5,1.2,0,0.082,49.6,1.2,64.7,33,5.7,Processed Foods
+502,tree fern cooked,57,0.096,0,15.3,0,0.4,5.3,0,0.3,11.4,0.2,75.253,79,4.3,Processed Foods
+503,yellow corn raw,606,7.9,1.1,123.3,1.1,15.6,12.1,0,0.06,11.6,4.5,175,50,10.8,Processed Foods
+504,endive,9,0.1,0.022,1.7,0.1,0.6,1.6,0,0.08,26,0.4,33.7,68,9.5,Processed Foods
+505,wakame,36,0.5,0.1,7.3,0.5,2.4,0.4,0,0.7,120,1.7,134.7,40,3.8,Processed Foods
+506,tahitian taro raw,55,1.2,0.2,8.6,0,3.5,0,0,0.003,161.3,1.6,296.2,43,1.1,Processed Foods
+507,broccoli raw,31,0.3,0.053,6,1.5,2.6,2.4,0,0.049,0.092,0.016,11.548,18,0.51,Vegetables
+508,sweet green peppers raw,30,0.3,0.053,6.9,3.6,1.3,2.5,0,0.023,14.9,0.5,146.2,96,18.8,Herbs & Spices
+509,chinese cabbage pak choi cooked,20,0.3,0.014,3,1.4,2.7,1.7,0,0.5,158.1,1.8,211.8,51,0.51,Processed Foods
+510,agar,1,0.058,0.087,0.3,0.005,0.053,0.027,0,0.049,0.075,0.002,0.587,83,9.5,Processed Foods
+511,watercress,4,0.006,0.071,0.4,0.099,0.8,0.2,0,0.038,0.069,0.063,1.59,31,18.4,Processed Foods
+512,beet greens cooked,39,0.3,0.025,7.9,0.9,3.7,4.2,0,0.3,164.2,2.7,218.9,93,0.43,Processed Foods
+513,winter squash cooked,76,0.7,0.1,18.1,6.8,1.8,5.7,0,0.068,45.1,0.9,76,45,4.9,Processed Foods
+514,new zealand spinach raw,8,0.1,0.077,1.4,0.2,0.8,0.8,0,0.017,32.5,0.4,52.8,7,0.5,Vegetables
+515,okra,4,0.082,0.001,0.9,0.2,0.2,0.4,0,0.098,9.8,0.082,14.081,70,0.6,Processed Foods
+516,yautia tannier,132,0.5,0.1,31.9,0,2,2,0,0.031,12.2,1.3,56.9,47,13.5,Processed Foods
+517,mustard spinach cooked,29,0.4,0,5,0,3.1,3.6,0,0.5,284.4,1.4,414.9,46,0.5,Vegetables
+518,rhubarb cooked,278,0.1,0.08,74.9,68.9,0.9,4.8,0,0.007,0.081,0.024,80.893,5,15.5,Processed Foods
+519,beets raw,58,0.2,0.028,13,9.2,2.2,3.8,0,0.1,0.079,0.1,19.395,66,0.43,Processed Foods
+520,drumstick pods raw,37,0.2,0.025,8.5,0,2.1,3.2,0,0.077,30,0.4,185.4,9,18.1,Processed Foods
+521,baby zucchini,2,0.089,0.02,0.3,0,0.3,0.1,0,0.041,2.3,0.098,6.89,44,15.7,Processed Foods
+522,onion raw,16,0.048,0.077,3.7,1.7,0.4,0.7,0,0.065,0.08,0.011,4.955,57,0.5,Vegetables
+523,romanesco cooked,39,0.4,0.028,7.7,0,3.7,4,0,0.3,39,0.9,144.3,46,12.4,Processed Foods
+524,butternut squash raw,90,0.2,0.044,23.4,4.4,2,4,0,0.067,0.075,0.1,30.078,6,0.43,Dairy Products
+525,amaranth leaves,6,0.075,0.072,1.1,0,0.7,0,0,0.071,60.2,0.6,74.73,8,12.9,Processed Foods
+526,turnip greens raw,18,0.2,0.009,3.9,0.4,0.8,1.8,0,0.012,104.5,0.6,144.8,41,4.8,Processed Foods
+527,spaghetti squash raw,31,0.6,0.1,7,2.8,0.6,1.5,0,0.081,23.2,0.3,35.3,35,11.4,Processed Foods
+528,seaweed dry,52,0.3,0.006,9.2,0,3.1,7.3,6.6,0.9,59.8,13.3,98.8,91,14.3,Processed Foods
+529,yam cooked,158,0.2,0.061,37.4,0.7,2,5.3,0,0.017,0.083,0.2,45.477,92,17.6,Processed Foods
+530,corn dried,119,3,0.6,18.8,6,4.1,5.8,0,0.029,7.1,0.7,39.5,53,15.5,Processed Foods
+531,cucumber,23,0.2,0.068,5.4,2.5,1,0.8,0,0.061,24,0.4,36,68,6.7,Processed Foods
+532,arrowroot,78,0.2,0.094,16.1,0,5.1,1.6,0,0.052,7.2,2.7,35.2,98,12.6,Processed Foods
+533,cardoon raw,30,0.2,0.072,7.2,0,1.2,2.8,0,0.3,0,0.4,12,84,16.3,Processed Foods
+534,bamboo shoots cooked,14,0.3,0.007,2.3,0,1.8,1.2,0,0.04,0,0.083,5.76,26,14,Processed Foods
+535,summer squash raw,42,0.5,0.1,8.7,5.7,3.1,2.9,0,0.051,0.009,0.1,15.958,69,18.7,Processed Foods
+536,sweet potato raw,112,0.002,0.036,26.2,5.4,2,3.9,0,0.079,0.048,0.2,32.696,78,0.46,Vegetables
+537,green tomato,42,0.4,0.024,9.3,7.3,2.2,2,0,0.055,23.7,0.9,81.1,72,13,Vegetables
+538,beet greens raw,8,0.078,0.026,1.6,0.2,0.8,1.4,0,0.013,44.5,1,60.771,2,0.43,Processed Foods
+539,savoy cabbage cooked,41,0.2,0.076,9.2,0,3.1,4.8,0,0.05,0,0.089,17.612,58,0.51,Processed Foods
+540,witloof chicory,9,0.031,0.076,2.1,0,0.5,1.6,0,0.022,10.1,0.1,15.994,72,8.7,Processed Foods
+541,turnips cooked,34,0.1,0.082,7.9,4.7,1.1,3.1,0,0.017,0.063,0.025,12.408,74,4.7,Processed Foods
+542,dried tomatoes,5,0.053,0.032,1.1,0.8,0.3,0.2,0,0.069,2.2,0.2,4.838,4,10.8,Vegetables
+543,radicchio,15,0.2,0.031,2.9,0.4,0.9,0.6,0,0.033,12.4,0.4,22.6,33,2.7,Processed Foods
+544,mixed vegetables cooked,118,0.3,0,23.8,5.7,5.2,8,0,0.089,0.083,0.2,37.698,65,0.53,Vegetables
+545,yellow tomato,32,0.6,0.03,6.3,0,2.1,1.5,0,0.088,0,0.2,10.8,69,19.4,Vegetables
+546,cardoon cooked,26,0.1,0.014,6.4,0,0.9,2,0,0.2,86.4,0.9,98.7,19,19.1,Processed Foods
+547,spinach raw,7,0.1,0.024,1.1,0.1,0.9,0.7,0,0.036,29.7,0.8,41.7,71,0.5,Vegetables
+548,kale raw,7,0.3,0.057,0.9,0.2,0.6,0.9,0,0.045,53.3,0.3,75.973,71,11.1,Vegetables
+549,drumstick pods cooked,42,0.2,0,9.7,0,2.5,5,0,0.3,23.6,0.5,156,22,4.3,Processed Foods
+550,kohlrabi raw,72,0.3,0.007,16.4,6.9,4.5,9.5,0,0.063,0.069,0.3,31.457,28,8.7,Processed Foods
+551,lentil sprouts,82,0.4,0.067,17,0,6.9,0,0,0.044,19.3,2.5,58.8,9,15.3,Plant-Based Proteins
+552,carrots raw,25,0.1,0.046,5.8,2.9,0.6,1.7,0,0.024,0.028,0.022,8.43,46,0.43,Vegetables
+553,red chili peppers,18,0.2,0.088,4,2.4,0.8,0.7,0,0.03,6.3,0.5,77.2,93,19.1,Herbs & Spices
+554,fennel,73,0.5,0,17.1,0,2.9,7.3,0,0.1,0.1,0.2,28.2,44,3.8,Processed Foods
+555,sweet corn white,63,0.9,0.1,13.9,2.4,2.4,2,0,0.016,0.084,0.049,19.356,73,12,Processed Foods
+556,celeriac raw,66,0.5,0.1,14.4,2.5,2.3,2.8,0,0.2,0.081,0.1,20.499,96,8.4,Processed Foods
+557,hubbard squash raw,46,0.6,0.1,10.1,4.6,2.3,4.5,0,0.094,0.086,0.033,17.795,31,10.3,Processed Foods
+558,brussels sprouts cooked,8,0.1,0.099,1.5,0.4,0.5,0.5,0,0.051,7.6,0.3,23.5,28,3.4,Processed Foods
+559,carrots cooked,16,0.092,0.096,3.8,1.6,0.3,1.4,0,0.025,13.8,0.2,21.214,23,0.43,Vegetables
+560,lambs quarters raw,0,0.067,0,0.069,0,0.08,0.046,0,0.033,3.3,0.06,3.658,78,25,Meat & Poultry
+561,lotus root cooked,6,0.056,0.029,1.4,0,0.1,0.3,0,0,2.3,0.059,6.591,49,15.9,Processed Foods
+562,split peas raw,672,2.3,0.3,118.9,15.8,48.4,50.2,0,0.075,108.4,8.7,340.4,9,1,Plant-Based Proteins
+563,scots kale cooked,36,0.5,0.014,7.3,0,2.5,0,0,0.4,171.6,2.5,253,33,9.5,Vegetables
+564,corn cooked,99,1.5,0.2,21.6,4.7,3.5,2.5,0,0.039,0.055,0.025,29.288,99,10.7,Processed Foods
+565,radish raw,1,0.026,0.084,0.2,0.066,0.042,0.002,0,0.033,0.002,0.052,0.556,57,16.4,Processed Foods
+566,stinging nettles,37,0.007,0,6.7,0.2,2.4,6.1,0,0.09,428.1,1.5,444.816,100,18,Processed Foods
+567,baby carrots,5,0.053,0.015,1.2,0.7,0.031,0.4,0,0.097,4.8,0.1,6.999,7,0.43,Vegetables
+568,sweet yellow peppers,50,0.4,0.012,11.8,0,1.9,1.7,0,0.017,20.5,0.9,378.5,7,8.9,Herbs & Spices
+569,taro leaves raw,12,0.2,0.013,1.9,0.8,1.4,1,0,0.083,30,0.6,49.7,99,18,Processed Foods
+570,corn raw,123,1.9,0.5,26.7,9,4.7,2.9,0,0.083,0.054,0.076,36.328,98,1.1,Processed Foods
+571,roselle,28,0.4,0,6.4,0,0.5,0,0,0.079,122.6,0.8,137.5,14,17.8,Processed Foods
+572,drumstick leaves raw,13,0.3,0,1.7,0,2,0.4,0,0.071,38.9,0.8,55,66,16.3,Processed Foods
+573,scallop squash raw,23,0.3,0.097,5,3.1,1.6,1.6,0,0.075,24.7,0.5,57.1,47,7.7,Processed Foods
+574,chicory roots,65,0.2,0.052,15.8,7.9,1.3,1.4,0,0.055,0,0.051,18.997,24,10,Processed Foods
+575,brussels sprouts raw,8,0.077,0.072,1.7,0.4,0.6,0.7,0,0.049,8,0.3,27.553,26,7.4,Processed Foods
+576,kale cooked,42,1.4,0.2,6.3,1.4,3.5,4.7,0,0.018,0.5,0.2,16.697,54,0,Vegetables
+577,pupusas con frijoles,289,11.4,2.8,39.7,1.6,7,7.3,0,0.4,64.3,1.8,131.5,2,1.2,Processed Foods
+578,mustard cabbage,36,0.1,0.016,7.2,1.8,1.4,4,0,0.9,0.1,0.077,13.276,20,0.51,Condiments & Sauces
+579,gourd raw,19,0.2,0.07,4.1,1.9,1.1,1,0,0.03,0.047,0.016,6.584,41,10.5,Processed Foods
+580,butternut squash cooked,80,0.2,0.013,21,3.9,1.8,6.4,0,0.002,82,1.2,142.8,35,0.43,Dairy Products
+581,burdock root cooked,146,0.2,0,35.1,5.9,3.5,3,0,0.4,81.3,1.3,128.7,25,8.6,Processed Foods
+582,cassava,330,0.6,0.2,78.4,3.5,2.8,3.7,0,0.099,0.011,0.2,85.964,63,10.2,Processed Foods
+583,peas carrots cooked,77,0.7,0.1,16.2,7,4.9,5,0,0.5,36.8,1.5,78.1,42,1,Plant-Based Proteins
+584,romaine lettuce,8,0.1,0.049,1.5,0.6,0.6,1,0,0.083,15.5,0.5,21.1,63,0.5,Processed Foods
+585,yam raw,177,0.3,0.067,41.8,0.8,2.3,6.2,0,0.017,0.025,0.3,51.39,73,10.4,Processed Foods
+586,chowchow pickles,296,2.2,0.4,65.3,58.5,3.7,3.7,0,1.3,56.4,3.4,149.4,53,3.1,Processed Foods
+587,prairie turnips raw,20,0.029,0,4.5,0.1,0.3,1,0,0.059,16.5,0.2,23.255,46,12,Processed Foods
+588,savoy cabbage raw,19,0.017,0.091,4.3,1.6,1.4,2.2,0,0.007,0.066,0.071,8.199,30,0.51,Processed Foods
+589,celery raw,6,0.045,0.005,1.2,0.5,0.3,0.6,0,0.019,0.086,0.056,2.212,97,12,Processed Foods
+590,celeriac cooked,42,0.3,0,9.1,0,1.5,0,0,0.084,40.3,0.7,57.5,75,1,Processed Foods
+591,mustard spinach raw,33,0.5,0.087,5.9,0,3.3,4.2,0,0.025,315,2.3,526.2,1,0.5,Vegetables
+592,zucchini raw,44,0.8,0.2,8.1,6.5,3.1,2.6,0,0.023,0.033,0.1,15.151,84,18.8,Processed Foods
+593,okra cooked,35,0.3,0.032,7.2,3.8,3,4,0,0.4,123.2,0.4,164.2,94,2.2,Processed Foods
+594,white icicle radish,14,0.1,0.076,2.6,0,1.1,1.4,0,0.049,27,0.8,62,55,11,Processed Foods
+595,orange tomato,18,0.2,0.097,3.5,0,1.3,1,0,0.001,0,0.079,6.093,42,19.6,Vegetables
+596,pumpkin leaves raw,7,0.2,0.053,0.9,0,1.2,0,0,0.057,15.2,0.9,22.7,91,10.9,Processed Foods
+597,spaghetti squash cooked,42,0.4,0.091,10,3.9,1,2.2,0,0.4,32.6,0.5,52.1,34,3.8,Processed Foods
+598,white corn cooked,100,1.5,0.2,22.4,8,3.4,2.8,0,0.082,0.017,0.052,30.302,41,15.2,Processed Foods
+599,artichoke cooked,64,0.4,0.059,14.3,1.2,3.5,10.3,0,0.087,0.035,0.2,28.845,69,19.9,Processed Foods
+600,avocado,432,39.6,5.7,23,1.8,5.4,18.1,0,0.045,0.078,0.5,87.302,4,19.9,Processed Foods
+601,string beans wellsley farms,8,0,0,1.7,0.3,0.3,0.087,1,0,0,0,2.09,58,1,Plant-Based Proteins
+602,lambs quarters cooked,58,1.3,0.085,9,1.1,5.8,3.8,0,0.5,464.4,1.3,552.2,69,25,Meat & Poultry
+603,peas cooked,134,0.4,0.065,25,9.5,8.6,8.8,0,0.074,0.011,0.3,43.499,53,1,Plant-Based Proteins
+604,beets cooked,22,0.085,0.026,5,4,0.8,1,0,0.035,0.099,0.021,7.012,65,0.43,Processed Foods
+605,shallots dried,3,0.013,0.063,0.7,0.3,0.1,0.1,0,0.059,0.043,0.082,1.07,12,5.8,Processed Foods
+606,green lettuce,23,0.2,0.027,4.3,1.2,2,2,0,0.05,0.2,0.012,8.829,4,0.5,Processed Foods
+607,kohlrabi cooked,48,0.2,0.041,11,4.6,3,1.8,0,0.035,0.008,0.2,16.506,10,11,Processed Foods
+608,kanpyo dried,139,0.3,0.041,35.1,0,4.6,5.3,0,0.056,0,0.2,45.8,79,8.5,Processed Foods
+609,prairie turnips boiled,18,0.086,0,4.2,0.7,0.2,1,0,0.012,14.4,0.1,20.299,70,18.1,Oils & Fats
+610,broccoli raab cooked,21,0.4,0.086,2.7,0.5,3.3,2.4,0,0.077,0.2,0.06,9.289,90,0.51,Vegetables
+611,summer squash cooked,49,1,0.2,9.9,6.4,2.7,2.9,0,0.036,0.028,0.3,17.09,37,8.6,Processed Foods
+612,taro cooked,187,0.1,0.012,45.7,0.6,0.7,6.7,0,0.055,0.073,0.3,53.993,7,10.6,Processed Foods
+613,spring onion scallions,6,0.077,0.029,1.5,0.5,0.4,0.5,0,0.048,0.006,0.057,2.554,22,0.5,Vegetables
+614,hubbard squash cooked,57,0.7,0.1,12.3,5.6,2.8,5.5,0,0.5,0.029,0.095,21.554,10,12.5,Processed Foods
+615,jalapeno pepper,4,0.002,0.06,0.9,0.6,0.1,0.4,0,0.028,0.011,0.045,1.593,59,3.4,Herbs & Spices
+616,new zealand spinach cooked,22,0.3,0.027,3.8,0.5,2.3,2.5,0,0.6,86.4,1.2,125.3,87,0.5,Vegetables
+617,sesbania flower raw,1,0.095,0,0.2,0,0.012,0,0,0.007,0.6,0.091,3.181,25,16.2,Processed Foods
+618,spirulina dried,20,0.5,0.2,1.7,0.2,4,0.3,0,0.031,8.4,2,17.6,24,11,Processed Foods
+619,chinese cabbage pe tsai cooked,17,0.2,0.011,2.9,0,1.8,2,0,0.3,38.1,0.4,64.2,74,0.51,Processed Foods
+620,zucchini cooked,27,0.6,0.1,4.8,3.1,2.1,1.8,0,0.077,32.4,0.7,65.6,83,1.9,Processed Foods
+621,green olives pickled,4,0.4,0.064,0.1,0.051,0.073,0.057,0,0.1,0.072,0.071,0.801,70,18.8,Processed Foods
+622,lotus root raw,85,0.1,0.057,19.8,0,3,5.6,0,0.06,51.8,1.3,132.2,62,13.7,Processed Foods
+623,grape leaves,13,0.3,0.085,2.4,0.9,0.8,1.5,0,0.005,50.8,0.4,57.8,37,11.8,Fruits
+624,dill pickled cucumber,17,0.2,0.08,3.7,1.9,0.9,1.6,0,1.3,60.1,0.5,68.1,75,15,Processed Foods
+625,skunk cabbage,11,0.1,0,1.8,0,1.5,1.2,0,0.016,43.1,0.9,79.4,36,0.51,Processed Foods
+626,banana pepper,9,0.1,0.018,1.8,0.6,0.5,1.1,0,0.039,4.6,0.2,35.6,47,0.86,Fruits
+627,oriental radish raw,61,0.3,0.1,13.9,8.5,2,5.4,0,0.014,91.3,1.4,188.7,26,4.2,Processed Foods
+628,purslane cooked,21,0.2,0,4.1,0,1.7,0,0,0.3,89.7,0.9,108.7,51,3.7,Processed Foods
+629,rhubarb raw,11,0.1,0.043,2.3,0.6,0.5,0.9,0,0.058,0.058,0.018,4.017,71,16.7,Processed Foods
+630,swamp cabbage,20,0.2,0,3.6,0,2,1.9,0,0.4,52.9,1.3,77.6,37,0.51,Processed Foods
+631,mung bean sprouts raw,6,0.044,0.036,1.2,0.8,0.6,0.4,0,0.08,0.069,0.072,2.418,3,1,Plant-Based Proteins
+632,onion cooked,7,0.034,0.095,1.5,0.7,0.2,0.2,0,0.04,0.084,0.067,2.171,11,0.5,Vegetables
+633,swiss chard raw,7,0.042,0.065,1.3,0.4,0.6,0.6,0,0.089,18.4,0.6,32.314,97,10.5,Processed Foods
+634,peas raw,117,0.6,0.1,21,8.2,7.9,7.4,0,0.017,36.3,2.1,133.3,75,1,Plant-Based Proteins
+635,cabbage cooked,35,0.019,0,8.3,4.2,1.9,2.9,0,0.011,0.2,0.067,13.566,97,0.51,Processed Foods
+636,taro leaves cooked,35,0.6,0.1,5.6,0,3.9,2.9,0,0.3,124.7,1.7,190.9,71,14.2,Processed Foods
+637,leeks cooked,38,0.2,0.086,9.4,2.6,1,1.2,0,0.067,37.2,1.4,55.6,80,0.5,Processed Foods
+638,split peas cooked,227,0.8,0.1,40.2,5.7,16.3,16.3,0,0.5,27.4,2.5,104.3,27,1,Plant-Based Proteins
+639,sweet corn yellow,58,0.4,0.029,14.2,2.6,4.1,1.5,0,0.05,0,0.075,20.347,2,14.2,Processed Foods
+640,asparagus raw,2,0.037,0.012,0.5,0.2,0.3,0.3,0,0.047,0.088,0.039,1.326,85,7.3,Processed Foods
+641,collard cooked,63,1.4,0.049,10.7,0,5.1,7.6,0,0.013,267.9,2.1,329.4,18,18.7,Oils & Fats
+642,swiss chard cooked,35,0.1,0,7.2,1.9,3.3,3.7,0,0.7,101.5,4,151.3,98,2.1,Processed Foods
+643,nopales cooked,22,0.003,0.064,4.9,1.7,2,3,0,0.087,244.4,0.7,262.963,52,10.5,Processed Foods
+644,tahitian taro cooked,60,0.9,0.2,9.4,0,5.7,0,0,0.4,204.1,2.1,274.3,20,1.8,Processed Foods
+645,chinese cabbage pak choi raw,9,0.1,0.013,1.5,0.8,1.1,0.7,0,0.087,73.5,0.6,109,72,0.51,Processed Foods
+646,green chili pepper,18,0.097,0.067,4.3,2.3,0.9,0.7,0,0.023,0.017,0.059,6.188,12,12.3,Herbs & Spices
+647,mountain yam raw,91,0.1,0.015,22.2,0.4,1.8,3.4,0,0.021,35.4,0.6,67,77,0.1,Processed Foods
+648,parsnips cooked,114,0.5,0.081,27.2,7.7,2.1,6.4,0,0.021,0.065,0.2,36.576,27,16.2,Processed Foods
+649,tomato stewed,97,3.3,0.6,16.1,0,2.4,2.1,0,0.6,0,0.1,24.1,99,12.4,Vegetables
+650,sweet green peppers cooked,19,0.1,0.037,4.5,2.3,0.7,0.9,0,0.2,6.6,0.3,67.4,61,10.1,Herbs & Spices
+651,white corn raw,143,2,0.3,31.6,5.3,5.3,4.5,0,0.088,0.081,0.5,43.973,14,18.8,Processed Foods
+652,rutabaga raw,286,1.2,0.2,66.5,34.4,8.3,17.8,0,0.061,332,3.4,622.2,23,7.2,Processed Foods
+653,jalapeno peppers canned,37,1.3,0.1,6.4,2.9,1.3,3.5,0,2.3,31.3,2.6,60,31,14.4,Herbs & Spices
+654,pumpkin canned,83,0.7,0.4,19.8,8.1,2.7,7.1,0,0.6,63.7,3.4,107.7,76,14.9,Processed Foods
+655,peas onions canned,61,0.5,0.064,10.3,0,3.9,2.8,0,0.5,20.4,1,42.5,77,1,Plant-Based Proteins
+656,sweet mashed potato canned,258,0.5,0.1,59.1,13.9,5,4.3,0,0.2,76.5,3.4,162.1,17,0.46,Vegetables
+657,hominy canned,119,1.5,0.2,23.5,3,2.4,4.1,0,0.6,16.5,1,49,58,0.9,Processed Foods
+658,tomato puree canned,95,0.5,0.098,22.5,12.1,4.1,4.8,0,0.002,0.038,0.7,32.936,9,7.5,Vegetables
+659,dried tomatoes canned in oil,6,0.4,0.072,0.7,0,0.2,0.2,0,0.056,1.4,0.057,6.037,28,18.2,Vegetables
+660,mixed vegetables canned,88,0.6,0.1,17.5,0,3.5,9.3,0,0.5,0,0.3,31.4,1,0.53,Vegetables
+661,straw mushrooms canned,2,0.09,0.1,0.3,0,0.2,0.1,0,0.049,0,0.06,0.771,61,14.5,Processed Foods
+662,capers canned,2,0.089,0.021,0.4,0.011,0.2,0.3,0,0.2,3.4,0.1,4.856,65,18.9,Processed Foods
+663,red peppers canned,15,0.058,0.03,3.7,2.4,0.7,0.9,0,0.9,5.1,0.4,60.443,34,3.3,Herbs & Spices
+664,carrots canned,104,0.6,0.1,24.4,11.2,2.6,8.2,0,0.2,0.028,0.5,36.875,27,0.43,Vegetables
+665,tomatoes in tomato juice canned,41,0.3,0.08,9.6,5.7,1.9,2.4,0,0.3,74.4,2.3,113.2,35,17.7,Vegetables
+666,asparagus canned,62,0.7,0.2,10.2,4.1,7.4,4.1,0,0.1,61.7,2.5,154.4,83,0,Processed Foods
+667,sweet red peppers canned,25,0.4,0.013,5.5,0,1.1,1.7,0,1.9,57.4,1.1,132.3,10,14.7,Herbs & Spices
+668,onions canned,12,0.084,0.045,2.5,1.4,0.5,0.8,0,0.2,28.4,0.011,34.925,57,0.5,Vegetables
+669,turnip greens canned,27,0.4,0.1,4,0.6,2,1.9,0,0.082,169.9,2.2,202.7,43,10.9,Processed Foods
+670,hearts of palm,9,0.2,0.056,1.5,0,0.8,0.8,0,0.1,19.1,1,26,10,2.7,Processed Foods
+671,spinach canned,44,0.9,0.1,6.8,0,4.9,3.7,0,0.7,194.2,3.7,245.8,34,0.5,Vegetables
+672,sweet potato canned,568,1.3,0.3,133.5,98.3,6.3,16,0,0.3,95.7,5.1,324.9,73,0.46,Vegetables
+673,corn canned,49,0.6,0.032,11.1,3.3,1.6,1.4,0,0.2,0,0.02,14.834,9,1,Processed Foods
+674,peas carrots canned,97,0.7,0.1,21.6,7.2,5.5,8.4,0,0.7,0.059,0.3,36.729,14,1,Plant-Based Proteins
+675,crookneck squash canned,27,0.1,0.088,6.2,2.5,1.3,2.9,0,0.006,25.2,1.5,42.9,70,18.2,Processed Foods
+676,tomatoes canned,77,0.7,0.062,17.6,10.6,4,4.6,0,0.3,82.3,3.1,134.6,5,9.9,Vegetables
+677,pimento canned,44,0.6,0.004,9.8,5.2,2.1,3.6,0,0.006,11.5,3.2,193.8,99,0.4,Processed Foods
+678,sweet green peppers canned,25,0.4,0.037,5.5,0,1.1,1.7,0,1.9,57.4,1.1,132.3,66,9.7,Herbs & Spices
+679,peas canned,57,0.8,0.1,9.5,0,3.5,0,0,0.2,0,0.091,13.89,41,1,Plant-Based Proteins
+680,chili peppers canned,29,0.4,0.013,6.4,0,1,2.4,0,0.6,50,1.8,109.5,68,7.9,Herbs & Spices
+681,green peppers canned,15,0.074,0.096,3.7,2.3,0.7,0.9,0,0.9,5.1,0.4,60.468,80,6.6,Herbs & Spices
+682,grape leaves canned,20,0.6,0.065,3.3,0,1.2,2.8,0,0.8,81.8,0.8,93.7,1,19.7,Fruits
+683,sauerkraut canned,27,0.2,0.023,6.1,2.5,1.3,4.1,0,0.9,0.096,0.1,12.078,57,3.9,Processed Foods
+684,beets canned,69,0.2,0.017,16.2,13.2,2,3,0,0.02,32,1.5,61.8,40,0.43,Processed Foods
+685,stewed tomatoes canned,66,0.5,0.078,15.8,9,2.3,2.6,0,0.6,0.039,0.3,21.684,54,18.6,Vegetables
+686,tomato paste canned,215,1.2,0.3,49.5,31.9,11.3,10.7,0,2.1,94.3,7.8,232.2,41,13.5,Vegetables
+687,bacon ranch salad mcdonalds,389,20.1,5.2,19.4,4.9,28.1,3.2,70.2,0.9,146.7,1.9,250.3,11,11.8,Processed Foods
+688,caesar salad with grilled chicken mcdonalds,201,5.6,3,11.3,4.8,29.1,3.3,71,0.6,189.4,1.8,271.9,18,6,Meat & Poultry
+689,caesar salad mcdonalds,94,4.4,2.5,9.1,4.4,6.8,3.4,10.7,0.2,183.2,1.3,238.2,61,17.8,Processed Foods
+690,vegetable salad,22,0.054,0.053,4.4,0,1.7,0,0,0.025,17.9,0.9,56.916,28,0.53,Vegetables
+691,vegetable salad with chicken,70,1.5,0.4,2.5,0,11.6,0,47.9,0.1,24.7,0.7,52.69,15,6,Meat & Poultry
+692,potato salad,358,20.5,3.6,27.9,0,6.7,3.3,170,1.3,47.5,1.6,132.547,34,0.46,Vegetables
+693,taco salad taco bell,906,48.9,15.9,80.5,0,35.7,16,101.3,1.9,506.4,9.4,696.9,20,17.6,Processed Foods
+694,iceberg lettuce,8,0.045,0.089,1.7,1.1,0.5,0.7,0,0.022,0.079,0.033,3.064,11,0.5,Processed Foods
+695,cornsalad,12,0.2,0,2,0,1.1,0,0,0.067,0,0.092,3.593,86,18.7,Processed Foods
+696,potato salad with egg,393,23.5,3.6,40.5,12.4,4.9,3.3,42.5,0.8,37.5,1.3,113.038,80,3,Eggs
+697,side salad mcdonalds,17,0.2,0.014,3.7,1.9,0.9,1.4,0,0.037,20.9,0.6,41.4,48,4.9,Processed Foods
+698,caesar salad with crispy chicken mcdonalds,349,16.4,4.3,19.2,4.5,25.7,3.4,55.6,0.7,188.5,1.8,285.9,35,6,Meat & Poultry
+699,grape apple salad with walnuts,191,8.2,1.1,25.6,20.3,3.5,3.6,1.6,0.087,70.1,0.5,119.357,82,0.43,Fruits
+700,vegetable salad with cheese egg,68,3.9,2,3.2,0,5.8,0,65.1,0.044,66.5,0.4,86.317,8,3,Dairy Products
+701,celtuce,1,0.088,0,0.3,0,0.071,0.1,0,0.094,3.1,0.079,5.255,3,13.3,Processed Foods
+702,arugula,5,0.1,0.029,0.7,0.4,0.5,0.3,0,0.018,32,0.3,36.9,81,6.5,Processed Foods
+703,vegetable salad with shrimp,71,1.7,0.4,4.4,0,9.7,0,119.5,0.3,39.3,0.6,61.8,47,0.53,Seafood
+704,coleslaw,292,18.9,3.1,28.4,23.3,1.8,3.6,7.6,0.4,0.1,0.039,53.118,54,18.1,Processed Foods
+705,shiitake mushrooms cooked,10,0.007,0.061,2.6,0.7,0.3,0.4,0,0.048,0,0.2,3.573,31,7.5,Processed Foods
+706,shiitake mushrooms raw,6,0.039,0,1.3,0.5,0.4,0.5,0,0.096,0.4,0.05,2.788,31,3.9,Processed Foods
+707,crimini mushrooms,1,0.018,0.054,0.3,0.1,0.2,0.064,0,0.086,0,0.098,0.681,43,8.4,Processed Foods
+708,mushrooms raw,15,0.2,0.052,2.3,1.4,2.2,0.7,0,0.053,2.1,0.4,9.4,68,3.5,Processed Foods
+709,portabella mushrooms grilled,35,0.7,0.023,5.4,2.7,4,2.7,0,0.047,0,0.5,13.4,63,2.1,Processed Foods
+710,maitake mushrooms,0,0.017,0.011,0.072,0.043,0.016,0.041,0,0.059,0,0.013,0.374,43,13.2,Processed Foods
+711,shiitake mushrooms dried,11,0.061,0.014,2.7,0.046,0.3,0.4,0,0.086,0.4,0.022,4.01,13,2.4,Processed Foods
+712,chanterelle mushrooms,2,0.063,0,0.4,0.076,0.033,0.2,0,0.028,0,0.067,0.757,97,3.9,Processed Foods
+713,cloud ear fungus dried,80,0.2,0,20.4,0,2.6,19.6,0,0.036,44.5,1.6,88.9,71,4,Processed Foods
+714,mushrooms cooked,44,0.7,0.05,8.3,3.7,3.4,3.4,0,0.011,0,0.8,16.7,76,17,Processed Foods
+715,pepeao dried,72,0.1,0,19.4,0,1.2,0,0,0.072,0,1.2,22.1,80,1,Plant-Based Proteins
+716,truffles,61,4.1,2.2,5.4,4.6,0.7,0.3,6.4,0.034,18.8,0.2,29.59,89,18,Processed Foods
+717,jews ear,25,0.095,0,6.7,0,0.5,0,0,0.027,15.8,0.6,24.249,68,17.1,Processed Foods
+718,enoki mushrooms,1,0.099,0.027,0.2,0.034,0.062,0.089,0,0.084,0,0.099,0.433,68,5.2,Processed Foods
+719,morel mushrooms,4,0.07,0.056,0.7,0.096,0.4,0.4,0,0.08,0,0.056,1.727,63,2.4,Processed Foods
+720,portabella mushrooms raw,19,0.3,0.036,3.3,2.2,1.8,1.1,0,0.014,2.6,0.3,9.4,93,3.7,Processed Foods
+721,oyster mushroom,5,0.035,0.016,0.9,0.2,0.5,0.3,0,0.098,0,0.008,1.804,54,8.6,Processed Foods

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart AI - Smart Market Basket Optimizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #10b981);
+        }
+        .gradient-bg:hover {
+            background: linear-gradient(to right, #047857, #059669);
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white bg-opacity-95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🧠</span>
+                    <span class="text-xl font-bold gradient-text">ShopSmart AI</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-green-600 transition-colors">How It Works</a>
+                    <div id="nav-buttons" class="flex items-center gap-4">
+                        <button id="login-btn" class="text-gray-600 hover:text-green-600 transition-colors">Login</button>
+                        <button id="signup-btn" class="px-4 py-2 gradient-bg text-white rounded-lg hover:shadow-lg transition-all">Sign Up</button>
+                        <button id="demo-login-btn" class="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-all">Demo Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold leading-tight mb-6">
+                        Optimize Your Nutrition with <span class="gradient-text">AI Intelligence</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Smart Market Basket Optimizer uses advanced algorithms to create personalized meal plans, optimize your budget, and promote sustainable eating habits for a healthier you and planet.
+                    </p>
+                    <div id="hero-buttons" class="flex gap-4 mb-12">
+                        <button id="hero-signup" class="px-6 py-3 gradient-bg text-white rounded-lg hover:shadow-lg transition-all text-lg">Get Started Free</button>
+                        <button id="hero-login" class="px-6 py-3 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-all text-lg">Sign In</button>
+                    </div>
+                    <div class="flex gap-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">50K+</div>
+                            <div class="text-sm text-gray-600">Happy Users</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">2M+</div>
+                            <div class="text-sm text-gray-600">Meals Optimized</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">30%</div>
+                            <div class="text-sm text-gray-600">Food Waste Reduced</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-pulse">
+                            <span class="text-2xl">🥗</span>
+                            <span class="font-semibold">Balanced Nutrition</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-pulse" style="animation-delay: 0.5s">
+                            <span class="text-2xl">🌱</span>
+                            <span class="font-semibold">Eco-Friendly</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-pulse" style="animation-delay: 1s">
+                            <span class="text-2xl">🤖</span>
+                            <span class="font-semibold">AI Powered</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-pulse" style="animation-delay: 1.5s">
+                            <span class="text-2xl">💰</span>
+                            <span class="font-semibold">Budget Smart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Intelligent Features for Smarter Shopping</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover how our AI-powered platform transforms your approach to nutrition, budgeting, and sustainability
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-3">Budget Optimization</h3>
+                    <p class="text-gray-600">Maximize nutrition while staying within your budget with AI-powered grocery list optimization.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🥗</div>
+                    <h3 class="text-xl font-semibold mb-3">Nutritional Filtering</h3>
+                    <p class="text-gray-600">Filter recommendations based on specific nutritional requirements and dietary preferences.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold mb-3">KNN Algorithm</h3>
+                    <p class="text-gray-600">Find healthier alternatives using machine learning to analyze nutritional similarities.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-3">Healthier Swaps</h3>
+                    <p class="text-gray-600">Get intelligent suggestions for healthier alternatives to common food items in your shopping list.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🛒</div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Cart</h3>
+                    <p class="text-gray-600">Manage your shopping cart with real-time nutrition and budget tracking.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Analytics</h3>
+                    <p class="text-gray-600">Track your nutrition, spending patterns, and health goals with detailed insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Optimize Your Shopping?</h2>
+            <p class="text-xl mb-8 opacity-90">Join thousands of users who have transformed their shopping habits with AI-powered insights.</p>
+            <div id="cta-buttons" class="flex gap-4 justify-center">
+                <button id="cta-signup" class="px-6 py-3 bg-white text-green-600 rounded-lg hover:bg-gray-100 transition-all text-lg">Get Started Free</button>
+                <button id="cta-login" class="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-600 transition-all text-lg">Sign In</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-6 border-b">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🧠</span>
+                    <span class="text-xl font-bold gradient-text">ShopSmart AI</span>
+                </div>
+                <button id="close-login" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2 text-center">Welcome Back</h2>
+                <p class="text-gray-600 text-center mb-6">Sign in to your account to continue</p>
+                <form id="login-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Password</label>
+                        <input type="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <button type="submit" class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all">Sign In</button>
+                </form>
+                <div class="text-center mt-4">
+                    <p class="text-gray-600">Don't have an account? <button id="switch-to-signup" class="text-green-600 hover:underline">Sign up</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-6 border-b">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🧠</span>
+                    <span class="text-xl font-bold gradient-text">ShopSmart AI</span>
+                </div>
+                <button id="close-signup" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2 text-center">Create Account</h2>
+                <p class="text-gray-600 text-center mb-6">Join thousands optimizing their nutrition</p>
+                <form id="signup-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Password</label>
+                        <input type="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <button type="submit" class="w-full gradient-bg text-white py-2 rounded-lg hover:shadow-lg transition-all">Create Account</button>
+                </form>
+                <div class="text-center mt-4">
+                    <p class="text-gray-600">Already have an account? <button id="switch-to-login" class="text-green-600 hover:underline">Sign in</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
